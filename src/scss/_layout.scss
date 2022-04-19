@@ -1,28 +1,207 @@
 body {
-    
+    font-family: $font-test;
+    color: $font-color;
+    // *****************************
+    // ****Farbe an den Seiten******
+    // *****************************
+    background-color: $bg-dark;
     
 
     article {
-        background-color: $bg;
+        background-image: linear-gradient(180deg, $bg-middle 0%, $bg 30%, $bg-middle 60%, $bg-dark 80%, $bg-middle 90%);
         width: 90%;
         height: 300vh;
         margin: 0 auto;
-        box-shadow: 2px 2px 20px 5px rgb(0, 0, 0, .5);
-    
+        @include box-shadow-lg;
 
+        // *****************************
+        // ****Header mit NAv-Leiste und 
+        // Begrüßung in Schreibmaschinen-Schrift**
+        // *****************************
+       
         header {
-            @include flex($justify:flex-end);
+            height: 500px;
+            @include flex($justify:flex-end, $align:flex-start);
+            position: relative;
+            h1:first-of-type {
+                transform: translate(80px, -50px) rotate(0deg);
+                letter-spacing: 5px;
+            }
+            h1 {
+                width: 400px;
+                font-size: 1.8em;
+                margin: 100px 0 0 10px;
+                font-family: $font-header;
+                transform: translate(-10px, 20px) rotate(30deg);
+                
+                // *****************************
+                // ****Erster Satz mit Namen und curved text**
+                // *****************************
+                .myName {
+                    text-align: center;
+                    width: 500px;
+                    
+
+                    span {
+                        display: inline-block;
+                    }
+                    .m1 {
+                        transform: translate(60px, -30px) rotate(0deg);
+                    }
+                    .a1 {
+                        transform: translate(60px, -28px) rotate(0deg);
+                    }
+                    .r1 {
+                        transform: translate(60px, -25px) rotate(-5deg);
+                    }
+                    .t1 {
+                        transform: translate(60px, -25px) rotate(-15deg);
+                    }
+                    .y1 {
+                        transform: translate(60px, -35px) rotate(-28deg);
+                    }
+                    .n1 {
+                        transform: translate(55px, -60px) rotate(-40deg);
+                    }
+                    .a2 {
+                        transform: translate(38px, -90px) rotate(-50deg);
+                    }
+                    .punkt {
+                        transform: translate(25px, -120px) rotate(-60deg);
+                    }
+                }
+
+                // *****************************
+                // ****Zweiter Satz mit Beschreibung und curved text**
+                // *****************************
+                .moreAbout {
+                    span {
+                        display: inline-block;
+                    }
+                    .a4 {
+                        transform: translate(0px, -2px) rotate(-5deg);
+                    }
+                    .b1 {
+                        transform: translate(390px, -35px) rotate(-12deg);
+                    }
+                    .o2 {
+                        transform: translate(388px, -42px) rotate(-20deg);
+                    }
+                    .u1 {
+                        transform: translate(385px, -50px) rotate(-25deg);
+                    }
+                    .t2 {
+                        transform: translate(382px, -60px) rotate(-28deg);
+                    }
+                    .m4 {
+                        transform: translate(380px, -86px) rotate(-30deg);
+                    }
+                    .e3 {
+                        transform: translate(377px, -105px) rotate(-40deg);
+                    }
+                    .punkt2 {
+                        transform: translate(375px, -130px) rotate(-28deg);
+                    }
+                    .punkt3 {
+                        transform: translate(370px, -155px) rotate(-30deg);
+                    }
+                    .punkt4 {
+                        transform: translate(360px, -180px) rotate(-40deg);
+                    }
+                }
+            }
+           
+            // *****************************
+            // ****Nav-Leiste**
+            // *****************************
             ul {
                 @include flex();
                 li {
-                    margin: 10px;
+                    margin: 20px;
+                }
+                .click {
+                    padding: 8px;
+                    border: 2px solid rgb(68, 68, 68); 
+                    border-radius: 5px;
+                    @include box-shadow-xs;
+                }
+            }
+        
+            // *****************************
+            // ****Zwei Textblöcke im Header**
+            // *****************************
+            p {
+                font-size: 0.8em;
+                position: absolute;
+                width: 150px;
+            }
+            p:first-of-type {
+                bottom: 100px;
+                left: 50px;
+            }
+            p:nth-of-type(2) {
+                top: 100px;
+                right: 50px;
+            }
+        }
+
+
+            // *****************************
+            // ****MAIN**
+            // *****************************
+        main {
+            width: 90%;
+            margin-left: 30px;
+            display: grid;
+            h2, h3 {
+                text-transform: uppercase;
+                letter-spacing: 3px;
+            }
+
+            .contact {
+                position: relative;
+                width: 90%;
+                height: 400px;
+
+                .ball {
+                    position: absolute;
+                    left: 250px;
+                    top: 150px;
+                    width: 100px;
+                    height: 100px;
+                    border-radius: 50%;
+                    background-color: rgb(68, 153, 120);
+
+                    box-shadow: 5px 2px 20px 5px rgba(58, 92, 155, 0.5);
+
+                }
+                .card {
+                    position: absolute;
+                    z-index: 1;
+                    @include flex($direction: column, $align:flex-start);
+                    
+                    width: 300px;
+                    height: 180px;
+                    background-color: rgba(216, 216, 174, 0.5);
+                    border: 1px solid #b3b30233;
+                    border-radius: 10px;
+                    box-shadow: 5px 2px 20px 5px rgba(209, 209, 91, 0.5);
+                    p {
+                        
+                        padding: 5px 0 0px 20px;
+                    }
                 }
             }
         }
 
+
+
+
         footer {
-            // height: 300px;
-            // background-color: $bg-dark;
+            margin-left: 30px;
+            span {
+                margin-right: 30px;
+            }
         }
     }
 }

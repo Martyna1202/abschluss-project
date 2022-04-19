@@ -1,0 +1,15 @@
+{
+  "name": "vorlage",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "aufbau": "mkdir -p src/scss && touch src/index.html && touch src/scss/_layout.scss && touch src/scss/_helpers.scss && touch src/scss/_typography.scss && touch src/scss/_variables.scss && touch src/scss/_reset.scss && echo '@import \"reset\";\n@import \"helpers\";\n@import \"typography\";\n@import \"layout\"; ' > src/scss/main.scss",
+    "watch": "sass -w ./src/scss/main.scss ./src/css/main.css"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^6.1.1"
+  }
+}

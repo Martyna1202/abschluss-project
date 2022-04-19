@@ -1,0 +1,25 @@
+// VARIABLES
+
+$fa-font-path: "../../node_modules/@fortawesome/fontawesome-free/webfonts";
+
+// BREAKPOINTS
+
+
+// COLORS
+$bg: rgba(230, 245, 226, 0.822);
+$bg-middle: rgba(200, 230, 191, 0.822);
+$bg-dark: rgba(107, 119, 103, 0.822);
+
+// SHADOW
+
+
+
+
+// FLEX
+
+@mixin flex($direction: row, $justify: center, $align: center) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $align;
+}

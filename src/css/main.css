@@ -29,175 +29,376 @@ a {
   src: url(../fonts/Raleway/static/Raleway-Regular.ttf);
   font-weight: 400;
 }
-body {
+html {
+  scroll-behavior: smooth;
+}
+html body {
   font-family: "Raleway", sans-serif;
   color: rgb(43, 46, 45);
   background-color: rgba(107, 119, 103, 0.8);
 }
-body article {
-  background-image: linear-gradient(180deg, rgba(170, 211, 158, 0.8) 0%, rgba(230, 245, 226, 0.822) 30%, rgba(170, 211, 158, 0.8) 60%, rgba(107, 119, 103, 0.8) 80%, rgba(170, 211, 158, 0.8) 90%);
+html body article {
+  background-image: linear-gradient(180deg, rgba(174, 190, 169, 0.5) 0%, rgba(230, 245, 226, 0.822) 30%, rgba(174, 190, 169, 0.5) 60%, rgba(107, 119, 103, 0.8) 80%, rgba(174, 190, 169, 0.5) 90%);
   width: 90%;
-  height: 300vh;
-  margin: 0 auto;
+  height: 600vh;
+  margin: 20px auto;
   box-shadow: 2px 2px 25px 5px rgba(0, 0, 0, 0.5);
 }
-body article header {
+html body article header.nav {
   height: 500px;
+  width: 90%;
+  margin: 30px auto;
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
   align-items: flex-start;
   position: relative;
 }
-body article header h1:first-of-type {
-  transform: translate(80px, -50px) rotate(0deg);
+html body article header.nav h1:first-of-type {
+  position: absolute;
+  top: 100px;
+  left: -50px;
+  transform: translate(80px, -50px);
   letter-spacing: 5px;
 }
-body article header h1 {
+html body article header.nav h1 {
   width: 400px;
   font-size: 1.8em;
-  margin: 100px 0 0 10px;
+  position: absolute;
+  top: 150px;
+  left: 120px;
   font-family: "Inconsolata", monospace;
-  transform: translate(-10px, 20px) rotate(30deg);
+  transform: rotate(30deg);
 }
-body article header h1 .myName {
+html body article header.nav h1 .myName {
   text-align: center;
   width: 500px;
 }
-body article header h1 .myName span {
+html body article header.nav h1 .myName span {
   display: inline-block;
 }
-body article header h1 .myName .m1 {
+html body article header.nav h1 .myName .m1 {
   transform: translate(60px, -30px) rotate(0deg);
 }
-body article header h1 .myName .a1 {
+html body article header.nav h1 .myName .a1 {
   transform: translate(60px, -28px) rotate(0deg);
 }
-body article header h1 .myName .r1 {
+html body article header.nav h1 .myName .r1 {
   transform: translate(60px, -25px) rotate(-5deg);
 }
-body article header h1 .myName .t1 {
+html body article header.nav h1 .myName .t1 {
   transform: translate(60px, -25px) rotate(-15deg);
 }
-body article header h1 .myName .y1 {
+html body article header.nav h1 .myName .y1 {
   transform: translate(60px, -35px) rotate(-28deg);
 }
-body article header h1 .myName .n1 {
+html body article header.nav h1 .myName .n1 {
   transform: translate(55px, -60px) rotate(-40deg);
 }
-body article header h1 .myName .a2 {
+html body article header.nav h1 .myName .a2 {
   transform: translate(38px, -90px) rotate(-50deg);
 }
-body article header h1 .myName .punkt {
+html body article header.nav h1 .myName .punkt {
   transform: translate(25px, -120px) rotate(-60deg);
 }
-body article header h1 .moreAbout span {
+html body article header.nav h1 .moreAbout span {
   display: inline-block;
 }
-body article header h1 .moreAbout .a4 {
+html body article header.nav h1 .moreAbout .a4 {
   transform: translate(0px, -2px) rotate(-5deg);
 }
-body article header h1 .moreAbout .b1 {
+html body article header.nav h1 .moreAbout .b1 {
   transform: translate(390px, -35px) rotate(-12deg);
 }
-body article header h1 .moreAbout .o2 {
+html body article header.nav h1 .moreAbout .o2 {
   transform: translate(388px, -42px) rotate(-20deg);
 }
-body article header h1 .moreAbout .u1 {
+html body article header.nav h1 .moreAbout .u1 {
   transform: translate(385px, -50px) rotate(-25deg);
 }
-body article header h1 .moreAbout .t2 {
+html body article header.nav h1 .moreAbout .t2 {
   transform: translate(382px, -60px) rotate(-28deg);
 }
-body article header h1 .moreAbout .m4 {
+html body article header.nav h1 .moreAbout .m4 {
   transform: translate(380px, -86px) rotate(-30deg);
 }
-body article header h1 .moreAbout .e3 {
+html body article header.nav h1 .moreAbout .e3 {
   transform: translate(377px, -105px) rotate(-40deg);
 }
-body article header h1 .moreAbout .punkt2 {
+html body article header.nav h1 .moreAbout .punkt2 {
   transform: translate(375px, -130px) rotate(-28deg);
 }
-body article header h1 .moreAbout .punkt3 {
+html body article header.nav h1 .moreAbout .punkt3 {
   transform: translate(370px, -155px) rotate(-30deg);
 }
-body article header h1 .moreAbout .punkt4 {
+html body article header.nav h1 .moreAbout .punkt4 {
   transform: translate(360px, -180px) rotate(-40deg);
 }
-body article header ul {
+html body article header.nav nav {
+  margin-top: 15px;
+}
+html body article header.nav nav ul {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
 }
-body article header ul li {
+html body article header.nav nav ul li {
   margin: 20px;
 }
-body article header ul .click {
+html body article header.nav nav ul .click {
   padding: 8px;
   border: 2px solid rgb(68, 68, 68);
   border-radius: 5px;
   box-shadow: 0px 0px 8px 2px rgba(22, 73, 56, 0.486);
 }
-body article header p {
+html body article header.nav p {
   font-size: 0.8em;
   position: absolute;
   width: 150px;
 }
-body article header p:first-of-type {
-  bottom: 100px;
-  left: 50px;
+html body article header.nav p:first-of-type {
+  bottom: 50px;
+  left: 0px;
 }
-body article header p:nth-of-type(2) {
-  top: 100px;
-  right: 50px;
+html body article header.nav p:nth-of-type(2) {
+  top: 120px;
+  right: 10px;
 }
-body article main {
+html body article main {
   width: 90%;
-  margin-left: 30px;
-  display: grid;
+  margin: 0 auto;
+  height: 400vh;
 }
-body article main h2, body article main h3 {
+html body article main h2, html body article main h3, html body article main h4 {
   text-transform: uppercase;
   letter-spacing: 3px;
 }
-body article main .contact {
+html body article main .process ul {
+  display: flex;
+  flex-direction: column;
+  margin-left: 5%;
+  text-align: right;
+}
+html body article main .process ul li:nth-of-type(odd) {
+  margin-top: 25px;
+}
+html body article main .process ul li:nth-of-type(even) {
+  margin-top: 10px;
+}
+html body article main .process ul span {
+  font-size: 1.6em;
+  padding: 20px;
+}
+html body article main .process ul h4 {
+  font-size: 1.2em;
+  display: inline-block;
+  width: 80%;
+  border-bottom: 2px solid rgba(107, 119, 103, 0.8);
+  text-align: end;
+}
+html body article main .process ul p {
+  font-size: 0.8em;
+  width: 50%;
+  margin-left: 50%;
+  text-align: right;
+}
+html body article main .about {
+  display: grid;
+  margin-top: 50px;
+}
+html body article main .about .person {
+  background-image: url(../img/person.webp);
+  background-size: cover;
+  background-position: center;
+  width: 250px;
+  height: 250px;
+}
+html body article main .skills {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 30vh;
+}
+html body article main .skills table {
+  width: 50%;
+  text-align: left;
+  margin-left: 40%;
+}
+html body article main .skills table td {
+  width: 30px;
+  border-bottom: 2px solid rgba(107, 119, 103, 0.8);
+}
+html body article main .projects {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 70vh;
+}
+html body article main .projects .prototype {
+  background-image: url(../img/prototype.jpeg);
+  background-size: cover;
+  background-position: center;
+  width: 250px;
+  height: 250px;
+}
+html body article main .projects .desktop {
+  background-image: url(../img/desktops.webp);
+  background-size: cover;
+  background-position: center;
+  width: 250px;
+  height: 250px;
+}
+html body article main .projects .touch {
+  background-image: url(../img/ipad-touch.webp);
+  background-size: cover;
+  background-position: center;
+  width: 250px;
+  height: 250px;
+}
+html body article main .projects .work {
+  background-image: url(../img/am-tisch.jpeg);
+  background-size: cover;
+  background-position: center;
+  width: 250px;
+  height: 250px;
+}
+html body article main .contact {
   position: relative;
   width: 90%;
   height: 400px;
 }
-body article main .contact .ball {
+html body article main .contact .ball {
   position: absolute;
   left: 250px;
   top: 150px;
   width: 100px;
   height: 100px;
   border-radius: 50%;
-  background-color: rgb(68, 153, 120);
+  background-color: rgba(107, 119, 103, 0.8);
   box-shadow: 5px 2px 20px 5px rgba(58, 92, 155, 0.5);
 }
-body article main .contact .card {
-  position: absolute;
-  z-index: 1;
+html body article main .contact .card {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
+  position: absolute;
+  z-index: 1;
   width: 300px;
   height: 180px;
-  background-color: rgba(216, 216, 174, 0.5);
+  background-color: rgba(255, 255, 255, 0.5);
   border: 1px solid rgba(179, 179, 2, 0.2);
   border-radius: 10px;
-  box-shadow: 5px 2px 20px 5px rgba(209, 209, 91, 0.5);
+  box-shadow: 2px 2px 25px 5px rgba(0, 0, 0, 0.5);
 }
-body article main .contact .card p {
+html body article main .contact .card p {
   padding: 5px 0 0px 20px;
 }
-body article footer {
+html body article main .newsletter {
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 5px;
+  box-shadow: 2px 2px 25px 5px rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50vh;
+}
+html body article main .newsletter .container {
+  width: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+html body article main .newsletter .container #toggle {
+  -webkit-appearance: none;
+}
+html body article main .newsletter .container .button {
+  position: absolute;
+  z-index: 999;
+  width: 43px;
+  height: 43px;
+  background: rgba(107, 119, 103, 0.8);
+  border-radius: 100%;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: -12px;
+}
+html body article main .newsletter .container .button:before {
+  position: absolute;
+  content: "";
+  width: 20px;
+  height: 2px;
+  background: #fff;
+  transform: rotate(90deg);
+  transition: all 0.4s ease;
+}
+html body article main .newsletter .container .button:after {
+  position: absolute;
+  content: "";
+  width: 20px;
+  height: 2px;
+  background: #fff;
+  transition: all 0.4s ease;
+}
+html body article main .newsletter .container .news {
+  opacity: 0;
+  transition: all 0.4s ease-in-out;
+  background: #fff;
+  width: 100%;
+  border-radius: 5px;
+  transform: translateY(0%);
+  box-shadow: 0px 0px 8px 2px rgba(22, 73, 56, 0.486);
+  border: 1px solid #e4e4e4;
+  padding: 10px;
+}
+html body article main .newsletter .container .news ul, html body article main .newsletter .container .news form {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+html body article main .newsletter .container .news ul input, html body article main .newsletter .container .news form input {
+  border: none;
+  background-color: rgba(230, 245, 226, 0.822);
+  width: 80%;
+  height: 30px;
+  margin: 0 auto;
+}
+html body article main .newsletter .container .news ul a, html body article main .newsletter .container .news ul label, html body article main .newsletter .container .news form a, html body article main .newsletter .container .news form label {
+  text-align: center;
+  margin: 20px 0;
+  color: rgba(107, 119, 103, 0.8);
+  text-decoration: none;
+  font-family: "Quicksand", sans-serif, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 14px;
+}
+html body article main .newsletter .container .news ul a:hover, html body article main .newsletter .container .news ul label:hover, html body article main .newsletter .container .news form a:hover, html body article main .newsletter .container .news form label:hover {
+  color: rgba(174, 190, 169, 0.5);
+}
+html body article main #toggle:checked ~ .news {
+  opacity: 1;
+  transform: translateY(10%);
+}
+html body article main #toggle:checked ~ .button:before {
+  transform: rotate(225deg);
+}
+html body article main #toggle:checked ~ .button:after {
+  transform: rotate(135deg);
+}
+html body article footer {
   margin-left: 30px;
 }
-body article footer span {
+html body article footer span {
   margin-right: 30px;
+  text-transform: uppercase;
 }
 
 /*# sourceMappingURL=main.css.map */

@@ -1,206 +1,406 @@
-body {
-    font-family: $font-test;
-    color: $font-color;
-    // *****************************
-    // ****Farbe an den Seiten******
-    // *****************************
-    background-color: $bg-dark;
+html {
+    scroll-behavior: smooth;
+
+    body {
+        font-family: $font-test;
+        color: $font-color;
+        // *****************************
+        // ****Farbe an den Seiten******
+        // *****************************
+        background-color: $bg-dark;
+    
     
 
-    article {
-        background-image: linear-gradient(180deg, $bg-middle 0%, $bg 30%, $bg-middle 60%, $bg-dark 80%, $bg-middle 90%);
-        width: 90%;
-        height: 300vh;
-        margin: 0 auto;
-        @include box-shadow-lg;
+        article {
+            background-image: linear-gradient(180deg, $bg-middle 0%, $bg 30%, $bg-middle 60%, $bg-dark 80%, $bg-middle 90%);
+            width: 90%;
+            height: 600vh;
+            margin: 20px auto;
+            @include box-shadow-lg;
 
-        // *****************************
-        // ****Header mit NAv-Leiste und 
-        // Begrüßung in Schreibmaschinen-Schrift**
-        // *****************************
-       
-        header {
-            height: 500px;
-            @include flex($justify:flex-end, $align:flex-start);
-            position: relative;
-            h1:first-of-type {
-                transform: translate(80px, -50px) rotate(0deg);
-                letter-spacing: 5px;
-            }
-            h1 {
-                width: 400px;
-                font-size: 1.8em;
-                margin: 100px 0 0 10px;
-                font-family: $font-header;
-                transform: translate(-10px, 20px) rotate(30deg);
-                
-                // *****************************
-                // ****Erster Satz mit Namen und curved text**
-                // *****************************
-                .myName {
-                    text-align: center;
-                    width: 500px;
-                    
-
-                    span {
-                        display: inline-block;
-                    }
-                    .m1 {
-                        transform: translate(60px, -30px) rotate(0deg);
-                    }
-                    .a1 {
-                        transform: translate(60px, -28px) rotate(0deg);
-                    }
-                    .r1 {
-                        transform: translate(60px, -25px) rotate(-5deg);
-                    }
-                    .t1 {
-                        transform: translate(60px, -25px) rotate(-15deg);
-                    }
-                    .y1 {
-                        transform: translate(60px, -35px) rotate(-28deg);
-                    }
-                    .n1 {
-                        transform: translate(55px, -60px) rotate(-40deg);
-                    }
-                    .a2 {
-                        transform: translate(38px, -90px) rotate(-50deg);
-                    }
-                    .punkt {
-                        transform: translate(25px, -120px) rotate(-60deg);
-                    }
-                }
-
-                // *****************************
-                // ****Zweiter Satz mit Beschreibung und curved text**
-                // *****************************
-                .moreAbout {
-                    span {
-                        display: inline-block;
-                    }
-                    .a4 {
-                        transform: translate(0px, -2px) rotate(-5deg);
-                    }
-                    .b1 {
-                        transform: translate(390px, -35px) rotate(-12deg);
-                    }
-                    .o2 {
-                        transform: translate(388px, -42px) rotate(-20deg);
-                    }
-                    .u1 {
-                        transform: translate(385px, -50px) rotate(-25deg);
-                    }
-                    .t2 {
-                        transform: translate(382px, -60px) rotate(-28deg);
-                    }
-                    .m4 {
-                        transform: translate(380px, -86px) rotate(-30deg);
-                    }
-                    .e3 {
-                        transform: translate(377px, -105px) rotate(-40deg);
-                    }
-                    .punkt2 {
-                        transform: translate(375px, -130px) rotate(-28deg);
-                    }
-                    .punkt3 {
-                        transform: translate(370px, -155px) rotate(-30deg);
-                    }
-                    .punkt4 {
-                        transform: translate(360px, -180px) rotate(-40deg);
-                    }
-                }
-            }
-           
             // *****************************
-            // ****Nav-Leiste**
+            // ****Header mit NAv-Leiste und 
+            // Begrüßung in Schreibmaschinen-Schrift**
             // *****************************
-            ul {
-                @include flex();
-                li {
-                    margin: 20px;
-                }
-                .click {
-                    padding: 8px;
-                    border: 2px solid rgb(68, 68, 68); 
-                    border-radius: 5px;
-                    @include box-shadow-xs;
-                }
-            }
         
-            // *****************************
-            // ****Zwei Textblöcke im Header**
-            // *****************************
-            p {
-                font-size: 0.8em;
-                position: absolute;
-                width: 150px;
-            }
-            p:first-of-type {
-                bottom: 100px;
-                left: 50px;
-            }
-            p:nth-of-type(2) {
-                top: 100px;
-                right: 50px;
-            }
-        }
+            header.nav {
+                height: 500px;
+                width: 90%;
+                margin: 30px auto;
+                @include flex($justify:flex-end, $align:flex-start);
+                position: relative;
+                h1:first-of-type {
+                    position: absolute;
+                    top: 100px;
+                    left: -50px;
+                    transform: translate(80px, -50px);
+                    letter-spacing: 5px;
+                }
+                h1 {
+                    width: 400px;
+                    font-size: 1.8em;
+                    position: absolute;
+                    top: 150px;
+                    left: 120px;
+                    font-family: $font-header;
+                    transform: rotate(30deg);
+                    
+                    // *****************************
+                    // ****Erster Satz mit Namen und curved text**
+                    // *****************************
+                    .myName {
+                        text-align: center;
+                        width: 500px;
+                        
+                        span {
+                            display: inline-block;
+                        }
+                        .m1 {
+                            transform: translate(60px, -30px) rotate(0deg);
+                        }
+                        .a1 {
+                            transform: translate(60px, -28px) rotate(0deg);
+                        }
+                        .r1 {
+                            transform: translate(60px, -25px) rotate(-5deg);
+                        }
+                        .t1 {
+                            transform: translate(60px, -25px) rotate(-15deg);
+                        }
+                        .y1 {
+                            transform: translate(60px, -35px) rotate(-28deg);
+                        }
+                        .n1 {
+                            transform: translate(55px, -60px) rotate(-40deg);
+                        }
+                        .a2 {
+                            transform: translate(38px, -90px) rotate(-50deg);
+                        }
+                        .punkt {
+                            transform: translate(25px, -120px) rotate(-60deg);
+                        }
+                    }
 
+                    // *****************************
+                    // ****Zweiter Satz mit Beschreibung und curved text**
+                    // *****************************
+                    .moreAbout {
+                        span {
+                            display: inline-block;
+                        }
+                        .a4 {
+                            transform: translate(0px, -2px) rotate(-5deg);
+                        }
+                        .b1 {
+                            transform: translate(390px, -35px) rotate(-12deg);
+                        }
+                        .o2 {
+                            transform: translate(388px, -42px) rotate(-20deg);
+                        }
+                        .u1 {
+                            transform: translate(385px, -50px) rotate(-25deg);
+                        }
+                        .t2 {
+                            transform: translate(382px, -60px) rotate(-28deg);
+                        }
+                        .m4 {
+                            transform: translate(380px, -86px) rotate(-30deg);
+                        }
+                        .e3 {
+                            transform: translate(377px, -105px) rotate(-40deg);
+                        }
+                        .punkt2 {
+                            transform: translate(375px, -130px) rotate(-28deg);
+                        }
+                        .punkt3 {
+                            transform: translate(370px, -155px) rotate(-30deg);
+                        }
+                        .punkt4 {
+                            transform: translate(360px, -180px) rotate(-40deg);
+                        }
+                    }
+                }
+            
+                // *****************************
+                // ****Nav-Leiste**
+                // *****************************
+                nav {
+                    margin-top: 15px;
+                    ul {
+                        @include flex();
+                        li {
+                            margin: 20px;
+                        }
+                        .click {
+                            padding: 8px;
+                            border: 2px solid rgb(68, 68, 68); 
+                            border-radius: 5px;
+                            @include box-shadow-xs;
+                        }
+                    }
+                }
+            
+                // *****************************
+                // ****Zwei Textblöcke im Header**
+                // *****************************
+                p {
+                    font-size: 0.8em;
+                    position: absolute;
+                    width: 150px;
+                }
+                p:first-of-type {
+                    bottom: 50px;
+                    left: 0px;
+                }
+                p:nth-of-type(2) {
+                    top: 120px;
+                    right: 10px;
+                }
+            }
 
             // *****************************
             // ****MAIN**
             // *****************************
-        main {
-            width: 90%;
-            margin-left: 30px;
-            display: grid;
-            h2, h3 {
-                text-transform: uppercase;
-                letter-spacing: 3px;
-            }
-
-            .contact {
-                position: relative;
+            main {
                 width: 90%;
-                height: 400px;
-
-                .ball {
-                    position: absolute;
-                    left: 250px;
-                    top: 150px;
-                    width: 100px;
-                    height: 100px;
-                    border-radius: 50%;
-                    background-color: rgb(68, 153, 120);
-
-                    box-shadow: 5px 2px 20px 5px rgba(58, 92, 155, 0.5);
-
+                margin: 0 auto;
+                height: 400vh;
+                
+                h2, h3, h4 {
+                    text-transform: uppercase;
+                    letter-spacing: 3px;
                 }
-                .card {
-                    position: absolute;
-                    z-index: 1;
-                    @include flex($direction: column, $align:flex-start);
-                    
-                    width: 300px;
-                    height: 180px;
-                    background-color: rgba(216, 216, 174, 0.5);
-                    border: 1px solid #b3b30233;
-                    border-radius: 10px;
-                    box-shadow: 5px 2px 20px 5px rgba(209, 209, 91, 0.5);
-                    p {
+
+                .process {
+                    ul {
+                        display: flex;
+                        flex-direction: column;
+                        margin-left: 5%;
+                        text-align: right;
+                        li:nth-of-type(odd) {
+                            margin-top: 25px;
+                        }
+                        li:nth-of-type(even) {
+                            margin-top: 10px;
+                        }
+                        span {
+                            font-size: 1.6em;
+                            padding: 20px;
+                        }
+                        h4 {
+                            font-size: 1.2em;
+                            display: inline-block;
+                            width: 80%;
+                            border-bottom: 2px solid $bg-dark;
+                            text-align: end;
+                        }
+                        p {
+                            font-size: 0.8em;
+                            width: 50%;
+                            margin-left: 50%;
+                            text-align: right;
+                        }
+                    }
+                }
+
+                .about {
+                    display: grid;
+                    margin-top: 50px;
+
+
+                    .person {
+                        background-image: url(../img/person.webp);
+                        @include image;
+                    }
+                }
+
+                .skills {
+                    @include flex;
+                    height: 30vh;
+                    table {
+                        width: 50%;
+                        text-align: left;
+                        margin-left: 40%;
+                        td {
+                            width: 30px;
+                            border-bottom: 2px solid $bg-dark;
+                        }
+                    }
+                }
+                .projects {
+                    @include flex;
+                    height: 70vh;
+
+                    .prototype {
+                        background-image: url(../img/prototype.jpeg);
+                        @include image;
+                    }
+                    .desktop {
+                        background-image: url(../img/desktops.webp);
+                        @include image;
+                    }
+                    .touch {
+                        background-image: url(../img/ipad-touch.webp);
+                        @include image;
+                    }
+                    .work {
+                        background-image: url(../img/am-tisch.jpeg);
+                        @include image;
+                    }
+                }
+                
+                .contact {
+                    position: relative;
+                    width: 90%;
+                    height: 400px;
+
+                    .ball {
+                        position: absolute;
+                        left: 250px;
+                        top: 150px;
+                        width: 100px;
+                        height: 100px;
+                        border-radius: 50%;
+                        background-color: $bg-dark;
+
+                        box-shadow: 5px 2px 20px 5px rgba(58, 92, 155, 0.5);
+                    }
+
+                    .card {
+                        @include flex($direction: column, $align:flex-start);
+                        position: absolute;
+                        z-index: 1;
                         
-                        padding: 5px 0 0px 20px;
+                        width: 300px;
+                        height: 180px;
+                        background-color: $white-transparent;
+                        border: 1px solid #b3b30233;
+                        border-radius: 10px;
+                        @include box-shadow-lg;
+                        // box-shadow: 5px 2px 20px 5px rgba(209, 209, 91, 0.5);
+                        p {
+                            padding: 5px 0 0px 20px;
+                        }
+                    }
+                }
+                .newsletter {
+                    border: 1px solid $white-transparent;
+                    border-radius: 5px;
+                    @include box-shadow-lg;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    height: 50vh;
+                
+                    .container {
+                        width: 30%;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        position: relative;
+                    
+                    
+                    #toggle {
+                        -webkit-appearance: none;
+                    }
+                    
+                    .button {
+                        position: absolute;
+                        z-index: 999;
+                        width: 43px;
+                        height: 43px;
+                        background: $bg-dark;
+                        border-radius: 100%;
+                        cursor: pointer;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        top: -12px;
+                    
+                        &:before {
+                            position: absolute;
+                            content: "";
+                            width: 20px;
+                            height: 2px;
+                            background: #fff;
+                            transform: rotate(90deg);
+                            transition: all 0.4s ease;
+                        }
+                        &:after {
+                            position: absolute;
+                            content: "";
+                            width: 20px;
+                            height: 2px;
+                            background: #fff;
+                            transition: all 0.4s ease;
+                        }
+                    }
+                    
+                    .news {
+                        opacity: 0;
+                        transition: all 0.4s ease-in-out;
+                        background: #fff;
+                        width: 100%;
+                        border-radius: 5px;
+                        transform: translateY(0%);
+                        @include box-shadow-xs;
+                        border: 1px solid #e4e4e4;
+                        padding: 10px;
+                    
+                        ul, form {
+                            margin: 0;
+                            padding: 0;
+                            display: flex;
+                            flex-direction: column;
+                            input {
+                                border: none;
+                                background-color: $bg;
+                                width: 80%;
+                                height: 30px;
+                                margin: 0 auto;
+                            }
+                    
+                        a, label {
+                            text-align: center;
+                            margin: 20px 0;
+                            color: $bg-dark;
+                            text-decoration: none;
+                            font-family: $font-main, sans-serif;
+                            text-transform: uppercase;
+                            letter-spacing: 2px;
+                            font-size: 14px;
+                        
+                        &:hover {
+                            color: $bg-middle;
+                        }
+                       
+                        }
                     }
                 }
             }
-        }
-
-
-
-
-        footer {
-            margin-left: 30px;
-            span {
-                margin-right: 30px;
+            }
+                #toggle:checked ~ .news {
+                    opacity: 1;
+                    transform: translateY(10%);
+                }
+                
+                #toggle:checked ~ .button:before {
+                    transform: rotate(225deg);
+                }
+                
+                #toggle:checked ~ .button:after {
+                    transform: rotate(135deg);
+                }
+                
+               
+            }
+            
+            footer {
+                margin-left: 30px;
+                span {
+                    margin-right: 30px;
+                    text-transform: uppercase;
+                }
             }
         }
     }

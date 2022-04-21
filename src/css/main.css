@@ -38,11 +38,11 @@ html body {
   background-color: rgba(107, 119, 103, 0.8);
 }
 html body article {
-  background-image: linear-gradient(180deg, rgba(174, 190, 169, 0.5) 0%, rgba(230, 245, 226, 0.822) 30%, rgba(174, 190, 169, 0.5) 60%, rgba(107, 119, 103, 0.8) 80%, rgba(174, 190, 169, 0.5) 90%);
+  background-image: linear-gradient(180deg, rgba(174, 190, 169, 0.5) 0%, rgba(230, 245, 226, 0.822) 30%, rgba(174, 190, 169, 0.5) 60%, rgba(230, 245, 226, 0.822) 90%);
   width: 90%;
-  height: 600vh;
-  margin: 20px auto;
+  margin: 30px auto;
   box-shadow: 2px 2px 25px 5px rgba(0, 0, 0, 0.5);
+  border-radius: 5px;
 }
 html body article header.nav {
   height: 500px;
@@ -73,6 +73,7 @@ html body article header.nav h1 {
 html body article header.nav h1 .myName {
   text-align: center;
   width: 500px;
+  transform: translateX(100px);
 }
 html body article header.nav h1 .myName span {
   display: inline-block;
@@ -146,11 +147,20 @@ html body article header.nav nav ul {
 html body article header.nav nav ul li {
   margin: 20px;
 }
+html body article header.nav nav ul li a:hover {
+  color: #fff;
+  font-weight: 700;
+}
 html body article header.nav nav ul .click {
   padding: 8px;
   border: 2px solid rgb(68, 68, 68);
   border-radius: 5px;
   box-shadow: 0px 0px 8px 2px rgba(22, 73, 56, 0.486);
+}
+html body article header.nav nav ul .click:hover {
+  background-color: rgba(255, 255, 255, 0.5);
+  color: rgba(107, 119, 103, 0.8);
+  border: 2px solid rgba(107, 119, 103, 0.8);
 }
 html body article header.nav p {
   font-size: 0.8em;
@@ -165,10 +175,12 @@ html body article header.nav p:nth-of-type(2) {
   top: 120px;
   right: 10px;
 }
+html body article header.nav p:nth-of-type(2) span {
+  font-weight: 700;
+}
 html body article main {
   width: 90%;
   margin: 0 auto;
-  height: 400vh;
 }
 html body article main h2, html body article main h3, html body article main h4 {
   text-transform: uppercase;
@@ -177,11 +189,17 @@ html body article main h2, html body article main h3, html body article main h4 
 html body article main .process ul {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: strech;
   margin-left: 5%;
   text-align: right;
 }
 html body article main .process ul li:nth-of-type(odd) {
   margin-top: 25px;
+}
+html body article main .process ul li:nth-of-type(odd):hover {
+  color: #fff;
+  font-weight: 700;
 }
 html body article main .process ul li:nth-of-type(even) {
   margin-top: 10px;
@@ -206,6 +224,21 @@ html body article main .process ul p {
 html body article main .about {
   display: grid;
   margin-top: 50px;
+  grid-template-columns: 100px 150px repeat(3, 1fr) 30px;
+  grid-template-rows: 50px 50px 100px 50px 100px 100px;
+  gap: 20px;
+}
+html body article main .about h4 {
+  grid-area: 2/5/4/6;
+  z-index: 1;
+  color: #fff;
+}
+html body article main .about p.first-sentence {
+  grid-area: 3/2/4/3;
+}
+html body article main .about p.second-sentence {
+  grid-area: 5/1/7/4;
+  text-align: justify;
 }
 html body article main .about .person {
   background-image: url(../img/person.webp);
@@ -213,29 +246,62 @@ html body article main .about .person {
   background-position: center;
   width: 250px;
   height: 250px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 8px 2px rgba(22, 73, 56, 0.486);
+  grid-area: 3/4/5/6;
 }
 html body article main .skills {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  height: 30vh;
+  margin: 50px 0;
+}
+html body article main .skills h3 {
+  font-size: 1.3em;
 }
 html body article main .skills table {
+  margin: 30px auto;
   width: 50%;
   text-align: left;
-  margin-left: 40%;
+  border-spacing: 20px;
 }
-html body article main .skills table td {
-  width: 30px;
+html body article main .skills table tr {
+  height: 40px;
+}
+html body article main .skills table tr th {
+  font-size: 0.9em;
+}
+html body article main .skills table tr td {
+  width: 50px;
+}
+html body article main .skills table tr td div {
+  height: 50%;
+  width: 100%;
   border-bottom: 2px solid rgba(107, 119, 103, 0.8);
 }
 html body article main .projects {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  height: 70vh;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 5px;
+  box-shadow: 0px 0px 8px 2px rgba(22, 73, 56, 0.486);
+  padding: 20px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 50px 100px 100px 150px 100px 50px 50px 100px;
+  gap: 20px;
+}
+html body article main .projects h2 {
+  grid-area: 1/1/2/2;
+}
+html body article main .projects h4 {
+  padding: 3px;
+  grid-area: 1/1/2/2;
+}
+html body article main .projects a:hover {
+  background-color: rgba(255, 255, 255, 0.5);
+  color: rgba(107, 119, 103, 0.8);
+  border: 2px solid rgba(107, 119, 103, 0.8);
+}
+html body article main .projects a:hover h4 {
+  color: red;
+  transform: translate(75px, 50px) scale(1.6);
 }
 html body article main .projects .prototype {
   background-image: url(../img/prototype.jpeg);
@@ -243,6 +309,13 @@ html body article main .projects .prototype {
   background-position: center;
   width: 250px;
   height: 250px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 8px 2px rgba(22, 73, 56, 0.486);
+  grid-area: 2/2/3/3;
+  color: #fff;
+}
+html body article main .projects div:nth-of-type(1) {
+  grid-area: 2/3/3/4;
 }
 html body article main .projects .desktop {
   background-image: url(../img/desktops.webp);
@@ -250,6 +323,13 @@ html body article main .projects .desktop {
   background-position: center;
   width: 250px;
   height: 250px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 8px 2px rgba(22, 73, 56, 0.486);
+  grid-area: 4/3/5/4;
+  color: brown;
+}
+html body article main .projects div:nth-of-type(2) {
+  grid-area: 6/3/7/4;
 }
 html body article main .projects .touch {
   background-image: url(../img/ipad-touch.webp);
@@ -257,6 +337,13 @@ html body article main .projects .touch {
   background-position: center;
   width: 250px;
   height: 250px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 8px 2px rgba(22, 73, 56, 0.486);
+  grid-area: 3/1/4/2;
+  color: cornflowerblue;
+}
+html body article main .projects div:nth-of-type(3) {
+  grid-area: 5/1/6/2;
 }
 html body article main .projects .work {
   background-image: url(../img/am-tisch.jpeg);
@@ -264,11 +351,26 @@ html body article main .projects .work {
   background-position: center;
   width: 250px;
   height: 250px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 8px 2px rgba(22, 73, 56, 0.486);
+  grid-area: 5/2/6/3;
+  color: blue;
+}
+html body article main .projects div:nth-of-type(4) {
+  grid-area: 8/2/9/3;
+}
+html body article main .pricing {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 html body article main .contact {
+  margin-top: 30px;
   position: relative;
   width: 90%;
-  height: 400px;
+  height: 40vh;
 }
 html body article main .contact .ball {
   position: absolute;
@@ -394,11 +496,26 @@ html body article main #toggle:checked ~ .button:after {
   transform: rotate(135deg);
 }
 html body article footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
   margin-left: 30px;
+  height: 30vh;
 }
-html body article footer span {
-  margin-right: 30px;
+html body article footer a {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 30px;
+}
+html body article footer a span {
+  margin: 10px;
   text-transform: uppercase;
+}
+html body article footer a .fa-brands {
+  margin-top: 10px;
 }
 
 /*# sourceMappingURL=main.css.map */

@@ -1,3 +1,4 @@
+
 html {
     scroll-behavior: smooth;
 
@@ -9,18 +10,22 @@ html {
         // *****************************
         background-color: $bg-dark;
     
-    
-
         article {
-            background-image: linear-gradient(180deg, $bg-middle 0%, $bg 30%, $bg-middle 60%, $bg-dark 80%, $bg-middle 90%);
+            background-image: 
+                linear-gradient(
+                    180deg, 
+                    $bg-middle 0%, 
+                    $bg 30%, 
+                    $bg-middle 60%,  
+                    $bg 90%);
             width: 90%;
-            height: 600vh;
-            margin: 20px auto;
+            margin: 30px auto;
             @include box-shadow-lg;
+            @include border-radius-xs;
 
             // *****************************
-            // ****Header mit NAv-Leiste und 
-            // Begrüßung in Schreibmaschinen-Schrift**
+            // ****  Header mit NAV-Leiste ** 
+            // ****  Schreibmaschinen-Schrift**
             // *****************************
         
             header.nav {
@@ -51,7 +56,7 @@ html {
                     .myName {
                         text-align: center;
                         width: 500px;
-                        
+                        transform: translateX(100px);
                         span {
                             display: inline-block;
                         }
@@ -130,19 +135,25 @@ html {
                         @include flex();
                         li {
                             margin: 20px;
+                            a:hover {
+                                @include hover1;
+                            }
                         }
                         .click {
                             padding: 8px;
                             border: 2px solid rgb(68, 68, 68); 
-                            border-radius: 5px;
+                            @include border-radius-xs;
                             @include box-shadow-xs;
+                            &:hover {
+                                @include hover;
+                            }
                         }
                     }
                 }
             
-                // *****************************
-                // ****Zwei Textblöcke im Header**
-                // *****************************
+                // <!-- ********************************* -->
+                // <!-- **** ZWEI TEXTBLÖCKE IN DER MITTE  ***** -->
+                // <!-- ********************************* -->
                 p {
                     font-size: 0.8em;
                     position: absolute;
@@ -155,30 +166,37 @@ html {
                 p:nth-of-type(2) {
                     top: 120px;
                     right: 10px;
+                    span {
+                        font-weight: 700;
+                    }
                 }
             }
 
-            // *****************************
-            // ****MAIN**
-            // *****************************
+                // <!-- ********************************* -->
+                // <!-- *********   MAIN      *********** -->
+                // <!-- ********************************* -->
             main {
                 width: 90%;
                 margin: 0 auto;
-                height: 400vh;
                 
                 h2, h3, h4 {
                     text-transform: uppercase;
                     letter-spacing: 3px;
                 }
 
+                // <!-- ********************************* -->
+                // <!-- *********   PROCESS   *********** -->
+                // <!-- ********************************* -->
                 .process {
                     ul {
-                        display: flex;
-                        flex-direction: column;
+                        @include flex($direction: column, $align: strech);
                         margin-left: 5%;
                         text-align: right;
                         li:nth-of-type(odd) {
                             margin-top: 25px;
+                            &:hover {
+                                @include hover1;
+                            }
                         }
                         li:nth-of-type(even) {
                             margin-top: 10px;
@@ -203,56 +221,158 @@ html {
                     }
                 }
 
+                // <!-- ********************************* -->
+                // <!-- ********   ABOUT ME    ********** -->
+                // <!-- ********************************* -->
                 .about {
                     display: grid;
                     margin-top: 50px;
+                    grid-template-columns: 100px 150px repeat(3, 1fr) 30px;
+                    grid-template-rows: 50px 50px 100px 50px 100px 100px;
+                    gap: 20px;
 
 
+                    h4 {
+                        grid-area: 2/5/4/6;
+                        z-index: 1;
+                        color: $white;
+                    }
+                    p.first-sentence {
+                        grid-area: 3/2/4/3;
+                    }
+                    p.second-sentence {
+                        grid-area: 5/1/7/4;
+                        text-align: justify;
+                    }
                     .person {
                         background-image: url(../img/person.webp);
                         @include image;
+                        grid-area: 3/4/5/6;
                     }
                 }
 
+                // <!-- ********************************* -->
+                // <!-- **** SKILLS MIT LINIEN IN TABELLE **** -->
+                // <!-- ********************************* -->
                 .skills {
-                    @include flex;
-                    height: 30vh;
+                    h3 {
+                        font-size: 1.3em;
+                    }
+                    margin: 50px 0;
                     table {
+                        margin: 30px auto;
                         width: 50%;
                         text-align: left;
-                        margin-left: 40%;
-                        td {
-                            width: 30px;
-                            border-bottom: 2px solid $bg-dark;
+
+                        border-spacing: 20px;
+                        tr {
+                            height: 40px;
+                            th {
+                                font-size: .9em;
+                            }
+                            td {
+                                width: 50px;
+                                div {
+                                    height: 50%;
+                                    width: 100%;
+                                    border-bottom: 2px solid $bg-dark;
+                                    
+                                }
+                                                                
+                            }
                         }
                     }
                 }
+
+                // <!-- ********************************* -->
+                // <!-- ****PROJECTS with IMAGES*********** -->
+                // <!-- ********************************* -->
                 .projects {
-                    @include flex;
-                    height: 70vh;
+                    width: 100%;
+                    background-color: $white-transparent;
+                    @include border-radius-xs;
+                    @include box-shadow-xs;
+                    padding: 20px;
+
+                    display: grid;
+                    grid-template-columns: repeat(3, 1fr);
+                    grid-template-rows: 50px 100px 100px 150px 100px 50px 50px 100px;
+                    gap: 20px;
+
+                    h2 {
+                        grid-area: 1/1/2/2;
+                    }
+                    h4 {
+                        padding: 3px;
+                        grid-area: 1/1/2/2;
+                    }
+                    a:hover {
+                        @include hover;
+                        h4 {
+                            color: red;
+                            transform: translate(75px, 50px) scale(1.6);
+                        }
+                    }
 
                     .prototype {
                         background-image: url(../img/prototype.jpeg);
                         @include image;
+                        grid-area: 2/2/3/3;
+                        color: $white;
+                    }
+                    div:nth-of-type(1) {
+                        grid-area: 2/3/3/4;
+
                     }
                     .desktop {
                         background-image: url(../img/desktops.webp);
                         @include image;
+                        grid-area: 4/3/5/4;
+                        color: brown
                     }
+                    div:nth-of-type(2) {
+                        grid-area: 6/3/7/4;
+                    }
+
                     .touch {
                         background-image: url(../img/ipad-touch.webp);
                         @include image;
+                        grid-area: 3/1/4/2;
+                        color: cornflowerblue;
                     }
+                    div:nth-of-type(3) {
+                        grid-area: 5/1/6/2;
+                    }
+
                     .work {
                         background-image: url(../img/am-tisch.jpeg);
                         @include image;
+                        grid-area: 5/2/6/3;
+                        color: blue;
+                    }
+                    div:nth-of-type(4) {
+                        grid-area: 8/2/9/3;
                     }
                 }
+
+                // <!-- ********************************* -->
+                // <!-- *******  PRICING   ************** -->
+                // <!-- ********************************* -->
+                .pricing {
+                    @include margin-section;
+                    @include flex($direction:column);
+                }
                 
+
+                // <!-- ********************************* -->
+                // <!-- *******  CONTACT   ************** -->
+                // <!-- ********************************* -->
                 .contact {
+                    @include margin-section;
+                    
                     position: relative;
                     width: 90%;
-                    height: 400px;
+                    height: 40vh;
 
                     .ball {
                         position: absolute;
@@ -275,7 +395,7 @@ html {
                         height: 180px;
                         background-color: $white-transparent;
                         border: 1px solid #b3b30233;
-                        border-radius: 10px;
+                        @include border-radius;
                         @include box-shadow-lg;
                         // box-shadow: 5px 2px 20px 5px rgba(209, 209, 91, 0.5);
                         p {
@@ -283,9 +403,15 @@ html {
                         }
                     }
                 }
+
+
+                // <!-- ********************************* -->
+                // <!-- *******  Newsletter   *********** -->
+                // <!-- ********************************* -->
+
                 .newsletter {
                     border: 1px solid $white-transparent;
-                    border-radius: 5px;
+                    @include border-radius-xs;
                     @include box-shadow-lg;
                     display: flex;
                     justify-content: center;
@@ -300,84 +426,83 @@ html {
                         position: relative;
                     
                     
-                    #toggle {
-                        -webkit-appearance: none;
-                    }
-                    
-                    .button {
-                        position: absolute;
-                        z-index: 999;
-                        width: 43px;
-                        height: 43px;
-                        background: $bg-dark;
-                        border-radius: 100%;
-                        cursor: pointer;
-                        display: flex;
-                        justify-content: center;
-                        align-items: center;
-                        top: -12px;
-                    
-                        &:before {
-                            position: absolute;
-                            content: "";
-                            width: 20px;
-                            height: 2px;
-                            background: #fff;
-                            transform: rotate(90deg);
-                            transition: all 0.4s ease;
+                        #toggle {
+                            -webkit-appearance: none;
                         }
-                        &:after {
+                    
+                        .button {
                             position: absolute;
-                            content: "";
-                            width: 20px;
-                            height: 2px;
-                            background: #fff;
-                            transition: all 0.4s ease;
-                        }
-                    }
-                    
-                    .news {
-                        opacity: 0;
-                        transition: all 0.4s ease-in-out;
-                        background: #fff;
-                        width: 100%;
-                        border-radius: 5px;
-                        transform: translateY(0%);
-                        @include box-shadow-xs;
-                        border: 1px solid #e4e4e4;
-                        padding: 10px;
-                    
-                        ul, form {
-                            margin: 0;
-                            padding: 0;
+                            z-index: 999;
+                            width: 43px;
+                            height: 43px;
+                            background: $bg-dark;
+                            border-radius: 100%;
+                            cursor: pointer;
                             display: flex;
-                            flex-direction: column;
-                            input {
-                                border: none;
-                                background-color: $bg;
-                                width: 80%;
-                                height: 30px;
-                                margin: 0 auto;
-                            }
-                    
-                        a, label {
-                            text-align: center;
-                            margin: 20px 0;
-                            color: $bg-dark;
-                            text-decoration: none;
-                            font-family: $font-main, sans-serif;
-                            text-transform: uppercase;
-                            letter-spacing: 2px;
-                            font-size: 14px;
+                            justify-content: center;
+                            align-items: center;
+                            top: -12px;
                         
-                        &:hover {
-                            color: $bg-middle;
+                            &:before {
+                                position: absolute;
+                                content: "";
+                                width: 20px;
+                                height: 2px;
+                                background: #fff;
+                                transform: rotate(90deg);
+                                transition: all 0.4s ease;
+                            }
+                            &:after {
+                                position: absolute;
+                                content: "";
+                                width: 20px;
+                                height: 2px;
+                                background: #fff;
+                                transition: all 0.4s ease;
+                            }
                         }
-                       
+                    
+                        .news {
+                            opacity: 0;
+                            transition: all 0.4s ease-in-out;
+                            background: #fff;
+                            width: 100%;
+                            @include border-radius-xs;
+                            transform: translateY(0%);
+                            @include box-shadow-xs;
+                            border: 1px solid #e4e4e4;
+                            padding: 10px;
+                        
+                            ul, form {
+                                margin: 0;
+                                padding: 0;
+                                display: flex;
+                                flex-direction: column;
+                                input {
+                                    border: none;
+                                    background-color: $bg;
+                                    width: 80%;
+                                    height: 30px;
+                                    margin: 0 auto;
+                                }
+                        
+                                a, label {
+                                    text-align: center;
+                                    margin: 20px 0;
+                                    color: $bg-dark;
+                                    text-decoration: none;
+                                    font-family: $font-main, sans-serif;
+                                    text-transform: uppercase;
+                                    letter-spacing: 2px;
+                                    font-size: 14px;
+                                
+                                    &:hover {
+                                        color: $bg-middle;
+                                    }
+                                }
+                            }
                         }
-                    }
                 }
-            }
             }
                 #toggle:checked ~ .news {
                     opacity: 1;
@@ -394,12 +519,27 @@ html {
                 
                
             }
+
+
+            // <!-- ********************************* -->
+            // <!-- *******  Footer   *************** -->
+            // <!-- ********************************* -->
             
             footer {
+                @include flex($justify:flex-end);
                 margin-left: 30px;
-                span {
-                    margin-right: 30px;
-                    text-transform: uppercase;
+                height: 30vh;
+                a {
+                    @include flex($direction:column);
+                    margin: 30px;
+                    span {
+                        margin: 10px;
+                        text-transform: uppercase;
+                    }
+                    .fa-brands {
+                        margin-top: 10px;
+                    }
+
                 }
             }
         }

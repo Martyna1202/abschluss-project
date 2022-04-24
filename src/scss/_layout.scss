@@ -1,8 +1,8 @@
 
 html {
     scroll-behavior: smooth;
-
     body {
+        
         font-family: $font-test;
         color: $font-color;
         // *****************************
@@ -125,6 +125,7 @@ html {
                         }
                     }
                 }
+                
             
                 // *****************************
                 // ****Nav-Leiste**
@@ -171,6 +172,23 @@ html {
                     }
                 }
             }
+            // @media screen and (max-width: 481px) {
+            //     header.nav {
+            //         height: 300px;
+                    
+            //         h1 {
+            //             display: none;
+            //         }
+            //         p {
+            //             font-size: .6em;
+            //         }
+            //         nav {
+            //             transform: scale(70%);
+            //             font-size: 1em;
+            //             margin-top: 1em;
+            //         } 
+            //     }
+            // }
 
                 // <!-- ********************************* -->
                 // <!-- *********   MAIN      *********** -->
@@ -359,8 +377,75 @@ html {
                 // <!-- *******  PRICING   ************** -->
                 // <!-- ********************************* -->
                 .pricing {
-                    @include margin-section;
-                    @include flex($direction:column);
+                    margin-top: $margin-xl;
+                    h2 {
+                        margin-bottom: 30px;
+                    }
+
+                    a {
+                        line-height: 0.5em;
+                        padding: 20px;
+                        margin-top: 20px;
+                        border-bottom: 1px solid $bg-dark;
+                    
+                        display: grid;
+                        grid-template-columns: repeat(2, 2fr) 200px 1fr 50px;
+                     
+                        span {
+                            color: $bg-dark;
+                            font-size: 2em;
+                        }
+                        
+                        p {
+                            text-transform: uppercase;
+                        }
+                        
+                        .fa-2xl {
+                            color: $bg-dark;
+                        }
+                    }
+                    a:nth-of-type(1) {
+                        grid-template-areas: 
+                        'span1 . p1 . i1'
+                        ;
+                        span {
+                            grid-area: span1;
+                        }
+                        p {
+                            grid-area: p1;
+                        }
+                        i {
+                            grid-area: i1;
+                        }
+                    }
+                    a:nth-of-type(2) {
+                        grid-template-areas: 
+                        'span1 . p1 . i1'
+                        ;
+                        span {
+                            grid-area: span1;
+                        }
+                        p {
+                            grid-area: p1;
+                        }
+                        i {
+                            grid-area: i1;
+                        }
+                    }
+                    a:nth-of-type(3) {
+                        grid-template-areas: 
+                        'span . p . i'
+                        ;
+                        span {
+                            grid-area: span;
+                        }
+                        p {
+                            grid-area: p;
+                        }
+                        i {
+                            grid-area: i;
+                        }
+                    }
                 }
                 
 
@@ -368,38 +453,82 @@ html {
                 // <!-- *******  CONTACT   ************** -->
                 // <!-- ********************************* -->
                 .contact {
-                    @include margin-section;
-                    
+                    margin-top: $margin-xl;
+                    height: 80vh;
                     position: relative;
-                    width: 90%;
-                    height: 40vh;
+                    
+                    h2 {
+                        margin: 0 0 60px 54%;
+                        
+                    }
+                    h4 {
+                        width: 35%;
+                        margin-bottom: 15px;
+                    }
+
+                    .get-started {
+                        @include button;
+                    }
 
                     .ball {
                         position: absolute;
-                        left: 250px;
-                        top: 150px;
+                        border-radius: 50%;
+                        
+                    }
+                    
+                    .ball:nth-of-type(1) {
+                        left: 200px;
+                        top: 320px;
+
+                        width: 150px;
+                        height: 150px;
+                        background-image: linear-gradient(250deg, $bg 0%, $bg-dark 70%);
+                        @include box-shadow-lg;
+                    }
+                    
+                    .ball:nth-of-type(2) {
+                        left: 270px;
+                        top: 270px;
+
                         width: 100px;
                         height: 100px;
-                        border-radius: 50%;
                         background-color: $bg-dark;
-
-                        box-shadow: 5px 2px 20px 5px rgba(58, 92, 155, 0.5);
+                        box-shadow: 5px 2px 20px 5px rgba(52, 70, 102, 0.5);
+ 
                     }
 
                     .card {
                         @include flex($direction: column, $align:flex-start);
                         position: absolute;
+                        top: 220px;
                         z-index: 1;
                         
                         width: 300px;
                         height: 180px;
-                        background-color: $white-transparent;
-                        border: 1px solid #b3b30233;
+                        background-image: linear-gradient(315deg, $white-transparent 0%, white 80%);
+                        border: 1px solid $border-color;
                         @include border-radius;
                         @include box-shadow-lg;
                         // box-shadow: 5px 2px 20px 5px rgba(209, 209, 91, 0.5);
                         p {
                             padding: 5px 0 0px 20px;
+                        }
+                    }
+                    .back-to-top {
+                        @include flex($direction:column);
+                        color: $bg-dark;
+                        position: absolute;
+                        right: 10px;
+                        bottom: 100px;
+                       
+                        
+                        .fa-solid {
+                            margin: .5em;
+                        }
+                        h5 {
+                            text-decoration: underline;
+                            text-transform: uppercase;
+                            margin: 1em;
                         }
                     }
                 }
@@ -541,6 +670,10 @@ html {
                     }
 
                 }
+                
+
+                    @extend .back-to-top;
+                
             }
         }
     }

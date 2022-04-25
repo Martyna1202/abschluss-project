@@ -1,5 +1,14 @@
 
 // **************************************
+// FONTS
+
+@mixin h2-mobile {
+        margin-bottom: 30px;
+        text-align: center;
+        font-size: 1.8em;
+}
+
+// **************************************
 // VARIABLES
 
 $font-test: 'Raleway', sans-serif;
@@ -9,6 +18,9 @@ $font-header: 'Inconsolata', monospace;
 // **************************************
 // BREAKPOINTS
 
+$mobile-xl: 481px;
+$tablet:768px;
+$desktop:992px;
 
 // **************************************
 // COLORS
@@ -20,6 +32,7 @@ $bg-dark: rgba(107, 119, 103, 0.8);
 $font-color: rgb(43, 46, 45);
 
 $white-transparent: rgb(255, 255, 255, 0.1);
+$white-transparent-xl: rgb(255, 255, 255, 0.5);
 $white: #fff;
 
 $border-color: rgba(179, 179, 2, 0.2);
@@ -39,11 +52,31 @@ $border-color: rgba(179, 179, 2, 0.2);
 // **************************************
 // IMAGES
 
-@mixin image {
+@mixin image-mobile {
     background-size: cover;
     background-position: center;
-    width: 200px;
+    background-repeat: no-repeat;
+    width: 100%;
     height: 200px;
+    border-radius: 5px;
+    @include box-shadow-lg();
+    margin: 0 auto;
+}
+@mixin image-mobile-lg {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 300px;
+    border-radius: 5px;
+    @include box-shadow-lg();
+    margin: 0 auto;
+}
+@mixin image-xl {
+    background-size: cover;
+    background-position: center;
+    width: 250px;
+    height: 250px;
     border-radius: 5px;
     @include box-shadow-xs();
 }
@@ -57,6 +90,19 @@ $border-color: rgba(179, 179, 2, 0.2);
     color: $bg-dark;
     border: none;
     border-bottom: 1px solid $bg-dark;
+}
+
+@mixin back-to-top {
+    @include flex($direction:column);
+    color: $bg-dark;
+    .fa-solid {
+        margin: .5em;
+    }
+    h5 {
+        text-decoration: underline;
+        text-transform: uppercase;
+        margin: 1em;
+    }
 }
 
 // **************************************
@@ -103,7 +149,7 @@ $border-radius-lg: 20px;
 // HOVER
 @mixin hover {
     background-color: $white-transparent;
-    color: $bg-dark;
+    color: $white;
     border: 2px solid $bg-dark;
 }
 

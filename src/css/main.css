@@ -55,7 +55,7 @@ h2, h3, h4 {
 }
 
 section, footer {
-  margin: 4rem 0;
+  margin: 5rem 0;
 }
 
 footer {
@@ -76,25 +76,29 @@ footer a:nth-of-type(1) .back-to-top h5 {
   text-transform: uppercase;
   margin: 1em;
 }
+footer a:nth-of-type(1) .back-to-top:hover {
+  color: #fff;
+  font-weight: 700;
+}
 footer div {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  margin-bottom: 20px;
 }
 footer div a {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  text-align: center;
   padding: 10px;
 }
+footer div a:hover {
+  color: #fff;
+  font-weight: 700;
+}
 footer div a span {
+  display: block;
   margin: 10px;
   text-transform: uppercase;
 }
 footer div a .fa-brands {
-  margin-top: 10px;
+  display: block;
+  margin: 20px auto;
 }
 @media screen and (min-width: 768px) {
   footer {
@@ -154,10 +158,10 @@ footer div a .fa-brands {
   font-size: 1.6em;
   transform: rotate(-30deg);
 }
-@media screen and (min-width: 992px) {
+@media screen and (min-width: 768px) {
   .main-menu span {
     font-size: 1.8em;
-    transform: translate(0px, 60px) rotate(-57deg);
+    transform: translate(-20px, 50px) rotate(-57deg);
   }
 }
 .main-menu nav ul {
@@ -212,19 +216,16 @@ article {
   font-size: 0.9em;
   margin-top: 2em;
 }
-@media screen and (min-width: 992px) {
+@media screen and (min-width: 768px) {
   .starter {
-    height: 70vh;
-    display: flex;
-    flex-direction: row;
-    justify-content: stretch;
-    align-items: stretch;
+    height: 50vh;
     position: relative;
   }
   .starter h1, .starter .main-menu span, .main-menu .starter span {
     font-size: 1.8em;
     width: 400px;
     transform: rotate(30deg);
+    margin-left: 20px;
   }
   .starter h1 .myName, .starter .main-menu span .myName, .main-menu .starter span .myName {
     text-align: center;
@@ -265,19 +266,22 @@ article {
     transform: translate(0px, -2px) rotate(-5deg);
   }
   .starter h1 .moreAbout .b1, .starter .main-menu span .moreAbout .b1, .main-menu .starter span .moreAbout .b1 {
-    transform: translate(390px, -35px) rotate(-12deg);
+    transform: translate(398px, -35px) rotate(-12deg);
   }
   .starter h1 .moreAbout .o2, .starter .main-menu span .moreAbout .o2, .main-menu .starter span .moreAbout .o2 {
-    transform: translate(388px, -42px) rotate(-20deg);
+    transform: translate(391px, -40px) rotate(-15deg);
   }
   .starter h1 .moreAbout .u1, .starter .main-menu span .moreAbout .u1, .main-menu .starter span .moreAbout .u1 {
-    transform: translate(385px, -50px) rotate(-25deg);
+    transform: translate(386px, -46px) rotate(-18deg);
   }
   .starter h1 .moreAbout .t2, .starter .main-menu span .moreAbout .t2, .main-menu .starter span .moreAbout .t2 {
-    transform: translate(382px, -60px) rotate(-28deg);
+    transform: translate(385px, -55px) rotate(-25deg);
+  }
+  .starter h1 .moreAbout .punkt1, .starter .main-menu span .moreAbout .punkt1, .main-menu .starter span .moreAbout .punkt1 {
+    transform: translate(384px, -64px) rotate(-25deg);
   }
   .starter h1 .moreAbout .m4, .starter .main-menu span .moreAbout .m4, .main-menu .starter span .moreAbout .m4 {
-    transform: translate(380px, -86px) rotate(-30deg);
+    transform: translate(380px, -82px) rotate(-36deg);
   }
   .starter h1 .moreAbout .e3, .starter .main-menu span .moreAbout .e3, .main-menu .starter span .moreAbout .e3 {
     transform: translate(377px, -105px) rotate(-40deg);
@@ -297,12 +301,24 @@ article {
     width: 150px;
   }
   .starter p:first-of-type {
-    bottom: 0px;
+    bottom: 100px;
     left: 0px;
   }
   .starter p:nth-of-type(2) {
     top: 0px;
     right: 0px;
+  }
+}
+@media screen and (min-width: 992px) {
+  .starter h1, .starter .main-menu span, .main-menu .starter span {
+    margin-left: 100px;
+    font-size: 2em;
+  }
+  .starter h1 .moreAbout .punkt10, .starter .main-menu span .moreAbout .punkt10, .main-menu .starter span .moreAbout .punkt10 {
+    transform: translate(390px, -32px) rotate(-5deg);
+  }
+  .starter h1 .moreAbout .a4, .starter .main-menu span .moreAbout .a4, .main-menu .starter span .moreAbout .a4 {
+    transform: translate(396px, -32px) rotate(-5deg);
   }
 }
 
@@ -332,28 +348,71 @@ article {
   border-bottom: 2px solid rgba(107, 119, 103, 0.8);
 }
 .process ul p {
+  font-size: 0.8em;
   width: 80%;
   margin: 0 auto;
   text-align: justify;
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 481px) {
   .process ul {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: strech;
-    margin-left: 5%;
+    align-items: center;
+  }
+  .process ul li {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    justify-items: center;
+  }
+  .process ul li a {
+    width: 100%;
+  }
+  .process ul li a span {
+    display: block;
+    text-align: center;
+    padding: 0;
+  }
+  .process ul li a h4 {
+    text-align: center;
+  }
+  .process ul p {
+    text-align: center;
+  }
+}
+@media screen and (min-width: 768px) {
+  .process h2 {
+    text-align: left;
+  }
+  .process ul {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+    margin-left: 10%;
     text-align: right;
   }
-  .process ul h4 {
+  .process ul li {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .process ul li a h4 {
     width: 80%;
     text-align: end;
   }
-  .process ul p {
+  .process ul li a span {
+    display: unset;
+    padding: 20px;
+  }
+  .process ul li p {
     font-size: 0.8em;
     width: 50%;
     margin-left: 50%;
-    text-align: right;
+    text-align: left;
   }
 }
 
@@ -451,11 +510,14 @@ article {
 }
 
 .projects {
-  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 5px;
+  box-shadow: 0px 0px 8px 2px rgba(22, 73, 56, 0.486);
+  padding: 30px;
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: auto;
-  gap: 20px;
+  gap: 30px;
 }
 .projects h2 {
   margin-bottom: 30px;
@@ -472,9 +534,10 @@ article {
 }
 .projects a:hover h4 {
   color: red;
-  transform: translate(30px, 60px) scale(1.3);
+  transform: translate(40px, 60px) scale(1.3);
+  transition: transform 0.5s, color 0.5s;
 }
-.projects .prototype {
+.projects .planning {
   background-image: url(../img/prototype.jpeg);
   background-size: cover;
   background-position: center;
@@ -486,7 +549,7 @@ article {
   margin: 0 auto;
   color: #fff;
 }
-.projects .desktop {
+.projects .creating {
   background-image: url(../img/desktops.webp);
   background-size: cover;
   background-position: center;
@@ -498,7 +561,7 @@ article {
   margin: 0 auto;
   color: brown;
 }
-.projects .touch {
+.projects .testing {
   background-image: url(../img/ipad-touch.webp);
   background-size: cover;
   background-position: center;
@@ -522,24 +585,26 @@ article {
   margin: 0 auto;
   color: blue;
 }
+@media screen and (min-width: 481px) {
+  .projects a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    border: 2px solid rgba(107, 119, 103, 0.8);
+  }
+  .projects a:hover h4 {
+    transform: translate(60px, 60px) scale(1.3);
+    transition: transform 0.5s, color 0.5s;
+  }
+}
 @media screen and (min-width: 768px) {
   .projects {
-    width: 100%;
-    background-color: rgba(255, 255, 255, 0.5);
-    border-radius: 5px;
-    box-shadow: 0px 0px 8px 2px rgba(22, 73, 56, 0.486);
-    padding: 20px;
-    display: grid;
-    grid-template-columns: repeat(8, 1fr);
-    grid-template-rows: 50px 50px 250px 50px 80px 90px 50px 100px;
-    gap: 20px;
+    grid-template-columns: repeat(2, 250px);
+    grid-template-rows: 50px repeat(4, 125px) 180px;
+    gap: 40px;
+    margin: 0 auto;
   }
   .projects h2 {
-    grid-area: 1/1/2/2;
-  }
-  .projects h4 {
-    padding: 3px;
-    grid-area: 1/1/2/2;
+    text-align: left;
   }
   .projects a:hover {
     background-color: rgba(255, 255, 255, 0.1);
@@ -548,9 +613,83 @@ article {
   }
   .projects a:hover h4 {
     color: red;
-    transform: translate(30px, 60px) scale(1.3);
+    transform: translate(40px, 60px) scale(1.3);
   }
-  .projects .prototype {
+  .projects .planning {
+    background-image: url(../img/prototype.jpeg);
+    background-size: cover;
+    background-position: center;
+    width: 250px;
+    height: 250px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 8px 2px rgba(22, 73, 56, 0.486);
+    grid-area: 2/2/3/3;
+    color: #fff;
+  }
+  .projects div:nth-of-type(1) {
+    display: none;
+  }
+  .projects .creating {
+    background-image: url(../img/desktops.webp);
+    background-size: cover;
+    background-position: center;
+    width: 250px;
+    height: 250px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 8px 2px rgba(22, 73, 56, 0.486);
+    grid-area: 3/1/5/2;
+    color: brown;
+  }
+  .projects div:nth-of-type(2) {
+    display: none;
+  }
+  .projects .testing {
+    background-image: url(../img/ipad-touch.webp);
+    background-size: cover;
+    background-position: center;
+    width: 250px;
+    height: 250px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 8px 2px rgba(22, 73, 56, 0.486);
+    grid-area: 4/2/6/3;
+    color: cornflowerblue;
+  }
+  .projects div:nth-of-type(3) {
+    display: none;
+  }
+  .projects .work {
+    background-image: url(../img/am-tisch.jpeg);
+    background-size: cover;
+    background-position: center;
+    width: 250px;
+    height: 250px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 8px 2px rgba(22, 73, 56, 0.486);
+    grid-area: 5/1/6/2;
+    color: blue;
+  }
+  .projects div:nth-of-type(4) {
+    display: none;
+  }
+}
+@media screen and (min-width: 992px) {
+  .projects {
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: 50px 50px 250px 50px 80px 90px 50px 100px;
+    gap: 20px;
+  }
+  .projects a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    border: 2px solid rgba(107, 119, 103, 0.8);
+  }
+  .projects a:hover h4 {
+    color: red;
+    transform: translate(40px, 60px) scale(1.3);
+  }
+  .projects .planning {
     background-image: url(../img/prototype.jpeg);
     background-size: cover;
     background-position: center;
@@ -562,9 +701,10 @@ article {
     color: #fff;
   }
   .projects div:nth-of-type(1) {
+    display: unset;
     grid-area: 2/6/3/9;
   }
-  .projects .desktop {
+  .projects .creating {
     background-image: url(../img/desktops.webp);
     background-size: cover;
     background-position: center;
@@ -576,9 +716,10 @@ article {
     color: brown;
   }
   .projects div:nth-of-type(2) {
+    display: unset;
     grid-area: 7/5/8/8;
   }
-  .projects .touch {
+  .projects .testing {
     background-image: url(../img/ipad-touch.webp);
     background-size: cover;
     background-position: center;
@@ -590,6 +731,7 @@ article {
     color: cornflowerblue;
   }
   .projects div:nth-of-type(3) {
+    display: unset;
     grid-area: 4/1/5/3;
   }
   .projects .work {
@@ -605,6 +747,7 @@ article {
   }
   .projects div:nth-of-type(4) {
     grid-area: 8/2/9/5;
+    display: unset;
   }
 }
 
@@ -643,6 +786,7 @@ article {
 @media screen and (min-width: 768px) {
   .pricing h2 {
     margin-bottom: 30px;
+    text-align: start;
   }
   .pricing a {
     line-height: 0.5em;
@@ -706,172 +850,218 @@ article {
 
 .contact {
   text-align: center;
-  height: 80vh;
+  height: 60vh;
   position: relative;
+  /* The modal's background */
 }
 .contact h2 {
   margin-bottom: 30px;
   text-align: center;
   font-size: 1.8em;
-  margin: 0;
 }
 .contact h4 {
-  width: 60%;
-  margin: 20px auto;
+  width: 80%;
+  margin: 4em auto;
 }
 .contact .get-started {
+  margin-top: 4em;
+  font-size: 1.2em;
+  font-weight: 800;
   text-transform: capitalize;
   background-color: transparent;
-  color: rgba(107, 119, 103, 0.8);
-  border: none;
-  border-bottom: 1px solid rgba(107, 119, 103, 0.8);
+  color: rgb(241, 28, 146);
+  border-bottom: 1px solid rgb(241, 28, 146);
 }
 .contact .get-started:hover {
   color: #fff;
   font-weight: 700;
+  border-bottom: 1px solid #fff;
 }
-.contact .ball {
+.contact .get-started:visited {
+  display: none;
+}
+.contact .modal {
+  display: none;
+  left: 0;
+  top: 160px;
+  width: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+.contact .modal:target {
+  display: table;
   position: absolute;
-  border-radius: 50%;
+  border-radius: 10px;
 }
-.contact .ball:nth-of-type(1) {
-  right: -20px;
-  top: 320px;
-  width: 150px;
-  height: 150px;
-  background-image: linear-gradient(250deg, rgba(230, 245, 226, 0.822) 0%, rgba(107, 119, 103, 0.8) 70%);
-  box-shadow: 2px 2px 25px 5px rgba(0, 0, 0, 0.5);
+.contact .modal .modal-dialog {
+  display: table-cell;
 }
-.contact .ball:nth-of-type(2) {
-  right: -10px;
-  top: 280px;
-  width: 100px;
-  height: 100px;
+.contact .modal .modal-dialog, .contact .modal .modal-content {
+  margin: auto;
+  background-color: rgba(122, 122, 122, 0.5);
+  border: 1px solid rgba(179, 179, 2, 0.2);
+  position: relative;
+  padding: 0;
+  border-radius: 10px;
+  text-align: center;
+  width: 100%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  animation: get-started 0.5s;
+}
+.contact .modal header.modal-text {
   background-color: rgba(107, 119, 103, 0.8);
-  box-shadow: 5px 2px 20px 5px rgba(52, 70, 102, 0.5);
+  font-size: 0.8em;
+  color: white;
+  border-radius: 10px;
+  /* The button used to close the modal */
 }
-.contact .card {
+.contact .modal header.modal-text h2 {
+  margin-bottom: unset;
+  padding: 10px;
+}
+.contact .modal header.modal-text .closebtn {
+  text-decoration: none;
+  float: right;
+  font-size: 2.5em;
+  font-weight: bold;
+  color: #fff;
+  padding: 10px 20px 0 0;
+}
+.contact .modal header.modal-text .closebtn:hover,
+.contact .modal header.modal-text .closebtn:focus {
+  color: rgba(107, 119, 103, 0.8);
+  text-decoration: none;
+  cursor: pointer;
+}
+.contact .modal .con {
+  position: relative;
+  width: 100%;
+  height: 180px;
+}
+.contact .modal .con .card {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
   position: absolute;
-  z-index: 1;
-  margin: 3rem auto;
+  height: 100%;
   width: 100%;
-  height: 180px;
+  z-index: 3;
   background-image: linear-gradient(315deg, rgba(255, 255, 255, 0.1) 0%, white 80%);
   border: 1px solid rgba(179, 179, 2, 0.2);
   border-radius: 10px;
   box-shadow: 2px 2px 25px 5px rgba(0, 0, 0, 0.5);
 }
-.contact .card p {
-  padding: 5px 0 0px 20px;
+.contact .modal .con .card p {
+  padding: 5px 0 0px 10px;
 }
-.contact .back-to-top {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  color: rgba(107, 119, 103, 0.8);
-  margin: 5rem auto 0;
+.contact .modal .con .ball {
+  position: absolute;
+  border-radius: 50%;
+  z-index: 1;
 }
-.contact .back-to-top .fa-solid {
-  margin: 0.5em;
+.contact .modal .con .ball-xl {
+  right: -20px;
+  bottom: -100px;
+  width: 150px;
+  height: 150px;
+  background-image: linear-gradient(250deg, rgba(230, 245, 226, 0.822) 0%, rgba(107, 119, 103, 0.8) 70%);
+  box-shadow: 2px 2px 25px 5px rgba(0, 0, 0, 0.5);
 }
-.contact .back-to-top h5 {
-  text-decoration: underline;
-  text-transform: uppercase;
-  margin: 1em;
+.contact .modal .con .ball-sm {
+  right: -50px;
+  bottom: 20px;
+  width: 100px;
+  height: 100px;
+  background-color: rgba(107, 119, 103, 0.8);
+  box-shadow: 5px 2px 20px 5px rgba(52, 70, 102, 0.5);
+}
+@keyframes get-started {
+  from {
+    top: -200px;
+    opacity: 0;
+  }
+  to {
+    top: 0px;
+    opacity: 1;
+  }
 }
 @media screen and (min-width: 481px) {
-  .contact .ball:nth-of-type(1) {
-    top: 200px;
-    left: 400px;
-  }
-  .contact .ball:nth-of-type(2) {
-    top: 300px;
-    left: 350px;
-  }
-  .contact .card {
-    width: 80%;
-    height: 300px;
+  .contact .con p {
+    font-size: 1.2em;
   }
 }
 @media screen and (min-width: 768px) {
   .contact {
-    height: 80vh;
-    position: relative;
+    height: 70vh;
+    text-align: left;
   }
   .contact h2 {
-    margin: 0 0 60px 54%;
+    margin: 0 0 60px 40%;
+    width: 40%;
   }
   .contact h4 {
-    width: 35%;
-    margin-bottom: 15px;
+    width: 25%;
+    line-height: 1.8em;
+    margin: 4em 0;
+    font-size: 1.3em;
   }
   .contact .get-started {
-    text-transform: capitalize;
-    background-color: transparent;
-    color: rgba(107, 119, 103, 0.8);
-    border: none;
-    border-bottom: 1px solid rgba(107, 119, 103, 0.8);
+    margin-left: 5px;
   }
-  .contact .ball {
-    position: absolute;
-    border-radius: 50%;
+  .contact .modal {
+    top: 280px;
+    width: 80%;
   }
-  .contact .ball:nth-of-type(1) {
-    left: 200px;
-    top: 320px;
-    width: 150px;
-    height: 150px;
-    background-image: linear-gradient(250deg, rgba(230, 245, 226, 0.822) 0%, rgba(107, 119, 103, 0.8) 70%);
-    box-shadow: 2px 2px 25px 5px rgba(0, 0, 0, 0.5);
+  .contact .modal header.modal-text h2 {
+    margin: unset;
+    width: unset;
+    text-align: center;
+    padding: 20px;
+    font-size: 1.8em;
   }
-  .contact .ball:nth-of-type(2) {
-    left: 270px;
-    top: 270px;
-    width: 100px;
-    height: 100px;
-    background-color: rgba(107, 119, 103, 0.8);
-    box-shadow: 5px 2px 20px 5px rgba(52, 70, 102, 0.5);
+  .contact .modal .con {
+    position: relative;
+    width: 100%;
+    height: 180px;
   }
-  .contact .card {
+  .contact .modal .con .card {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
     position: absolute;
-    top: 220px;
-    z-index: 1;
-    width: 300px;
-    height: 180px;
+    height: 100%;
+    width: 100%;
+    z-index: 3;
     background-image: linear-gradient(315deg, rgba(255, 255, 255, 0.1) 0%, white 80%);
     border: 1px solid rgba(179, 179, 2, 0.2);
     border-radius: 10px;
     box-shadow: 2px 2px 25px 5px rgba(0, 0, 0, 0.5);
   }
-  .contact .card p {
-    padding: 5px 0 0px 20px;
+  .contact .modal .con .card p {
+    padding: 5px 0 0px 10px;
   }
-  .contact .back-to-top {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: rgba(107, 119, 103, 0.8);
+  .contact .modal .con .ball {
     position: absolute;
-    right: 10px;
-    bottom: 100px;
+    border-radius: 50%;
+    z-index: 1;
   }
-  .contact .back-to-top .fa-solid {
-    margin: 0.5em;
+  .contact .modal .con .ball-xl {
+    right: -50px;
+    bottom: -100px;
+    width: 180px;
+    height: 180px;
+    background-image: linear-gradient(250deg, rgba(230, 245, 226, 0.822) 0%, rgba(107, 119, 103, 0.8) 70%);
+    box-shadow: 2px 2px 25px 5px rgba(0, 0, 0, 0.5);
   }
-  .contact .back-to-top h5 {
-    text-decoration: underline;
-    text-transform: uppercase;
-    margin: 1em;
+  .contact .modal .con .ball-sm {
+    right: -80px;
+    bottom: 20px;
+    width: 130px;
+    height: 130px;
+    background-color: rgba(107, 119, 103, 0.8);
+    box-shadow: 5px 2px 20px 5px rgba(52, 70, 102, 0.5);
   }
 }
 
@@ -961,103 +1151,56 @@ article {
 .newsletter .container .news ul a:hover, .newsletter .container .news ul label:hover, .newsletter .container .news form a:hover, .newsletter .container .news form label:hover {
   color: rgba(174, 190, 169, 0.5);
 }
+.newsletter .container .news form input, .newsletter .container .news form label {
+  margin: 10px auto;
+  text-align: center;
+  border-radius: 10px;
+}
+.newsletter .container .news form input:hover, .newsletter .container .news form label:hover {
+  color: rgb(241, 28, 146);
+  font-weight: 800;
+  border: 1px solid rgb(241, 28, 146);
+  border-radius: 5px;
+}
+.newsletter .container .news form input:hover::placeholder, .newsletter .container .news form label:hover::placeholder {
+  color: rgb(241, 28, 146);
+}
+.newsletter .container .news form button {
+  width: 50%;
+  margin: 20px auto;
+  text-transform: capitalize;
+  background-color: transparent;
+  color: rgba(107, 119, 103, 0.8);
+  border: none;
+  border-bottom: 1px solid rgba(107, 119, 103, 0.8);
+}
+.newsletter .container .news form button:hover {
+  color: rgb(241, 28, 146);
+  font-weight: 800;
+  border: 1px solid rgb(241, 28, 146);
+  border-radius: 5px;
+}
 @media screen and (min-width: 768px) {
-  .newsletter .container {
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 5px;
-    box-shadow: 2px 2px 25px 5px rgba(0, 0, 0, 0.5);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 50vh;
-  }
-  .newsletter .container .container {
-    width: 30%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-  }
-  .newsletter .container .container #toggle {
-    -webkit-appearance: none;
-  }
-  .newsletter .container .container .button {
-    position: absolute;
-    z-index: 999;
-    width: 43px;
-    height: 43px;
-    background: rgba(107, 119, 103, 0.8);
-    border-radius: 100%;
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    top: -12px;
-  }
-  .newsletter .container .container .button:before {
-    position: absolute;
-    content: "";
-    width: 20px;
-    height: 2px;
-    background: #fff;
-    transform: rotate(90deg);
-    transition: all 0.4s ease;
-  }
-  .newsletter .container .container .button:after {
-    position: absolute;
-    content: "";
-    width: 20px;
-    height: 2px;
-    background: #fff;
-    transition: all 0.4s ease;
-  }
-  .newsletter .container .container .news {
-    opacity: 0;
-    transition: all 0.4s ease-in-out;
-    background: #fff;
-    width: 100%;
-    border-radius: 5px;
-    transform: translateY(0%);
-    box-shadow: 0px 0px 8px 2px rgba(22, 73, 56, 0.486);
-    border: 1px solid #e4e4e4;
-    padding: 10px;
-  }
-  .newsletter .container .container .news ul, .newsletter .container .container .news form {
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-  }
-  .newsletter .container .container .news ul input, .newsletter .container .container .news form input {
-    border: none;
-    background-color: rgba(230, 245, 226, 0.822);
-    width: 80%;
-    height: 30px;
-    margin: 0 auto;
-  }
-  .newsletter .container .container .news ul a, .newsletter .container .container .news ul label, .newsletter .container .container .news form a, .newsletter .container .container .news form label {
-    text-align: center;
-    margin: 20px 0;
-    color: rgba(107, 119, 103, 0.8);
-    text-decoration: none;
-    font-family: "Quicksand", sans-serif, sans-serif;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    font-size: 14px;
-  }
-  .newsletter .container .container .news ul a:hover, .newsletter .container .container .news ul label:hover, .newsletter .container .container .news form a:hover, .newsletter .container .container .news form label:hover {
-    color: rgba(174, 190, 169, 0.5);
+  .newsletter .container .news {
+    max-width: 500px;
   }
 }
 .newsletter .container #toggle:checked ~ .news {
   opacity: 1;
-  transform: translateY(10%);
+  transform: translateY(5%);
 }
 .newsletter .container #toggle:checked ~ .button:before {
   transform: rotate(225deg);
 }
 .newsletter .container #toggle:checked ~ .button:after {
   transform: rotate(135deg);
+}
+
+#unseen {
+  display: none;
+}
+#unseen:target {
+  display: block;
 }
 
 /*# sourceMappingURL=main.css.map */

@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/main.css">
-    <title>Document</title>
+    <title>Martyna Mis</title>
 </head>
 <body>
     <article>
@@ -57,20 +57,20 @@
                     <span class="a3">a</span>
                     <span class="n2">n</span>
                     <span class="y2">y</span>
-                    <span class="punkt1">.</span>
+                    <span class="punkt0">.</span>
     
                     <span class="m3">M</span>
                     <span class="o1">o</span>
                     <span class="r3">r</span>
                     <span class="e2">e</span>
-                    <span>.</span>
+                    <span class="punkt10">.</span>
     
                     <span class="a4">a</span>
                     <span class="b1">b</span>
                     <span class="o2">o</span>
                     <span class="u1">u</span>
                     <span class="t2">t</span>
-                    <span>.</span>
+                    <span class="punkt1">.</span>
     
                     <span class="m4">m</span>
                     <span class="e3">e</span>
@@ -219,7 +219,7 @@
         <section id="Projects" class="projects">
             <h2>Projects</h2>   
 
-            <a href="#" class="prototype">
+            <a href="../src/projects.html" target="_blank" class="planning">
                 <h4>Planning</h4>
             </a>
             <div>
@@ -227,7 +227,7 @@
                 <p>Lorem ipsum dolor sit amet.</p>
             </div>
                             
-            <a href="#" class="desktop">
+            <a href="../src/projects.html" target="_blank" class="creating">
                 <h4>Creating <br> and <br> developing</h4>
             </a>
             <div>
@@ -235,7 +235,7 @@
                 <p>Lorem ipsum dolor sit amet.</p>
             </div>
 
-            <a href="#" class="touch">
+            <a href="../src/projects.html" target="_blank" class="testing">
                 <h4>Testing</h4>
             </a>
             <div>
@@ -243,7 +243,7 @@
                 <p>Lorem ipsum dolor sit amet.</p>
             </div>
 
-            <a href="#" class="work">
+            <a href="../src/projects.html" target="_blank" class="work">
                 <h4>Satisfaction</h4>
             </a>
             <div>
@@ -258,19 +258,19 @@
         <!-- ********************************* -->
         <section class="pricing">
             <h2>Pricing</h2>
-            <a href="#">
+            <a href="../src/pricing.html">
                 <span class="span1">(01)</span>
                 <p class="p1">landing page</p>
                 <i class="i1 fa-solid fa-plus fa-2xl"></i>
             </a>
         
-            <a href="#">
+            <a href="../src/pricing.html" target="_blank">
                 <span class="span2">(02)</span>
                 <p class="p2">e-commerce Website</p>
                 <i class="i2 fa-solid fa-plus fa-2xl"></i>
             </a>
         
-            <a href="#">
+            <a href="../src/pricing.html" target="_blank">
                 <span>(03)</span>
                 <p>corporate website</p>
                 <i class="fa-solid fa-plus fa-2xl"></i>
@@ -285,23 +285,32 @@
         <section class="contact">
             <h2 id="Contact">Contact</h2>
             <h4>Interested in Working together?</h4>
-            <a href="#" class="get-started" target="_blank">get started!</a>
 
-            <div class="ball"></div>
-            <div class="ball"></div>
 
-            <div class="card">
-                <p>Martyna Mischlinski</p>
-                <p>Lüneburg, Germany</p>
-                <p>martina.mischlinski@gmail.com</p>
-                <p>+49 151 64 60 40 xx</p>
-            </div>
-            <a href="#">
-                <div class="back-to-top">
-                    <i class="fa-solid fa-arrow-up-long fa-2xl"></i>
-                    <h5>back to top</h5>
+            <!-- <a href="#" class="get-started" target="_blank">get started!</a> -->
+
+            <a href="#started" class="get-started">Get started</a>
+
+            <div id="started" class="modal">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <header class="modal-text">
+                            <a href="#" class="closebtn">×</a>
+                            <h2>Let's get started</h2>
+                        </header>
+                        <div class="con">
+                            <div class="card">
+                                <p>Martina Mischlinski</p>
+                                <p>martina.mischlinski@gmail.com</p>
+                                <p>+49 151 64 60 40 xx</p>
+                                <p>Germany</p>
+                            </div>
+                            <div class="ball ball-xl"></div>
+                            <div class="ball ball-sm"></div>
+                        </div>
+                    </div>
                 </div>
-            </a>
+            </div>
         </section>
 
 
@@ -316,14 +325,29 @@
                 <nav class="news">
                     <ul>
                         <a href="#Contact" target="_blank">Hire Me</a>
-                        <a href="#" target="_blank">Subscribe</a>
+                        <a href="#unseen" target="_blank">Subscribe</a>
                     </ul>
+
                     <form action="">
-                        <label for="email">Email</label>
+                        <label><a href="#unseen">Any Questions?</a></label>
+                        <!-- <label><a href="#unseen2">Name</a></label> -->
                         <input 
-                            type="text"
-                            >
-                    </form>
+                            type="text" 
+                            name="name"
+                            id="#unseen2"
+                            placeholder="Your Name"
+                            required
+                            pattern="[a-zA-Z]"
+                        >
+                        <input 
+                            type="email" 
+                            name="email"
+                            id="unseen"
+                            placeholder="martina@mail.com"
+                            required
+                        >
+                        <button type="submit">Send me a Message</button>
+                    </form>   
                 </nav>
             </div>
         </section>

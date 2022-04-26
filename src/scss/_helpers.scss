@@ -35,6 +35,9 @@ $white-transparent: rgb(255, 255, 255, 0.1);
 $white-transparent-xl: rgb(255, 255, 255, 0.5);
 $white: #fff;
 
+$yellow: rgb(255, 251, 0, 1);
+$pink: rgb(241, 28, 146);
+
 $border-color: rgba(179, 179, 2, 0.2);
 
 
@@ -90,6 +93,15 @@ $border-color: rgba(179, 179, 2, 0.2);
     color: $bg-dark;
     border: none;
     border-bottom: 1px solid $bg-dark;
+}
+
+@mixin button-highlight {
+    font-size: 1.2em;
+    font-weight: 800;
+    text-transform: capitalize;
+    background-color: transparent;
+    color: $pink;
+    border-bottom: 1px solid $pink;
 }
 
 @mixin back-to-top {
@@ -155,6 +167,10 @@ $border-radius-lg: 20px;
 
 @mixin hover1 {
     color: $white;
+    font-weight: 700;    
+}
+@mixin hover2 {
+    color: $white;
     font-weight: 700;
-    
+    border-bottom: 1px solid $white;
 }

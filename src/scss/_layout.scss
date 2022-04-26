@@ -27,7 +27,7 @@ h2, h3, h4 {
 }
 
 section, footer{
-    margin: 4rem 0;
+    margin: 5rem 0;
 }
 
 footer {
@@ -35,21 +35,29 @@ footer {
     a:nth-of-type(1) {
         .back-to-top {
             @include back-to-top;
+            &:hover {
+                @include hover1;
+            }
         }
     }
     div {
-        @include flex($direction:column);
+        margin-bottom: 20px;
 
         a {
-            @include flex($direction:column);
+            text-align: center;
             padding: 10px;
+            &:hover {
+                @include hover1;
+            }
 
             span {
+                display: block;
                 margin: 10px;
                 text-transform: uppercase;
             }
             .fa-brands {
-                margin-top: 10px;
+                display: block;
+                margin: 20px auto;
             }
         }
     }
@@ -97,9 +105,9 @@ footer {
         font-size: 1.6em;
         transform: rotate(-30deg);
 
-        @media screen and (min-width:$desktop) {
+        @media screen and (min-width:$tablet) {
             font-size: 1.8em;
-            transform: translate(0px, 60px) rotate(-57deg);
+            transform: translate(-20px, 50px) rotate(-57deg);
         }
     }
 
@@ -173,110 +181,125 @@ footer {
         margin-top: 2em;
     }
  
-    @media screen and (min-width:$desktop) {
-    height: 70vh;
-
-    @include flex($justify:stretch, $align:stretch);
-    position: relative;
+    @media screen and (min-width:$tablet) {
+        height: 50vh;
+        position: relative;
         h1 {
             font-size: 1.8em;
             width: 400px;
             transform: rotate(30deg);
+            margin-left: 20px;
         
-        // *****************************
-        // ****Erster Satz mit Namen und curved text**
-        // *****************************
+            // *****************************
+            // ****Erster Satz mit Namen und curved text**
+            // *****************************
 
-        .myName {
-            text-align: center;
-            width: 500px;
-            transform: translateX(100px);
-            span {
-                display: inline-block;
+            .myName {
+                text-align: center;
+                width: 500px;
+                transform: translateX(100px);
+                span {
+                    display: inline-block;
+                }
+                .m1 {
+                    transform: translate(60px, -30px) rotate(0deg);
+                }
+                .a1 {
+                    transform: translate(60px, -28px) rotate(0deg);
+                }
+                .r1 {
+                    transform: translate(60px, -25px) rotate(-5deg);
+                }
+                .t1 {
+                    transform: translate(60px, -25px) rotate(-15deg);
+                }
+                .y1 {
+                    transform: translate(60px, -35px) rotate(-28deg);
+                }
+                .n1 {
+                    transform: translate(55px, -60px) rotate(-40deg);
+                }
+                .a2 {
+                    transform: translate(38px, -90px) rotate(-50deg);
+                }
+                .punkt {
+                    transform: translate(25px, -120px) rotate(-60deg);
+                }
             }
-            .m1 {
-                transform: translate(60px, -30px) rotate(0deg);
+
+            // *****************************
+            // ****Zweiter Satz mit Beschreibung und curved text**
+            // *****************************
+            .moreAbout {
+                span {
+                    display: inline-block;
+                }
+                .a4 {
+                    transform: translate(0px, -2px) rotate(-5deg);
+                }
+                .b1 {
+                    transform: translate(398px, -35px) rotate(-12deg);
+                }
+                .o2 {
+                    transform: translate(391px, -40px) rotate(-15deg);
+                }
+                .u1 {
+                    transform: translate(386px, -46px) rotate(-18deg);
+                }
+                .t2 {
+                    transform: translate(385px, -55px) rotate(-25deg);
+                }
+                .punkt1 {
+                    transform: translate(384px, -64px) rotate(-25deg);
+                }
+                .m4 {
+                    transform: translate(380px, -82px) rotate(-36deg);
+                }
+                .e3 {
+                    transform: translate(377px, -105px) rotate(-40deg);
+                }
+                .punkt2 {
+                    transform: translate(375px, -130px) rotate(-28deg);
+                }
+                .punkt3 {
+                    transform: translate(370px, -155px) rotate(-30deg);
+                }
+                .punkt4 {
+                    transform: translate(360px, -180px) rotate(-40deg);
+                }
             }
-            .a1 {
-                transform: translate(60px, -28px) rotate(0deg);
-            }
-            .r1 {
-                transform: translate(60px, -25px) rotate(-5deg);
-            }
-            .t1 {
-                transform: translate(60px, -25px) rotate(-15deg);
-            }
-            .y1 {
-                transform: translate(60px, -35px) rotate(-28deg);
-            }
-            .n1 {
-                transform: translate(55px, -60px) rotate(-40deg);
-            }
-            .a2 {
-                transform: translate(38px, -90px) rotate(-50deg);
-            }
-            .punkt {
-                transform: translate(25px, -120px) rotate(-60deg);
+        } 
+        // **** ZWEI TEXTBLÖCKE links unten und rechts oben  *****
+
+        p {
+            font-size: 0.8em;
+            position: absolute;
+            width: 150px;
+        }
+        p:first-of-type {
+            bottom: 100px;
+            left: 0px;
+        }
+        p:nth-of-type(2) {
+            top: 0px;
+            right: 0px;
+        }
+    }
+    @media screen and (min-width:$desktop) {
+        h1 {
+            margin-left: 100px; 
+            font-size: 2em;
+            // width: 410px;
+            .moreAbout {
+                .punkt10 {
+                    transform: translate(390px, -32px) rotate(-5deg);
+                }
+                .a4 {
+                    transform: translate(396px, -32px) rotate(-5deg);
+                }
             }
         }
-
-        // *****************************
-        // ****Zweiter Satz mit Beschreibung und curved text**
-        // *****************************
-        .moreAbout {
-            span {
-                display: inline-block;
-            }
-            .a4 {
-                transform: translate(0px, -2px) rotate(-5deg);
-            }
-            .b1 {
-                transform: translate(390px, -35px) rotate(-12deg);
-            }
-            .o2 {
-                transform: translate(388px, -42px) rotate(-20deg);
-            }
-            .u1 {
-                transform: translate(385px, -50px) rotate(-25deg);
-            }
-            .t2 {
-                transform: translate(382px, -60px) rotate(-28deg);
-            }
-            .m4 {
-                transform: translate(380px, -86px) rotate(-30deg);
-            }
-            .e3 {
-                transform: translate(377px, -105px) rotate(-40deg);
-            }
-            .punkt2 {
-                transform: translate(375px, -130px) rotate(-28deg);
-            }
-            .punkt3 {
-                transform: translate(370px, -155px) rotate(-30deg);
-            }
-            .punkt4 {
-                transform: translate(360px, -180px) rotate(-40deg);
-            }
-        }
     }
-    // **** ZWEI TEXTBLÖCKE links und rechts  *****
-
-    p {
-        font-size: 0.8em;
-        position: absolute;
-        width: 150px;
-    }
-    p:first-of-type {
-        bottom: 0px;
-        left: 0px;
-    }
-    p:nth-of-type(2) {
-        top: 0px;
-        right: 0px;
-        
-    } 
-    }
-  
 }
 // <!-- ********************************* -->
 // <!-- *********   PROCESS   *********** -->
@@ -287,49 +310,90 @@ footer {
     }
     ul {
         li:nth-of-type(odd) {
-                margin-top: 25px;
-                &:hover {
-                    @include hover1;
+            margin-top: 25px;
+            &:hover {
+                @include hover1;
+            }
+        }
+        li:nth-of-type(even) {
+            margin-top: 10px;
+        }
+        span {
+            font-size: 1.6em;
+            padding: 20px;
+        }
+        h4 {
+            font-size: 1.2em;
+            display: inline-block;
+            width: 100%;
+            border-bottom: 2px solid $bg-dark;
+
+        }
+        p {
+            font-size: 0.8em;
+            width: 80%;
+            margin: 0 auto;
+            text-align: justify;
+        }
+    }
+
+    @media screen and (min-width:$mobile-xl) {
+        ul {
+            @include flex($direction: column, $align: center);
+            li {
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+                align-items: center;
+                justify-items: center;
+                a {
+                    width: 100%;
+                    span {
+                        display: block;
+                        text-align: center;
+                        padding: 0;
+                    }
+                    h4 {
+                        text-align: center;
+                    }
                 }
             }
-            li:nth-of-type(even) {
-                margin-top: 10px;
-            }
-            span {
-                font-size: 1.6em;
-                padding: 20px;
-            }
-            h4 {
-                font-size: 1.2em;
-                display: inline-block;
-                width: 100%;
-                border-bottom: 2px solid $bg-dark;
-
-            }
             p {
-                width: 80%;
-                margin: 0 auto;
-                text-align: justify;
+                text-align: center;
             }
+        }
     }
     @media screen and (min-width:$tablet) {
-        
-    
+        h2 {
+            text-align: left;
+        }
         ul {
-            @include flex($direction: column, $align: strech);
-            margin-left: 5%;
+            width: 90%;
+            @include flex($direction: column, $align: stretch);
+            margin-left: 10%;
             text-align: right;
-           
-           
-            h4 {
-                width: 80%;
-                text-align: end;
-            }
-            p {
-                font-size: 0.8em;
-                width: 50%;
-                margin-left: 50%;
-                text-align: right;
+            li {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                a {
+                    h4 {
+                        width: 80%;
+                        text-align: end;
+                    }
+                    span{
+                        display: unset;
+                        padding: 20px;
+                    }
+                }
+                
+                p {
+                    font-size: 0.8em;
+                    width: 50%;
+                    margin-left: 50%;
+                    text-align: left;
+                }
+
             }
         }
     }
@@ -428,20 +492,19 @@ footer {
 // <!-- ****PROJECTS with IMAGES*********** -->
 // <!-- ********************************* -->
 .projects {
-    // background-color: $white-transparent;
-    // @include border-radius-xs;
-    // @include box-shadow-xs;
-    padding: 20px;
+    background-color: $white-transparent-xl;
+    @include border-radius-xs;
+    @include box-shadow-xs;
+    padding: 30px;
 
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: auto;
-    gap: 20px;
+    gap: 30px;
 
     h2 {
         @include h2-mobile;
     }
-
     h4 {
         padding: 3px;
     }
@@ -449,23 +512,24 @@ footer {
         @include hover;
         h4 {
             color: red;
-            transform: translate(30px, 60px) scale(1.3);
+            transform: translate(40px, 60px) scale(1.3);
+            transition: transform .5s, color .5s;
         }
     }
 
-    .prototype {
+    .planning {
         background-image: url(../img/prototype.jpeg);
         @include image-mobile;
         color: $white;
     }
 
-    .desktop {
+    .creating {
         background-image: url(../img/desktops.webp);
         @include image-mobile;
         color: brown
     }
 
-    .touch {
+    .testing {
         background-image: url(../img/ipad-touch.webp);
         @include image-mobile;
         color: cornflowerblue;
@@ -477,12 +541,76 @@ footer {
         color: blue;
     }
 
-
+    @media screen and (min-width:$mobile-xl) {
+        a:hover {
+            @include hover;
+            h4 {
+                transform: translate(60px, 60px) scale(1.3);
+                transition: transform .5s, color .5s;
+            }
+        }
+    }
     @media screen and (min-width:$tablet) {
-        width: 100%;
-        background-color: $white-transparent-xl;
-        @include border-radius-xs;
-        @include box-shadow-xs;
+        grid-template-columns: repeat(2, 250px);
+        grid-template-rows: 50px repeat(4, 125px) 180px;
+        gap: 40px;
+
+        margin: 0 auto;
+        h2 {
+            text-align: left;
+        }
+        
+        a:hover {
+            @include hover;
+            h4 {
+                color: red;
+                transform: translate(40px, 60px) scale(1.3);
+            }
+        }
+
+        .planning {
+            background-image: url(../img/prototype.jpeg);
+            @include image-xl;
+            grid-area: 2/2/3/3;
+            color: $white;
+        }
+        div:nth-of-type(1) {
+            display: none;
+        }
+
+        .creating {
+            background-image: url(../img/desktops.webp);
+            @include image-xl;
+            grid-area: 3/1/5/2;
+            color: brown;
+        }
+        div:nth-of-type(2) {
+            display: none;
+        }
+
+        .testing {
+            background-image: url(../img/ipad-touch.webp);
+            @include image-xl;
+            grid-area: 4/2/6/3;
+            color: cornflowerblue;
+        }
+        div:nth-of-type(3) {
+            display: none;
+        }
+
+        .work {
+            background-image: url(../img/am-tisch.jpeg);
+            @include image-xl;
+            grid-area: 5/1/6/2;
+            color: blue;
+        }
+        div:nth-of-type(4) {
+            display: none;
+        }
+    }
+
+    @media screen and (min-width:$desktop) {
+        
         padding: 20px;
 
         display: grid;
@@ -490,48 +618,45 @@ footer {
         grid-template-rows: 50px 50px 250px 50px 80px 90px 50px 100px;
         gap: 20px;
 
-        h2 {
-            grid-area: 1/1/2/2;
-        }
-        h4 {
-            padding: 3px;
-            grid-area: 1/1/2/2;
-        }
+       
         a:hover {
             @include hover;
             h4 {
                 color: red;
-                transform: translate(30px, 60px) scale(1.3);
+                transform: translate(40px, 60px) scale(1.3);
             }
         }
 
-        .prototype {
+        .planning {
             background-image: url(../img/prototype.jpeg);
             @include image-xl;
             grid-area: 2/3/5/6;
             color: $white;
         }
         div:nth-of-type(1) {
+            display: unset;
             grid-area: 2/6/3/9;
 
         }
-        .desktop {
+        .creating {
             background-image: url(../img/desktops.webp);
             @include image-xl;
             grid-area: 4/5/7/8;
-            color: brown
+            color: brown;
         }
         div:nth-of-type(2) {
+            display: unset;
             grid-area: 7/5/8/8;
         }
 
-        .touch {
+        .testing {
             background-image: url(../img/ipad-touch.webp);
             @include image-xl;
             grid-area: 3/1/4/3;
             color: cornflowerblue;
         }
         div:nth-of-type(3) {
+            display: unset;
             grid-area: 4/1/5/3;
         }
 
@@ -543,6 +668,7 @@ footer {
         }
         div:nth-of-type(4) {
             grid-area: 8/2/9/5;
+            display: unset;
         }
     }
 
@@ -590,6 +716,7 @@ footer {
     @media screen and (min-width:$tablet) {
         h2 {
             margin-bottom: 30px;
+            text-align: start;
         }
 
         a {
@@ -668,160 +795,246 @@ footer {
 // <!-- ********************************* -->
 .contact {
     text-align: center;
-    height: 80vh;
+    height: 60vh;
     position: relative;
-    
     h2 {
         @include h2-mobile;
-        margin: 0;
-        
     }
     h4 {
-        width: 60%;
-        margin: 20px auto;
+        width: 80%;
+        margin: 4em auto;
     }
 
     .get-started {
-        @include button;
+        margin-top: 4em; 
+        @include button-highlight;
         &:hover {
-            @include hover1;
+            @include hover2;
+        }
+        &:visited {
+            display: none;
         }
     }
-
-    .ball {
-        position: absolute;
-        border-radius: 50%;
-        
-    }
-    
-    .ball:nth-of-type(1) {
-        right: -20px;
-        top: 320px;
-
-        width: 150px;
-        height: 150px;
-        background-image: linear-gradient(250deg, $bg 0%, $bg-dark 70%);
-        @include box-shadow-lg;
-    }
-    
-    .ball:nth-of-type(2) {
-        right: -10px;
-        top: 280px;
-
-        width: 100px;
-        height: 100px;
-        background-color: $bg-dark;
-        box-shadow: 5px 2px 20px 5px rgba(52, 70, 102, 0.5);
-
-    }
-
-    .card {
-        @include flex($direction: column, $align:flex-start);
-
-        position: absolute;
-        z-index: 1;
-
-        margin: 3rem auto;
+    // *****************************************************
+    // *********   MODAL   *********************************
+    /* The modal's background */
+    .modal {
+        display: none;
+        left: 0;
+        top: 160px;
         width: 100%;
-        height: 180px;
-        background-image: linear-gradient(315deg, $white-transparent 0%, white 80%);
-        border: 1px solid $border-color;
-        @include border-radius;
-        @include box-shadow-lg;
-        p {
-            padding: 5px 0 0px 20px;
-        }
+        // height: 60%;
+        overflow: auto;
+        background-color: rgba(0, 0, 0, 0.4);
 
+        // display modal when targeted  ************
+        &:target {
+            display: table;
+            position: absolute;
+            @include border-radius;
+        }
+        // modal-box   ****************************
+        .modal-dialog {
+            display: table-cell;
+            // vertical-align: middle;
+        }
+        // modal-content   ************************
+        .modal-dialog, .modal-content {
+            margin: auto;
+            background-color: rgb(122, 122, 122, 0.5);
+            border: 1px solid $border-color;
+            position: relative;
+            padding: 0;
+            // outline: 0;
+            @include border-radius;
+            text-align: center;
+            width: 100%;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            animation: get-started 0.5s;
+        }
+        header.modal-text {
+            background-color: $bg-dark;
+            font-size: .8em;
+            color: white;
+            @include border-radius;
+            h2 {
+                margin-bottom: unset;
+                padding: 10px;
+            }
         
+            /* The button used to close the modal */
+            .closebtn {
+                text-decoration: none;
+                float: right;
+                font-size: 2.5em;
+                font-weight: bold;
+                color: #fff;
+                padding: 10px 20px 0 0 ;
+            }
+            
+            .closebtn:hover,
+            .closebtn:focus {
+                color: $bg-dark;
+                text-decoration: none;
+                cursor: pointer;
+            }
+        }
+     
+        // *****************************************************
+        // ******   VISITENKARTE MIT GLASSMORPHISM    **********
+        .con {
+            position: relative;
+            // margin: 3rem auto;
+            width: 100%;
+            height: 180px;
+            .card {
+                @include flex($direction: column, $align:flex-start);
+                position: absolute;
+                height: 100%;
+                width: 100%;
+                z-index: 3;
+                background-image: linear-gradient(315deg, $white-transparent 0%, white 80%);
+                border: 1px solid $border-color;
+                @include border-radius;
+                @include box-shadow-lg;
+                p {
+                    padding: 5px 0 0px 10px;
+                }
+            }
 
-    }
-    .back-to-top {
-        @include back-to-top;
-        margin: 5rem auto 0;
+            .ball {
+                position: absolute;
+                border-radius: 50%;
+                z-index: 1;
+            }
+            
+            .ball-xl {
+                right: -20px;
+                bottom: -100px;
+                width: 150px;
+                height: 150px;
+                background-image: linear-gradient(250deg, $bg 0%, $bg-dark 70%);
+                @include box-shadow-lg;
+            }
+            
+            .ball-sm{
+                right: -50px;
+                bottom: 20px;
+                width: 100px;
+                height: 100px;
+                background-color: $bg-dark;
+                box-shadow: 5px 2px 20px 5px rgba(52, 70, 102, 0.5);
+            }
+        }
     }
 
-    @media screen and (min-width:$mobile-xl) {
-        .ball:nth-of-type(1) {
-            top: 200px;
-            left:400px;
+    // ************************************************
+    // *****  Keyframes  ******************************
+    // *****  Animation Visitenkarte wird sichtbar  ***
+
+    @keyframes get-started {
+        from {
+            top: -200px;
+            opacity: 0;
         }
-        .ball:nth-of-type(2) {
-            top: 300px;
-            left:350px;
-        }
-        
-        .card {
-            width: 80%;
-            height: 300px;
+        to {
+            top: 0px;
+            opacity: 1;
         }
     }
+
+    // ***********************************************
+    // ******  MEDIAQUERY LARGER SMARTPHONE   ********
+    @media screen and (min-width:$mobile-xl) {        
+        .con {
+            p {
+                font-size: 1.2em;
+            }
+        }
+    }
+    
+    // ************************************************
+    // ********   MEDIAQUERY TABLET   *****************
+    // ************************************************
     @media screen and (min-width:$tablet) {
-    height: 80vh;
-    position: relative;
-    
-    h2 {
-        margin: 0 0 60px 54%;
-        
-    }
-    h4 {
-        width: 35%;
-        margin-bottom: 15px;
-    }
-
-    .get-started {
-        @include button;
-    }
-
-    .ball {
-        position: absolute;
-        border-radius: 50%;
-        
-    }
-    
-    .ball:nth-of-type(1) {
-        left: 200px;
-        top: 320px;
-
-        width: 150px;
-        height: 150px;
-        background-image: linear-gradient(250deg, $bg 0%, $bg-dark 70%);
-        @include box-shadow-lg;
-    }
-    
-    .ball:nth-of-type(2) {
-        left: 270px;
-        top: 270px;
-
-        width: 100px;
-        height: 100px;
-        background-color: $bg-dark;
-        box-shadow: 5px 2px 20px 5px rgba(52, 70, 102, 0.5);
-
-    }
-
-    .card {
-        @include flex($direction: column, $align:flex-start);
-        position: absolute;
-        top: 220px;
-        z-index: 1;
-        
-        width: 300px;
-        height: 180px;
-        background-image: linear-gradient(315deg, $white-transparent 0%, white 80%);
-        border: 1px solid $border-color;
-        @include border-radius;
-        @include box-shadow-lg;
-        // box-shadow: 5px 2px 20px 5px rgba(209, 209, 91, 0.5);
-        p {
-            padding: 5px 0 0px 20px;
+        height: 70vh;
+        text-align: left;
+        h2 {
+            margin: 0 0 60px 40%;
+            width: 40%;
         }
-    }
-    .back-to-top {
-        @include back-to-top;
-        position: absolute;
-        right: 10px;
-        bottom: 100px;
-    }
+        h4 {
+            width: 25%;
+            line-height: 1.8em;
+            margin: 4em 0;
+            font-size: 1.3em;
+        }
+
+        .get-started {
+            margin-left: 5px;
+        }
+
+        .modal {
+            top: 280px;
+            width: 80%; 
+         
+            header.modal-text {
+                h2 {
+                    margin: unset;
+                    width: unset;
+                    text-align: center;
+                    padding: 20px;
+                    font-size: 1.8em;
+                }
+            }
+         
+            // *****************************************************
+            // ******   VISITENKARTE MIT GLASSMORPHISM    **********
+            .con {
+                position: relative;
+                // margin: 3rem auto;
+                width: 100%;
+                height: 180px;
+                .card {
+                    @include flex($direction: column, $align:flex-start);
+                    position: absolute;
+                    height: 100%;
+                    width: 100%;
+                    z-index: 3;
+                    background-image: linear-gradient(315deg, $white-transparent 0%, white 80%);
+                    border: 1px solid $border-color;
+                    @include border-radius;
+                    @include box-shadow-lg;
+                    p {
+                        padding: 5px 0 0px 10px;
+                    }
+                }
+    
+                .ball {
+                    position: absolute;
+                    border-radius: 50%;
+                    z-index: 1;
+                }
+                
+                .ball-xl {
+                    right: -50px;
+                    bottom: -100px;
+                    width: 180px;
+                    height: 180px;
+                    background-image: linear-gradient(250deg, $bg 0%, $bg-dark 70%);
+                    @include box-shadow-lg;
+                }
+                
+                .ball-sm{
+                    right: -80px;
+                    bottom: 20px;
+                    width: 130px;
+                    height: 130px;
+                    background-color: $bg-dark;
+                    box-shadow: 5px 2px 20px 5px rgba(52, 70, 102, 0.5);
+                }
+            }
+        }
     }
 }
 
@@ -922,101 +1135,44 @@ footer {
                     }
                 }
             }
-        }
-    @media screen and (min-width:$tablet) {
-        border: 1px solid $white-transparent;
-    @include border-radius-xs;
-    @include box-shadow-lg;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 50vh;
+           
+                form {
+                    input, label {
+                        margin: 10px auto;
+                        text-align: center;
+                        @include border-radius;
 
-    .container {
-        width: 30%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        position: relative;
-    
-    
-        #toggle {
-            -webkit-appearance: none;
-        }
-    
-        .button {
-            position: absolute;
-            z-index: 999;
-            width: 43px;
-            height: 43px;
-            background: $bg-dark;
-            border-radius: 100%;
-            cursor: pointer;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            top: -12px;
-        
-            &:before {
-                position: absolute;
-                content: "";
-                width: 20px;
-                height: 2px;
-                background: #fff;
-                transform: rotate(90deg);
-                transition: all 0.4s ease;
-            }
-            &:after {
-                position: absolute;
-                content: "";
-                width: 20px;
-                height: 2px;
-                background: #fff;
-                transition: all 0.4s ease;
-            }
-        }
-    
-        .news {
-            opacity: 0;
-            transition: all 0.4s ease-in-out;
-            background: #fff;
-            width: 100%;
-            @include border-radius-xs;
-            transform: translateY(0%);
-            @include box-shadow-xs;
-            border: 1px solid #e4e4e4;
-            padding: 10px;
-        
-            ul, form {
-                margin: 0;
-                padding: 0;
-                display: flex;
-                flex-direction: column;
-                input {
-                    border: none;
-                    background-color: $bg;
-                    width: 80%;
-                    height: 30px;
-                    margin: 0 auto;
-                }
-        
-                a, label {
-                    text-align: center;
-                    margin: 20px 0;
-                    color: $bg-dark;
-                    text-decoration: none;
-                    font-family: $font-main, sans-serif;
-                    text-transform: uppercase;
-                    letter-spacing: 2px;
-                    font-size: 14px;
-                
-                    &:hover {
-                        color: $bg-middle;
+                        &:hover{
+                            color: $pink;
+                            font-weight: 800;
+                            border: 1px solid $pink;
+                            @include border-radius-xs;
+                            &::placeholder {
+                                color: $pink;
+                            }
+                        }
+                    }
+                    button {
+                        width: 50%;
+                        margin: 20px auto;
+                        @include button;
+                        &:hover {
+                            color: $pink;
+                            font-weight: 800;
+                            border: 1px solid $pink;
+                            @include border-radius-xs;
+                        }
                     }
                 }
-            }
+           
         }
+    @media screen and (min-width:$tablet) {             
+            .news {
+                max-width: 500px;
+            }
     }
+
+
     // border: 1px solid $white-transparent;
     // @include border-radius-xs;
     // @include box-shadow-lg;
@@ -1109,10 +1265,11 @@ footer {
     //             }
     //         }
     //     }
-    }
+    // }
+
     #toggle:checked ~ .news {
         opacity: 1;
-        transform: translateY(10%);
+        transform: translateY(5%);
     }
     
     #toggle:checked ~ .button:before {
@@ -1127,3 +1284,19 @@ footer {
 // *********************************
 // *********   MAIN END   **********
 // *********************************
+
+
+
+#unseen{
+    display: none;
+    &:target{
+        display: block;
+    }
+}
+
+// #unseen2{
+//     display: none;
+//     &:target{
+//         display: block;
+//     }
+// }

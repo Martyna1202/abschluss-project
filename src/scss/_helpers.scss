@@ -25,9 +25,14 @@ $desktop:992px;
 // **************************************
 // COLORS
 
-$bg: rgba(230, 245, 226, 0.822);
-$bg-middle: rgba(174, 190, 169, 0.5);
-$bg-dark: rgba(107, 119, 103, 0.8);
+$bg: rgba(162, 209, 190, 0.822);
+$bg-middle: rgba(250, 234, 142, 0.521);
+$bg-dark: rgba(91, 126, 91, 0.8);
+$bg-background: rgba(172, 177, 157, 0.822);
+
+// $bg: rgba(230, 245, 226, 0.822);
+// $bg-middle: rgba(174, 190, 169, 0.5);
+// $bg-dark: rgba(107, 119, 103, 0.8);
 
 $font-color: rgb(43, 46, 45);
 
@@ -36,7 +41,7 @@ $white-transparent-xl: rgb(255, 255, 255, 0.5);
 $white: #fff;
 
 $yellow: rgb(255, 251, 0, 1);
-$pink: rgb(241, 28, 146);
+$pink: rgb(13, 107, 145);
 
 $border-color: rgba(179, 179, 2, 0.2);
 
@@ -93,6 +98,14 @@ $border-color: rgba(179, 179, 2, 0.2);
     color: $bg-dark;
     border: none;
     border-bottom: 1px solid $bg-dark;
+}
+
+@mixin button2 {
+    text-transform: capitalize;
+    background-color: transparent;
+    color: $bg-dark;
+    border: none;
+    border: 1px solid $bg-dark;
 }
 
 @mixin button-highlight {

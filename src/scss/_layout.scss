@@ -10,7 +10,14 @@ body {
     // *****************************
     // ****Farbe an den Seiten******
     // *****************************
-    background-color: $bg-dark;
+    background-image: 
+            linear-gradient(
+                180deg, 
+                $bg-middle 0%, 
+                $bg 30%, 
+                $bg-dark 60%,  
+                $white-transparent 90%);
+    // background-color: rgb(245, 245, 235);
 }
 main {
     width: 90%;
@@ -34,6 +41,7 @@ footer {
     margin: 0 auto;
     a:nth-of-type(1) {
         .back-to-top {
+            font-size: .8em;
             @include back-to-top;
             &:hover {
                 @include hover1;
@@ -42,14 +50,13 @@ footer {
     }
     div {
         margin-bottom: 20px;
-
         a {
+            font-size: .8em;
             text-align: center;
             padding: 10px;
             &:hover {
                 @include hover1;
             }
-
             span {
                 display: block;
                 margin: 10px;
@@ -61,20 +68,27 @@ footer {
             }
         }
     }
+    @media screen and (min-width: $mobile-xl) {
+        a:nth-of-type(1) {
+            .back-to-top {
+                font-size: 1em;
+            }
+        }
+        div {
+            a {
+                font-size: 1em;
+            }
+        }
+    }
     @media screen and (min-width: $tablet) {
         @include flex($justify:space-between);
         margin-left: 30px;
         height: 30vh;
-        a:nth-of-type(1) {
-            .back-to-top {
-                @include back-to-top;
-            }
-        }
         div {
-            @include flex($justify:flex-end);
+            @include flex();
             a {
                 @include flex($direction:column);
-                margin: 30px;
+                margin: 20px;
                 span {
                     margin: 10px;
                     text-transform: uppercase;
@@ -88,10 +102,10 @@ footer {
 }
 /* END GLOBAL STYLES */
 
-// *****************************
-// ****  Header mit NAV-Leiste ** 
-// ****  Schreibmaschinen-Schrift**
-// *****************************
+// ********************************************
+// ****  Header mit NAV-Leiste ****************
+// ****  Schreibmaschinen-Schrift**************
+// ********************************************
 
 .main-menu {
     display: flex;
@@ -811,9 +825,10 @@ footer {
         &:hover {
             @include hover2;
         }
-        &:visited {
+        &:target {
             display: none;
         }
+        
     }
     // *****************************************************
     // *********   MODAL   *********************************
@@ -934,7 +949,7 @@ footer {
 
     @keyframes get-started {
         from {
-            top: -200px;
+            top: -100px;
             opacity: 0;
         }
         to {
@@ -947,8 +962,10 @@ footer {
     // ******  MEDIAQUERY LARGER SMARTPHONE   ********
     @media screen and (min-width:$mobile-xl) {        
         .con {
-            p {
-                font-size: 1.2em;
+            .card {
+                p {
+                    font-size: 1.2em;
+                }
             }
         }
     }
@@ -976,7 +993,9 @@ footer {
 
         .modal {
             top: 280px;
-            width: 80%; 
+            width: 70%;
+            max-width: 500px;
+            height: 230px; 
          
             header.modal-text {
                 h2 {
@@ -991,38 +1010,18 @@ footer {
             // *****************************************************
             // ******   VISITENKARTE MIT GLASSMORPHISM    **********
             .con {
-                position: relative;
-                // margin: 3rem auto;
                 width: 100%;
-                height: 180px;
+                height: 200px;
                 .card {
-                    @include flex($direction: column, $align:flex-start);
-                    position: absolute;
-                    height: 100%;
-                    width: 100%;
-                    z-index: 3;
-                    background-image: linear-gradient(315deg, $white-transparent 0%, white 80%);
-                    border: 1px solid $border-color;
-                    @include border-radius;
-                    @include box-shadow-lg;
                     p {
-                        padding: 5px 0 0px 10px;
+                        font-size: 1.3em;
                     }
                 }
-    
-                .ball {
-                    position: absolute;
-                    border-radius: 50%;
-                    z-index: 1;
-                }
-                
                 .ball-xl {
                     right: -50px;
                     bottom: -100px;
                     width: 180px;
                     height: 180px;
-                    background-image: linear-gradient(250deg, $bg 0%, $bg-dark 70%);
-                    @include box-shadow-lg;
                 }
                 
                 .ball-sm{
@@ -1030,8 +1029,6 @@ footer {
                     bottom: 20px;
                     width: 130px;
                     height: 130px;
-                    background-color: $bg-dark;
-                    box-shadow: 5px 2px 20px 5px rgba(52, 70, 102, 0.5);
                 }
             }
         }
@@ -1044,13 +1041,14 @@ footer {
 // <!-- ********************************* -->
 
 .newsletter {
-    border: 1px solid $white-transparent;
+    border: 1px solid $border-color;
+    background-color: $white-transparent-xl;
     @include border-radius-xs;
     @include box-shadow-lg;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 50vh;
+    height: 60vh;
 
     .container {
         width: 80%;
@@ -1059,9 +1057,8 @@ footer {
         align-items: center;
         position: relative;
     
-    
         #toggle {
-            -webkit-appearance: none;
+            display: none;
         }
     
         .button {
@@ -1097,6 +1094,7 @@ footer {
         }
     
         .news {
+            text-align: center;
             opacity: 0;
             transition: all 0.4s ease-in-out;
             background: #fff;
@@ -1104,7 +1102,7 @@ footer {
             @include border-radius-xs;
             transform: translateY(0%);
             @include box-shadow-xs;
-            border: 1px solid #e4e4e4;
+            border: 1px solid $border-color;
             padding: 10px;
         
             ul, form {
@@ -1112,14 +1110,7 @@ footer {
                 padding: 0;
                 display: flex;
                 flex-direction: column;
-                input {
-                    border: none;
-                    background-color: $bg;
-                    width: 80%;
-                    height: 30px;
-                    margin: 0 auto;
-                }
-        
+                
                 a, label {
                     text-align: center;
                     margin: 20px 0;
@@ -1131,141 +1122,77 @@ footer {
                     font-size: 14px;
                 
                     &:hover {
-                        color: $bg-middle;
+                        font-weight: 600;
                     }
+                }
+                input {
+                    border: none;
+                    background-color: $bg;
+                    width: 80%;
+                    height: 30px;
+                    margin: 0 auto;
                 }
             }
            
-                form {
-                    input, label {
-                        margin: 10px auto;
-                        text-align: center;
-                        @include border-radius;
-
+            form {
+                border: 2px solid $bg;
+                @include border-radius-xs;
+                &:hover{
+                    background-color: $border-color;
+                    font-weight: 800;
+                }
+                
+                label {
+                    display: block;
+                    margin-bottom: 5px;
+                    &:hover{
+                        color: $pink;
+                    }
+                    a {
+                        padding: 10px;
                         &:hover{
                             color: $pink;
-                            font-weight: 800;
-                            border: 1px solid $pink;
-                            @include border-radius-xs;
-                            &::placeholder {
-                                color: $pink;
-                            }
                         }
                     }
-                    button {
-                        width: 50%;
-                        margin: 20px auto;
-                        @include button;
-                        &:hover {
-                            color: $pink;
-                            font-weight: 800;
-                            border: 1px solid $pink;
-                            @include border-radius-xs;
-                        }
+                
+                }
+                input, label {
+                    margin: 5px auto;
+                    text-align: center;
+                    @include border-radius-xs;
+                    &::placeholder {
+                        color: $bg-dark;
+                    }
+                    
+                   
+                    
+                }
+                button {
+                    width: 50%;
+                    padding: 5px;
+                    margin: 20px auto;
+                    @include button2;
+                    @include border-radius-xs;
+                    &:hover {
+                        color: $white;
+                        background-color: $bg-dark;
+                        font-weight: 800;
                     }
                 }
+                .close-btn{
+                    font-size: 2em;
+                    &:hover{
+                        color: $white;
+                    }
+                }
+            }
            
         }
     @media screen and (min-width:$tablet) {             
-            .news {
-                max-width: 500px;
-            }
+        .news {
+            max-width: 500px;
+        }
     }
-
-
-    // border: 1px solid $white-transparent;
-    // @include border-radius-xs;
-    // @include box-shadow-lg;
-    // display: flex;
-    // justify-content: center;
-    // align-items: center;
-    // height: 50vh;
-
-    // .container {
-    //     width: 30%;
-    //     display: flex;
-    //     justify-content: center;
-    //     align-items: center;
-    //     position: relative;
-    
-    
-    //     #toggle {
-    //         -webkit-appearance: none;
-    //     }
-    
-    //     .button {
-    //         position: absolute;
-    //         z-index: 999;
-    //         width: 43px;
-    //         height: 43px;
-    //         background: $bg-dark;
-    //         border-radius: 100%;
-    //         cursor: pointer;
-    //         display: flex;
-    //         justify-content: center;
-    //         align-items: center;
-    //         top: -12px;
-        
-    //         &:before {
-    //             position: absolute;
-    //             content: "";
-    //             width: 20px;
-    //             height: 2px;
-    //             background: #fff;
-    //             transform: rotate(90deg);
-    //             transition: all 0.4s ease;
-    //         }
-    //         &:after {
-    //             position: absolute;
-    //             content: "";
-    //             width: 20px;
-    //             height: 2px;
-    //             background: #fff;
-    //             transition: all 0.4s ease;
-    //         }
-    //     }
-    
-    //     .news {
-    //         opacity: 0;
-    //         transition: all 0.4s ease-in-out;
-    //         background: #fff;
-    //         width: 100%;
-    //         @include border-radius-xs;
-    //         transform: translateY(0%);
-    //         @include box-shadow-xs;
-    //         border: 1px solid #e4e4e4;
-    //         padding: 10px;
-        
-    //         ul, form {
-    //             margin: 0;
-    //             padding: 0;
-    //             display: flex;
-    //             flex-direction: column;
-    //             input {
-    //                 border: none;
-    //                 background-color: $bg;
-    //                 width: 80%;
-    //                 height: 30px;
-    //                 margin: 0 auto;
-    //             }
-        
-    //             a, label {
-    //                 text-align: center;
-    //                 margin: 20px 0;
-    //                 color: $bg-dark;
-    //                 text-decoration: none;
-    //                 font-family: $font-main, sans-serif;
-    //                 text-transform: uppercase;
-    //                 letter-spacing: 2px;
-    //                 font-size: 14px;
-                
-    //                 &:hover {
-    //                     color: $bg-middle;
-    //                 }
-    //             }
-    //         }
-    //     }
-    // }
 
     #toggle:checked ~ .news {
         opacity: 1;
@@ -1285,18 +1212,9 @@ footer {
 // *********   MAIN END   **********
 // *********************************
 
-
-
 #unseen{
     display: none;
     &:target{
         display: block;
     }
 }
-
-// #unseen2{
-//     display: none;
-//     &:target{
-//         display: block;
-//     }
-// }

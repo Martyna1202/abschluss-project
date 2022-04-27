@@ -5,7 +5,7 @@
 
 body {
         
-    font-family: $font-test;
+    font-family: $font-main;
     color: $font-color;
     // *****************************
     // ****Farbe an den Seiten******
@@ -17,7 +17,6 @@ body {
                 $bg 30%, 
                 $bg-dark 60%,  
                 $white-transparent 90%);
-    // background-color: rgb(245, 245, 235);
 }
 main {
     width: 90%;
@@ -33,12 +32,12 @@ h2, h3, h4 {
     letter-spacing: 3px;
 }
 
-section, footer{
+section{
     margin: 5rem 0;
 }
 
 footer {
-    margin: 0 auto;
+    margin: 5rem auto;
     a:nth-of-type(1) {
         .back-to-top {
             font-size: .8em;
@@ -132,13 +131,11 @@ footer {
         
         ul {
             @include flex($direction: column);
-
             li {
                 a{
                     font-size: 1.5em;
                     padding: 20px;
                     display: inline-block;
-
                     &:hover {
                         @include hover1;
                     }
@@ -159,7 +156,6 @@ footer {
         & {
             flex-direction: row;
             justify-content: space-between;
-            
             span{
                 align-self: flex-end;
             }
@@ -194,7 +190,6 @@ footer {
         font-size: .9em;
         margin-top: 2em;
     }
- 
     @media screen and (min-width:$tablet) {
         height: 50vh;
         position: relative;
@@ -241,9 +236,9 @@ footer {
                 }
             }
 
-            // *****************************
+            // ***************************************************
             // ****Zweiter Satz mit Beschreibung und curved text**
-            // *****************************
+            // ***************************************************
             .moreAbout {
                 span {
                     display: inline-block;
@@ -303,7 +298,6 @@ footer {
         h1 {
             margin-left: 100px; 
             font-size: 2em;
-            // width: 410px;
             .moreAbout {
                 .punkt10 {
                     transform: translate(390px, -32px) rotate(-5deg);
@@ -341,7 +335,6 @@ footer {
             display: inline-block;
             width: 100%;
             border-bottom: 2px solid $bg-dark;
-
         }
         p {
             font-size: 0.8em;
@@ -350,7 +343,7 @@ footer {
             text-align: justify;
         }
     }
-
+    // ************************************************
     @media screen and (min-width:$mobile-xl) {
         ul {
             @include flex($direction: column, $align: center);
@@ -377,6 +370,7 @@ footer {
             }
         }
     }
+    // +**************************************************
     @media screen and (min-width:$tablet) {
         h2 {
             text-align: left;
@@ -400,14 +394,12 @@ footer {
                         padding: 20px;
                     }
                 }
-                
                 p {
                     font-size: 0.8em;
                     width: 50%;
                     margin-left: 50%;
                     text-align: left;
                 }
-
             }
         }
     }
@@ -438,12 +430,8 @@ footer {
     }
 
     @media screen and (min-width:$tablet) {
-        display: grid;
         grid-template-columns: 100px 150px repeat(3, 1fr) 30px;
         grid-template-rows: 50px 50px 100px 50px 100px 100px;
-        gap: 20px;
-
-
         h4 {
             grid-area: 2/5/4/6;
             z-index: 1;
@@ -457,7 +445,6 @@ footer {
             text-align: justify;
         }
         .person {
-            background-image: url(../img/person.webp);
             @include image-xl;
             grid-area: 3/4/5/6;
             margin: 0;
@@ -521,11 +508,17 @@ footer {
     }
     h4 {
         padding: 3px;
+        h4:hover {
+            color: red;
+        }
     }
     a:hover {
         @include hover;
+        filter: brightness(.8);
+        transition: filter .5s;
         h4 {
             color: red;
+            font-weight: 800;
             transform: translate(40px, 60px) scale(1.3);
             transition: transform .5s, color .5s;
         }
@@ -554,7 +547,7 @@ footer {
         @include image-mobile;
         color: blue;
     }
-
+    // *******************************************************
     @media screen and (min-width:$mobile-xl) {
         a:hover {
             @include hover;
@@ -564,16 +557,15 @@ footer {
             }
         }
     }
+    // *********************************************************
     @media screen and (min-width:$tablet) {
         grid-template-columns: repeat(2, 250px);
         grid-template-rows: 50px repeat(4, 125px) 180px;
         gap: 40px;
-
         margin: 0 auto;
         h2 {
             text-align: left;
         }
-        
         a:hover {
             @include hover;
             h4 {
@@ -581,58 +573,46 @@ footer {
                 transform: translate(40px, 60px) scale(1.3);
             }
         }
-
         .planning {
-            background-image: url(../img/prototype.jpeg);
             @include image-xl;
             grid-area: 2/2/3/3;
-            color: $white;
         }
         div:nth-of-type(1) {
             display: none;
         }
 
         .creating {
-            background-image: url(../img/desktops.webp);
             @include image-xl;
             grid-area: 3/1/5/2;
-            color: brown;
         }
         div:nth-of-type(2) {
             display: none;
         }
 
         .testing {
-            background-image: url(../img/ipad-touch.webp);
             @include image-xl;
             grid-area: 4/2/6/3;
-            color: cornflowerblue;
         }
         div:nth-of-type(3) {
             display: none;
         }
 
         .work {
-            background-image: url(../img/am-tisch.jpeg);
             @include image-xl;
             grid-area: 5/1/6/2;
-            color: blue;
         }
         div:nth-of-type(4) {
             display: none;
         }
     }
-
-    @media screen and (min-width:$desktop) {
-        
+    // ****************************************************
+    @media screen and (min-width:$desktop) {  
         padding: 20px;
 
         display: grid;
         grid-template-columns: repeat(8, 1fr);
         grid-template-rows: 50px 50px 250px 50px 80px 90px 50px 100px;
         gap: 20px;
-
-       
         a:hover {
             @include hover;
             h4 {
@@ -640,12 +620,8 @@ footer {
                 transform: translate(40px, 60px) scale(1.3);
             }
         }
-
         .planning {
-            background-image: url(../img/prototype.jpeg);
-            @include image-xl;
             grid-area: 2/3/5/6;
-            color: $white;
         }
         div:nth-of-type(1) {
             display: unset;
@@ -653,10 +629,7 @@ footer {
 
         }
         .creating {
-            background-image: url(../img/desktops.webp);
-            @include image-xl;
             grid-area: 4/5/7/8;
-            color: brown;
         }
         div:nth-of-type(2) {
             display: unset;
@@ -664,10 +637,7 @@ footer {
         }
 
         .testing {
-            background-image: url(../img/ipad-touch.webp);
-            @include image-xl;
             grid-area: 3/1/4/3;
-            color: cornflowerblue;
         }
         div:nth-of-type(3) {
             display: unset;
@@ -675,17 +645,13 @@ footer {
         }
 
         .work {
-            background-image: url(../img/am-tisch.jpeg);
-            @include image-xl;
             grid-area: 5/2/8/5;
-            color: blue;
         }
         div:nth-of-type(4) {
             grid-area: 8/2/9/5;
             display: unset;
         }
     }
-
 }
 
 // <!-- ********************************* -->
@@ -699,7 +665,6 @@ footer {
         text-align: center;
         font-size: 1.8em;
     }
-
     a {
         padding: 20px 0;
         margin-top: 20px;
@@ -712,50 +677,31 @@ footer {
         &:hover * , &:hover i {
             @include hover1;
         }
-        
         span {
             color: $bg-dark;
             font-size: 2em;
         }
-        
         p {
             text-transform: uppercase;
         }
-        
         .fa-2xl {
             color: $bg-dark;
         }
     }
-
+    // *************************************************
     @media screen and (min-width:$tablet) {
         h2 {
             margin-bottom: 30px;
             text-align: start;
         }
-
         a {
             line-height: 0.5em;
             padding: 20px;
-            margin-top: 20px;
-            border-bottom: 1px solid $bg-dark;
-        
             display: grid;
             grid-template-columns: repeat(2, 2fr) 200px 1fr 50px;
-            &:hover {
-                @include hover1;
-            }
-            
             span {
                 color: $bg-dark;
                 font-size: 2em;
-            }
-            
-            p {
-                text-transform: uppercase;
-            }
-            
-            .fa-2xl {
-                color: $bg-dark;
             }
         }
         a:nth-of-type(1) {
@@ -803,7 +749,6 @@ footer {
     }
 }
 
-
 // <!-- ********************************* -->
 // <!-- *******  CONTACT   ************** -->
 // <!-- ********************************* -->
@@ -818,7 +763,6 @@ footer {
         width: 80%;
         margin: 4em auto;
     }
-
     .get-started {
         margin-top: 4em; 
         @include button-highlight;
@@ -828,7 +772,6 @@ footer {
         &:target {
             display: none;
         }
-        
     }
     // *****************************************************
     // *********   MODAL   *********************************
@@ -838,7 +781,6 @@ footer {
         left: 0;
         top: 160px;
         width: 100%;
-        // height: 60%;
         overflow: auto;
         background-color: rgba(0, 0, 0, 0.4);
 
@@ -851,7 +793,6 @@ footer {
         // modal-box   ****************************
         .modal-dialog {
             display: table-cell;
-            // vertical-align: middle;
         }
         // modal-content   ************************
         .modal-dialog, .modal-content {
@@ -860,7 +801,6 @@ footer {
             border: 1px solid $border-color;
             position: relative;
             padding: 0;
-            // outline: 0;
             @include border-radius;
             text-align: center;
             width: 100%;
@@ -891,7 +831,6 @@ footer {
             .closebtn:focus {
                 color: $bg-dark;
                 text-decoration: none;
-                cursor: pointer;
             }
         }
      
@@ -899,7 +838,6 @@ footer {
         // ******   VISITENKARTE MIT GLASSMORPHISM    **********
         .con {
             position: relative;
-            // margin: 3rem auto;
             width: 100%;
             height: 180px;
             .card {
@@ -1120,7 +1058,6 @@ footer {
                     text-transform: uppercase;
                     letter-spacing: 2px;
                     font-size: 14px;
-                
                     &:hover {
                         font-weight: 600;
                     }
@@ -1141,7 +1078,6 @@ footer {
                     background-color: $border-color;
                     font-weight: 800;
                 }
-                
                 label {
                     display: block;
                     margin-bottom: 5px;
@@ -1154,7 +1090,6 @@ footer {
                             color: $pink;
                         }
                     }
-                
                 }
                 input, label {
                     margin: 5px auto;
@@ -1162,10 +1097,7 @@ footer {
                     @include border-radius-xs;
                     &::placeholder {
                         color: $bg-dark;
-                    }
-                    
-                   
-                    
+                    } 
                 }
                 button {
                     width: 50%;
@@ -1188,25 +1120,26 @@ footer {
             }
            
         }
-    @media screen and (min-width:$tablet) {             
-        .news {
-            max-width: 500px;
+        // **********************************************
+        @media screen and (min-width:$tablet) {             
+            .news {
+                max-width: 500px;
+            }
+        }
+
+        #toggle:checked ~ .news {
+            opacity: 1;
+            transform: translateY(5%);
+        }
+        
+        #toggle:checked ~ .button:before {
+            transform: rotate(225deg);
+        }
+        
+        #toggle:checked ~ .button:after {
+            transform: rotate(135deg);
         }
     }
-
-    #toggle:checked ~ .news {
-        opacity: 1;
-        transform: translateY(5%);
-    }
-    
-    #toggle:checked ~ .button:before {
-        transform: rotate(225deg);
-    }
-    
-    #toggle:checked ~ .button:after {
-        transform: rotate(135deg);
-    }
-}
 }
 // *********************************
 // *********   MAIN END   **********

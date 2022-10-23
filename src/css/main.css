@@ -36,7 +36,13 @@ a {
 body {
   font-family: "Raleway", sans-serif;
   color: rgb(43, 46, 45);
-  background-image: linear-gradient(180deg, rgba(250, 234, 142, 0.521) 0%, rgba(162, 209, 190, 0.822) 30%, rgba(91, 126, 91, 0.8) 60%, rgba(255, 255, 255, 0.1) 90%);
+  background-image: linear-gradient(
+    180deg,
+    rgba(250, 234, 142, 0.521) 0%,
+    rgba(162, 209, 190, 0.822) 30%,
+    rgba(91, 126, 91, 0.8) 60%,
+    rgba(255, 255, 255, 0.1) 90%
+  );
 }
 
 main {
@@ -44,12 +50,15 @@ main {
   margin: 0 auto;
 }
 
-h1, .main-menu span {
+h1,
+.main-menu span {
   font-family: "Inconsolata", monospace;
   font-weight: 700;
 }
 
-h2, h3, h4 {
+h2,
+h3,
+h4 {
   text-transform: uppercase;
   letter-spacing: 3px;
 }
@@ -200,7 +209,13 @@ footer div a .fa-brands {
 }
 
 article {
-  background-image: linear-gradient(180deg, rgba(250, 234, 142, 0.521) 0%, rgba(162, 209, 190, 0.822) 30%, rgba(250, 234, 142, 0.521) 60%, rgba(162, 209, 190, 0.822) 90%);
+  background-image: linear-gradient(
+    180deg,
+    rgba(250, 234, 142, 0.521) 0%,
+    rgba(162, 209, 190, 0.822) 30%,
+    rgba(250, 234, 142, 0.521) 60%,
+    rgba(162, 209, 190, 0.822) 90%
+  );
   width: 90%;
   margin: 30px auto;
   box-shadow: 2px 2px 25px 5px rgba(0, 0, 0, 0.5);
@@ -216,78 +231,124 @@ article {
     height: 50vh;
     position: relative;
   }
-  .starter h1, .starter .main-menu span, .main-menu .starter span {
+  .starter h1,
+  .starter .main-menu span,
+  .main-menu .starter span {
     font-size: 1.8em;
     width: 400px;
     transform: rotate(30deg);
     margin-left: 20px;
   }
-  .starter h1 .myName, .starter .main-menu span .myName, .main-menu .starter span .myName {
+  .starter h1 .myName,
+  .starter .main-menu span .myName,
+  .main-menu .starter span .myName {
     text-align: center;
     width: 500px;
     transform: translateX(100px);
   }
-  .starter h1 .myName span, .starter .main-menu span .myName span, .main-menu .starter span .myName span {
+  .starter h1 .myName span,
+  .starter .main-menu span .myName span,
+  .main-menu .starter span .myName span {
     display: inline-block;
   }
-  .starter h1 .myName .m1, .starter .main-menu span .myName .m1, .main-menu .starter span .myName .m1 {
+  .starter h1 .myName .m1,
+  .starter .main-menu span .myName .m1,
+  .main-menu .starter span .myName .m1 {
     transform: translate(60px, -30px) rotate(0deg);
   }
-  .starter h1 .myName .a1, .starter .main-menu span .myName .a1, .main-menu .starter span .myName .a1 {
+  .starter h1 .myName .a1,
+  .starter .main-menu span .myName .a1,
+  .main-menu .starter span .myName .a1 {
     transform: translate(60px, -28px) rotate(0deg);
   }
-  .starter h1 .myName .r1, .starter .main-menu span .myName .r1, .main-menu .starter span .myName .r1 {
+  .starter h1 .myName .r1,
+  .starter .main-menu span .myName .r1,
+  .main-menu .starter span .myName .r1 {
     transform: translate(60px, -25px) rotate(-5deg);
   }
-  .starter h1 .myName .t1, .starter .main-menu span .myName .t1, .main-menu .starter span .myName .t1 {
+  .starter h1 .myName .t1,
+  .starter .main-menu span .myName .t1,
+  .main-menu .starter span .myName .t1 {
     transform: translate(60px, -25px) rotate(-15deg);
   }
-  .starter h1 .myName .y1, .starter .main-menu span .myName .y1, .main-menu .starter span .myName .y1 {
+  .starter h1 .myName .y1,
+  .starter .main-menu span .myName .y1,
+  .main-menu .starter span .myName .y1 {
     transform: translate(60px, -35px) rotate(-28deg);
   }
-  .starter h1 .myName .n1, .starter .main-menu span .myName .n1, .main-menu .starter span .myName .n1 {
+  .starter h1 .myName .n1,
+  .starter .main-menu span .myName .n1,
+  .main-menu .starter span .myName .n1 {
     transform: translate(55px, -60px) rotate(-40deg);
   }
-  .starter h1 .myName .a2, .starter .main-menu span .myName .a2, .main-menu .starter span .myName .a2 {
+  .starter h1 .myName .a2,
+  .starter .main-menu span .myName .a2,
+  .main-menu .starter span .myName .a2 {
     transform: translate(38px, -90px) rotate(-50deg);
   }
-  .starter h1 .myName .punkt, .starter .main-menu span .myName .punkt, .main-menu .starter span .myName .punkt {
+  .starter h1 .myName .punkt,
+  .starter .main-menu span .myName .punkt,
+  .main-menu .starter span .myName .punkt {
     transform: translate(25px, -120px) rotate(-60deg);
   }
-  .starter h1 .moreAbout span, .starter .main-menu span .moreAbout span, .main-menu .starter span .moreAbout span {
+  .starter h1 .moreAbout span,
+  .starter .main-menu span .moreAbout span,
+  .main-menu .starter span .moreAbout span {
     display: inline-block;
   }
-  .starter h1 .moreAbout .a4, .starter .main-menu span .moreAbout .a4, .main-menu .starter span .moreAbout .a4 {
+  .starter h1 .moreAbout .a4,
+  .starter .main-menu span .moreAbout .a4,
+  .main-menu .starter span .moreAbout .a4 {
     transform: translate(0px, -2px) rotate(-5deg);
   }
-  .starter h1 .moreAbout .b1, .starter .main-menu span .moreAbout .b1, .main-menu .starter span .moreAbout .b1 {
+  .starter h1 .moreAbout .b1,
+  .starter .main-menu span .moreAbout .b1,
+  .main-menu .starter span .moreAbout .b1 {
     transform: translate(398px, -35px) rotate(-12deg);
   }
-  .starter h1 .moreAbout .o2, .starter .main-menu span .moreAbout .o2, .main-menu .starter span .moreAbout .o2 {
+  .starter h1 .moreAbout .o2,
+  .starter .main-menu span .moreAbout .o2,
+  .main-menu .starter span .moreAbout .o2 {
     transform: translate(391px, -40px) rotate(-15deg);
   }
-  .starter h1 .moreAbout .u1, .starter .main-menu span .moreAbout .u1, .main-menu .starter span .moreAbout .u1 {
+  .starter h1 .moreAbout .u1,
+  .starter .main-menu span .moreAbout .u1,
+  .main-menu .starter span .moreAbout .u1 {
     transform: translate(386px, -46px) rotate(-18deg);
   }
-  .starter h1 .moreAbout .t2, .starter .main-menu span .moreAbout .t2, .main-menu .starter span .moreAbout .t2 {
+  .starter h1 .moreAbout .t2,
+  .starter .main-menu span .moreAbout .t2,
+  .main-menu .starter span .moreAbout .t2 {
     transform: translate(385px, -55px) rotate(-25deg);
   }
-  .starter h1 .moreAbout .punkt1, .starter .main-menu span .moreAbout .punkt1, .main-menu .starter span .moreAbout .punkt1 {
+  .starter h1 .moreAbout .punkt1,
+  .starter .main-menu span .moreAbout .punkt1,
+  .main-menu .starter span .moreAbout .punkt1 {
     transform: translate(384px, -64px) rotate(-25deg);
   }
-  .starter h1 .moreAbout .m4, .starter .main-menu span .moreAbout .m4, .main-menu .starter span .moreAbout .m4 {
+  .starter h1 .moreAbout .m4,
+  .starter .main-menu span .moreAbout .m4,
+  .main-menu .starter span .moreAbout .m4 {
     transform: translate(380px, -82px) rotate(-36deg);
   }
-  .starter h1 .moreAbout .e3, .starter .main-menu span .moreAbout .e3, .main-menu .starter span .moreAbout .e3 {
+  .starter h1 .moreAbout .e3,
+  .starter .main-menu span .moreAbout .e3,
+  .main-menu .starter span .moreAbout .e3 {
     transform: translate(377px, -105px) rotate(-40deg);
   }
-  .starter h1 .moreAbout .punkt2, .starter .main-menu span .moreAbout .punkt2, .main-menu .starter span .moreAbout .punkt2 {
+  .starter h1 .moreAbout .punkt2,
+  .starter .main-menu span .moreAbout .punkt2,
+  .main-menu .starter span .moreAbout .punkt2 {
     transform: translate(375px, -130px) rotate(-28deg);
   }
-  .starter h1 .moreAbout .punkt3, .starter .main-menu span .moreAbout .punkt3, .main-menu .starter span .moreAbout .punkt3 {
+  .starter h1 .moreAbout .punkt3,
+  .starter .main-menu span .moreAbout .punkt3,
+  .main-menu .starter span .moreAbout .punkt3 {
     transform: translate(370px, -155px) rotate(-30deg);
   }
-  .starter h1 .moreAbout .punkt4, .starter .main-menu span .moreAbout .punkt4, .main-menu .starter span .moreAbout .punkt4 {
+  .starter h1 .moreAbout .punkt4,
+  .starter .main-menu span .moreAbout .punkt4,
+  .main-menu .starter span .moreAbout .punkt4 {
     transform: translate(360px, -180px) rotate(-40deg);
   }
   .starter p {
@@ -305,14 +366,20 @@ article {
   }
 }
 @media screen and (min-width: 992px) {
-  .starter h1, .starter .main-menu span, .main-menu .starter span {
+  .starter h1,
+  .starter .main-menu span,
+  .main-menu .starter span {
     margin-left: 100px;
     font-size: 2em;
   }
-  .starter h1 .moreAbout .punkt10, .starter .main-menu span .moreAbout .punkt10, .main-menu .starter span .moreAbout .punkt10 {
+  .starter h1 .moreAbout .punkt10,
+  .starter .main-menu span .moreAbout .punkt10,
+  .main-menu .starter span .moreAbout .punkt10 {
     transform: translate(390px, -32px) rotate(-5deg);
   }
-  .starter h1 .moreAbout .a4, .starter .main-menu span .moreAbout .a4, .main-menu .starter span .moreAbout .a4 {
+  .starter h1 .moreAbout .a4,
+  .starter .main-menu span .moreAbout .a4,
+  .main-menu .starter span .moreAbout .a4 {
     transform: translate(396px, -32px) rotate(-5deg);
   }
 }
@@ -429,7 +496,7 @@ article {
   text-align: justify;
 }
 .about .person {
-  background-image: url(../img/person.webp);
+  background-image: url(../img/mischlinski.jpg);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -727,7 +794,8 @@ article {
   align-items: center;
   justify-content: space-between;
 }
-.pricing a:hover *, .pricing a:hover i {
+.pricing a:hover *,
+.pricing a:hover i {
   color: #fff;
   font-weight: 700;
 }
@@ -842,7 +910,8 @@ article {
 .contact .modal .modal-dialog {
   display: table-cell;
 }
-.contact .modal .modal-dialog, .contact .modal .modal-content {
+.contact .modal .modal-dialog,
+.contact .modal .modal-content {
   margin: auto;
   background-color: rgba(122, 122, 122, 0.5);
   border: 1px solid rgba(179, 179, 2, 0.2);
@@ -892,7 +961,11 @@ article {
   height: 100%;
   width: 100%;
   z-index: 3;
-  background-image: linear-gradient(315deg, rgba(255, 255, 255, 0.1) 0%, white 80%);
+  background-image: linear-gradient(
+    315deg,
+    rgba(255, 255, 255, 0.1) 0%,
+    white 80%
+  );
   border: 1px solid rgba(179, 179, 2, 0.2);
   border-radius: 10px;
   box-shadow: 2px 2px 25px 5px rgba(0, 0, 0, 0.5);
@@ -910,7 +983,11 @@ article {
   bottom: -100px;
   width: 150px;
   height: 150px;
-  background-image: linear-gradient(250deg, rgba(162, 209, 190, 0.822) 0%, rgba(91, 126, 91, 0.8) 70%);
+  background-image: linear-gradient(
+    250deg,
+    rgba(162, 209, 190, 0.822) 0%,
+    rgba(91, 126, 91, 0.8) 70%
+  );
   box-shadow: 2px 2px 25px 5px rgba(0, 0, 0, 0.5);
 }
 .contact .modal .con .ball-sm {
@@ -1050,13 +1127,17 @@ article {
   border: 1px solid rgba(179, 179, 2, 0.2);
   padding: 10px;
 }
-.newsletter .container .news ul, .newsletter .container .news form {
+.newsletter .container .news ul,
+.newsletter .container .news form {
   margin: 0;
   padding: 0;
   display: flex;
   flex-direction: column;
 }
-.newsletter .container .news ul a, .newsletter .container .news ul label, .newsletter .container .news form a, .newsletter .container .news form label {
+.newsletter .container .news ul a,
+.newsletter .container .news ul label,
+.newsletter .container .news form a,
+.newsletter .container .news form label {
   text-align: center;
   margin: 20px 0;
   color: rgba(91, 126, 91, 0.8);
@@ -1066,10 +1147,14 @@ article {
   letter-spacing: 2px;
   font-size: 14px;
 }
-.newsletter .container .news ul a:hover, .newsletter .container .news ul label:hover, .newsletter .container .news form a:hover, .newsletter .container .news form label:hover {
+.newsletter .container .news ul a:hover,
+.newsletter .container .news ul label:hover,
+.newsletter .container .news form a:hover,
+.newsletter .container .news form label:hover {
   font-weight: 600;
 }
-.newsletter .container .news ul input, .newsletter .container .news form input {
+.newsletter .container .news ul input,
+.newsletter .container .news form input {
   border: none;
   background-color: rgba(162, 209, 190, 0.822);
   width: 80%;
@@ -1097,12 +1182,14 @@ article {
 .newsletter .container .news form label a:hover {
   color: rgb(13, 107, 145);
 }
-.newsletter .container .news form input, .newsletter .container .news form label {
+.newsletter .container .news form input,
+.newsletter .container .news form label {
   margin: 5px auto;
   text-align: center;
   border-radius: 5px;
 }
-.newsletter .container .news form input::placeholder, .newsletter .container .news form label::placeholder {
+.newsletter .container .news form input::placeholder,
+.newsletter .container .news form label::placeholder {
   color: rgba(91, 126, 91, 0.8);
 }
 .newsletter .container .news form button {

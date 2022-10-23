@@ -1,103 +1,103 @@
-
 :root {
-    scroll-behavior: smooth;
+  scroll-behavior: smooth;
 }
 
 body {
-        
-    font-family: $font-main;
-    color: $font-color;
-    // *****************************
-    // ****Farbe an den Seiten******
-    // *****************************
-    background-image: 
-            linear-gradient(
-                180deg, 
-                $bg-middle 0%, 
-                $bg 30%, 
-                $bg-dark 60%,  
-                $white-transparent 90%);
+  font-family: $font-main;
+  color: $font-color;
+  // *****************************
+  // ****Farbe an den Seiten******
+  // *****************************
+  background-image: linear-gradient(
+    180deg,
+    $bg-middle 0%,
+    $bg 30%,
+    $bg-dark 60%,
+    $white-transparent 90%
+  );
 }
 main {
-    width: 90%;
-    margin: 0 auto;
+  width: 90%;
+  margin: 0 auto;
 }
 h1 {
-    font-family: $font-header;
-    font-weight: 700;
+  font-family: $font-header;
+  font-weight: 700;
 }
 
-h2, h3, h4 {
-    text-transform: uppercase;
-    letter-spacing: 3px;
+h2,
+h3,
+h4 {
+  text-transform: uppercase;
+  letter-spacing: 3px;
 }
 
-section{
-    margin: 5rem 0;
+section {
+  margin: 5rem 0;
 }
 
 footer {
-    margin: 5rem auto;
+  margin: 5rem auto;
+  a:nth-of-type(1) {
+    .back-to-top {
+      font-size: 0.8em;
+      @include back-to-top;
+      &:hover {
+        @include hover1;
+      }
+    }
+  }
+  div {
+    margin-bottom: 20px;
+    a {
+      font-size: 0.8em;
+      text-align: center;
+      padding: 10px;
+      &:hover {
+        @include hover1;
+      }
+      span {
+        display: block;
+        margin: 10px;
+        text-transform: uppercase;
+      }
+      .fa-brands {
+        display: block;
+        margin: 20px auto;
+      }
+    }
+  }
+  @media screen and (min-width: $mobile-xl) {
     a:nth-of-type(1) {
-        .back-to-top {
-            font-size: .8em;
-            @include back-to-top;
-            &:hover {
-                @include hover1;
-            }
-        }
+      .back-to-top {
+        font-size: 1em;
+      }
     }
     div {
-        margin-bottom: 20px;
-        a {
-            font-size: .8em;
-            text-align: center;
-            padding: 10px;
-            &:hover {
-                @include hover1;
-            }
-            span {
-                display: block;
-                margin: 10px;
-                text-transform: uppercase;
-            }
-            .fa-brands {
-                display: block;
-                margin: 20px auto;
-            }
-        }
+      a {
+        font-size: 1em;
+      }
     }
-    @media screen and (min-width: $mobile-xl) {
-        a:nth-of-type(1) {
-            .back-to-top {
-                font-size: 1em;
-            }
+  }
+  @media screen and (min-width: $tablet) {
+    @include flex($justify: space-between);
+    margin-left: 30px;
+    height: 30vh;
+    div {
+      @include flex();
+      a {
+        @include flex($direction: column);
+        margin: 20px;
+        span {
+          margin: 10px;
+          text-transform: uppercase;
         }
-        div {
-            a {
-                font-size: 1em;
-            }
+        .fa-brands {
+          margin-top: 10px;
         }
+      }
     }
-    @media screen and (min-width: $tablet) {
-        @include flex($justify:space-between);
-        margin-left: 30px;
-        height: 30vh;
-        div {
-            @include flex();
-            a {
-                @include flex($direction:column);
-                margin: 20px;
-                span {
-                    margin: 10px;
-                    text-transform: uppercase;
-                }
-                .fa-brands {
-                    margin-top: 10px;
-                }
-            }
-        }
-    }
+  }
 }
 /* END GLOBAL STYLES */
 
@@ -107,1047 +107,1047 @@ footer {
 // ********************************************
 
 .main-menu {
-    display: flex;
-    flex-direction: column;
-    padding: 0 5%;
-    text-align: center;
+  display: flex;
+  flex-direction: column;
+  padding: 0 5%;
+  text-align: center;
 
-    span {
-        text-align: left;
-        @extend h1;
-        font-size: 1.6em;
-        transform: rotate(-30deg);
+  span {
+    text-align: left;
+    @extend h1;
+    font-size: 1.6em;
+    transform: rotate(-30deg);
 
-        @media screen and (min-width:$tablet) {
-            font-size: 1.8em;
-            transform: translate(-20px, 50px) rotate(-57deg);
-        }
+    @media screen and (min-width: $tablet) {
+      font-size: 1.8em;
+      transform: translate(-20px, 50px) rotate(-57deg);
     }
+  }
 
-    // *****************************
-    // ****Nav-Leiste**
-    // *****************************
-    nav {
-        
-        ul {
-            @include flex($direction: column);
-            li {
-                a{
-                    font-size: 1.5em;
-                    padding: 20px;
-                    display: inline-block;
-                    &:hover {
-                        @include hover1;
-                    }
-                }
-            }
-            .click {
-                padding: 8px;
-                border: 2px solid rgb(68, 68, 68); 
-                @include border-radius-xs;
-                @include box-shadow-xs;
-                &:hover {
-                    @include hover;
-                }
-            }
+  // *****************************
+  // ****Nav-Leiste**
+  // *****************************
+  nav {
+    ul {
+      @include flex($direction: column);
+      li {
+        a {
+          font-size: 1.5em;
+          padding: 20px;
+          display: inline-block;
+          &:hover {
+            @include hover1;
+          }
         }
-    }
-    @media screen and (min-width:$tablet) {
-        & {
-            flex-direction: row;
-            justify-content: space-between;
-            span{
-                align-self: flex-end;
-            }
-            nav {
-                ul {
-                    flex-direction: row;
-                    align-items: center;
-                }
-            }
-        }
-    }
-}
-  article {
-        background-image: 
-            linear-gradient(
-                180deg, 
-                $bg-middle 0%, 
-                $bg 30%, 
-                $bg-middle 60%,  
-                $bg 90%);
-        width: 90%;
-        margin: 30px auto;
-        @include box-shadow-lg;
+      }
+      .click {
+        padding: 8px;
+        border: 2px solid rgb(68, 68, 68);
         @include border-radius-xs;
+        @include box-shadow-xs;
+        &:hover {
+          @include hover;
+        }
+      }
     }
+  }
+  @media screen and (min-width: $tablet) {
+    & {
+      flex-direction: row;
+      justify-content: space-between;
+      span {
+        align-self: flex-end;
+      }
+      nav {
+        ul {
+          flex-direction: row;
+          align-items: center;
+        }
+      }
+    }
+  }
+}
+article {
+  background-image: linear-gradient(
+    180deg,
+    $bg-middle 0%,
+    $bg 30%,
+    $bg-middle 60%,
+    $bg 90%
+  );
+  width: 90%;
+  margin: 30px auto;
+  @include box-shadow-lg;
+  @include border-radius-xs;
+}
 // *********************************
 // *********   MAIN START   **********
 // *********************************
 
-.starter{
+.starter {
+  p {
+    font-size: 0.9em;
+    margin-top: 2em;
+  }
+  @media screen and (min-width: $tablet) {
+    height: 50vh;
+    position: relative;
+    h1 {
+      font-size: 1.8em;
+      width: 400px;
+      transform: rotate(30deg);
+      margin-left: 20px;
+
+      // *****************************
+      // ****Erster Satz mit Namen und curved text**
+      // *****************************
+
+      .myName {
+        text-align: center;
+        width: 500px;
+        transform: translateX(100px);
+        span {
+          display: inline-block;
+        }
+        .m1 {
+          transform: translate(60px, -30px) rotate(0deg);
+        }
+        .a1 {
+          transform: translate(60px, -28px) rotate(0deg);
+        }
+        .r1 {
+          transform: translate(60px, -25px) rotate(-5deg);
+        }
+        .t1 {
+          transform: translate(60px, -25px) rotate(-15deg);
+        }
+        .y1 {
+          transform: translate(60px, -35px) rotate(-28deg);
+        }
+        .n1 {
+          transform: translate(55px, -60px) rotate(-40deg);
+        }
+        .a2 {
+          transform: translate(38px, -90px) rotate(-50deg);
+        }
+        .punkt {
+          transform: translate(25px, -120px) rotate(-60deg);
+        }
+      }
+
+      // ***************************************************
+      // ****Zweiter Satz mit Beschreibung und curved text**
+      // ***************************************************
+      .moreAbout {
+        span {
+          display: inline-block;
+        }
+        .a4 {
+          transform: translate(0px, -2px) rotate(-5deg);
+        }
+        .b1 {
+          transform: translate(398px, -35px) rotate(-12deg);
+        }
+        .o2 {
+          transform: translate(391px, -40px) rotate(-15deg);
+        }
+        .u1 {
+          transform: translate(386px, -46px) rotate(-18deg);
+        }
+        .t2 {
+          transform: translate(385px, -55px) rotate(-25deg);
+        }
+        .punkt1 {
+          transform: translate(384px, -64px) rotate(-25deg);
+        }
+        .m4 {
+          transform: translate(380px, -82px) rotate(-36deg);
+        }
+        .e3 {
+          transform: translate(377px, -105px) rotate(-40deg);
+        }
+        .punkt2 {
+          transform: translate(375px, -130px) rotate(-28deg);
+        }
+        .punkt3 {
+          transform: translate(370px, -155px) rotate(-30deg);
+        }
+        .punkt4 {
+          transform: translate(360px, -180px) rotate(-40deg);
+        }
+      }
+    }
+    // **** ZWEI TEXTBLÖCKE links unten und rechts oben  *****
+
     p {
-        font-size: .9em;
-        margin-top: 2em;
+      font-size: 0.8em;
+      position: absolute;
+      width: 150px;
     }
-    @media screen and (min-width:$tablet) {
-        height: 50vh;
-        position: relative;
-        h1 {
-            font-size: 1.8em;
-            width: 400px;
-            transform: rotate(30deg);
-            margin-left: 20px;
-        
-            // *****************************
-            // ****Erster Satz mit Namen und curved text**
-            // *****************************
-
-            .myName {
-                text-align: center;
-                width: 500px;
-                transform: translateX(100px);
-                span {
-                    display: inline-block;
-                }
-                .m1 {
-                    transform: translate(60px, -30px) rotate(0deg);
-                }
-                .a1 {
-                    transform: translate(60px, -28px) rotate(0deg);
-                }
-                .r1 {
-                    transform: translate(60px, -25px) rotate(-5deg);
-                }
-                .t1 {
-                    transform: translate(60px, -25px) rotate(-15deg);
-                }
-                .y1 {
-                    transform: translate(60px, -35px) rotate(-28deg);
-                }
-                .n1 {
-                    transform: translate(55px, -60px) rotate(-40deg);
-                }
-                .a2 {
-                    transform: translate(38px, -90px) rotate(-50deg);
-                }
-                .punkt {
-                    transform: translate(25px, -120px) rotate(-60deg);
-                }
-            }
-
-            // ***************************************************
-            // ****Zweiter Satz mit Beschreibung und curved text**
-            // ***************************************************
-            .moreAbout {
-                span {
-                    display: inline-block;
-                }
-                .a4 {
-                    transform: translate(0px, -2px) rotate(-5deg);
-                }
-                .b1 {
-                    transform: translate(398px, -35px) rotate(-12deg);
-                }
-                .o2 {
-                    transform: translate(391px, -40px) rotate(-15deg);
-                }
-                .u1 {
-                    transform: translate(386px, -46px) rotate(-18deg);
-                }
-                .t2 {
-                    transform: translate(385px, -55px) rotate(-25deg);
-                }
-                .punkt1 {
-                    transform: translate(384px, -64px) rotate(-25deg);
-                }
-                .m4 {
-                    transform: translate(380px, -82px) rotate(-36deg);
-                }
-                .e3 {
-                    transform: translate(377px, -105px) rotate(-40deg);
-                }
-                .punkt2 {
-                    transform: translate(375px, -130px) rotate(-28deg);
-                }
-                .punkt3 {
-                    transform: translate(370px, -155px) rotate(-30deg);
-                }
-                .punkt4 {
-                    transform: translate(360px, -180px) rotate(-40deg);
-                }
-            }
-        } 
-        // **** ZWEI TEXTBLÖCKE links unten und rechts oben  *****
-
-        p {
-            font-size: 0.8em;
-            position: absolute;
-            width: 150px;
-        }
-        p:first-of-type {
-            bottom: 100px;
-            left: 0px;
-        }
-        p:nth-of-type(2) {
-            top: 0px;
-            right: 0px;
-        }
+    p:first-of-type {
+      bottom: 100px;
+      left: 0px;
     }
-    @media screen and (min-width:$desktop) {
-        h1 {
-            margin-left: 100px; 
-            font-size: 2em;
-            .moreAbout {
-                .punkt10 {
-                    transform: translate(390px, -32px) rotate(-5deg);
-                }
-                .a4 {
-                    transform: translate(396px, -32px) rotate(-5deg);
-                }
-            }
-        }
+    p:nth-of-type(2) {
+      top: 0px;
+      right: 0px;
     }
+  }
+  @media screen and (min-width: $desktop) {
+    h1 {
+      margin-left: 100px;
+      font-size: 2em;
+      .moreAbout {
+        .punkt10 {
+          transform: translate(390px, -32px) rotate(-5deg);
+        }
+        .a4 {
+          transform: translate(396px, -32px) rotate(-5deg);
+        }
+      }
+    }
+  }
 }
 // <!-- ********************************* -->
 // <!-- *********   PROCESS   *********** -->
 // <!-- ********************************* -->
 .process {
+  h2 {
+    @include h2-mobile;
+  }
+  ul {
+    li:nth-of-type(odd) {
+      margin-top: 25px;
+      &:hover {
+        @include hover1;
+      }
+    }
+    li:nth-of-type(even) {
+      margin-top: 10px;
+    }
+    span {
+      font-size: 1.6em;
+      padding: 20px;
+    }
+    h4 {
+      font-size: 1.2em;
+      display: inline-block;
+      width: 100%;
+      border-bottom: 2px solid $bg-dark;
+    }
+    p {
+      font-size: 0.8em;
+      width: 80%;
+      margin: 0 auto;
+      text-align: justify;
+    }
+  }
+  // ************************************************
+  @media screen and (min-width: $mobile-xl) {
+    ul {
+      @include flex($direction: column, $align: center);
+      li {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+        justify-items: center;
+        a {
+          width: 100%;
+          span {
+            display: block;
+            text-align: center;
+            padding: 0;
+          }
+          h4 {
+            text-align: center;
+          }
+        }
+      }
+      p {
+        text-align: center;
+      }
+    }
+  }
+  // +**************************************************
+  @media screen and (min-width: $tablet) {
     h2 {
-        @include h2-mobile;
+      text-align: left;
     }
     ul {
-        li:nth-of-type(odd) {
-            margin-top: 25px;
-            &:hover {
-                @include hover1;
-            }
-        }
-        li:nth-of-type(even) {
-            margin-top: 10px;
-        }
-        span {
-            font-size: 1.6em;
+      width: 90%;
+      @include flex($direction: column, $align: stretch);
+      margin-left: 10%;
+      text-align: right;
+      li {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        a {
+          h4 {
+            width: 80%;
+            text-align: end;
+          }
+          span {
+            display: unset;
             padding: 20px;
-        }
-        h4 {
-            font-size: 1.2em;
-            display: inline-block;
-            width: 100%;
-            border-bottom: 2px solid $bg-dark;
+          }
         }
         p {
-            font-size: 0.8em;
-            width: 80%;
-            margin: 0 auto;
-            text-align: justify;
+          font-size: 0.8em;
+          width: 50%;
+          margin-left: 50%;
+          text-align: left;
         }
+      }
     }
-    // ************************************************
-    @media screen and (min-width:$mobile-xl) {
-        ul {
-            @include flex($direction: column, $align: center);
-            li {
-                display: flex;
-                flex-direction: column;
-                width: 100%;
-                align-items: center;
-                justify-items: center;
-                a {
-                    width: 100%;
-                    span {
-                        display: block;
-                        text-align: center;
-                        padding: 0;
-                    }
-                    h4 {
-                        text-align: center;
-                    }
-                }
-            }
-            p {
-                text-align: center;
-            }
-        }
-    }
-    // +**************************************************
-    @media screen and (min-width:$tablet) {
-        h2 {
-            text-align: left;
-        }
-        ul {
-            width: 90%;
-            @include flex($direction: column, $align: stretch);
-            margin-left: 10%;
-            text-align: right;
-            li {
-                display: flex;
-                flex-direction: row;
-                justify-content: space-between;
-                a {
-                    h4 {
-                        width: 80%;
-                        text-align: end;
-                    }
-                    span{
-                        display: unset;
-                        padding: 20px;
-                    }
-                }
-                p {
-                    font-size: 0.8em;
-                    width: 50%;
-                    margin-left: 50%;
-                    text-align: left;
-                }
-            }
-        }
-    }
+  }
 }
 
 // <!-- ********************************* -->
 // <!-- ********   ABOUT ME    ********** -->
 // <!-- ********************************* -->
 .about {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 20px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
 
-    h2 {
-        @include h2-mobile;
-        text-align: left;
-    }
+  h2 {
+    @include h2-mobile;
+    text-align: left;
+  }
+  h4 {
+    color: $white;
+  }
+  p {
+    text-align: justify;
+  }
+  .person {
+    background-image: url(../img/am-tisch.jpeg);
+    @include image-mobile;
+    margin: 0 auto;
+  }
+
+  @media screen and (min-width: $tablet) {
+    grid-template-columns: 100px 150px repeat(3, 1fr) 30px;
+    grid-template-rows: 50px 50px 100px 50px 100px 100px;
     h4 {
-        color: $white;
+      grid-area: 2/5/4/6;
+      z-index: 1;
     }
-    p {
-        text-align: justify;
+    p.first-sentence {
+      grid-area: 3/2/4/3;
+      text-align: left;
+    }
+    p.second-sentence {
+      grid-area: 5/1/7/4;
+      text-align: justify;
     }
     .person {
-        background-image: url(../img/person.webp);
-        @include image-mobile;
-        margin: 0 auto;
+      @include image-xl;
+      grid-area: 3/4/5/6;
+      margin: 0;
     }
-
-    @media screen and (min-width:$tablet) {
-        grid-template-columns: 100px 150px repeat(3, 1fr) 30px;
-        grid-template-rows: 50px 50px 100px 50px 100px 100px;
-        h4 {
-            grid-area: 2/5/4/6;
-            z-index: 1;
-        }
-        p.first-sentence {
-            grid-area: 3/2/4/3;
-            text-align: left;
-        }
-        p.second-sentence {
-            grid-area: 5/1/7/4;
-            text-align: justify;
-        }
-        .person {
-            @include image-xl;
-            grid-area: 3/4/5/6;
-            margin: 0;
-        }
-    }
+  }
 }
 
 // <!-- ********************************* -->
 // <!-- **** SKILLS MIT LINIEN IN TABELLE **** -->
 // <!-- ********************************* -->
 .skills {
+  h3 {
+    font-size: 1.3em;
+    text-align: center;
+  }
+  table {
+    text-align: left;
+    border-spacing: 20px;
+    tr {
+      height: 40px;
+      th {
+        font-size: 0.9em;
+      }
+      td {
+        width: 50px;
+        div {
+          height: 50%;
+          width: 100%;
+          border-bottom: 2px solid $bg-dark;
+        }
+      }
+    }
+  }
+  @media screen and (min-width: $tablet) {
     h3 {
-        font-size: 1.3em;
-        text-align: center;
+      text-align: left;
     }
     table {
-        text-align: left;
-        border-spacing: 20px;
-        tr {
-            height: 40px;
-            th {
-                font-size: .9em;
-            }
-            td {
-                width: 50px;
-                div {
-                    height: 50%;
-                    width: 100%;
-                    border-bottom: 2px solid $bg-dark;
-                }                         
-            }
-        }
+      margin: 30px auto;
+      width: 50%;
     }
-    @media screen and (min-width:$tablet) {
-        h3 {
-            text-align: left;
-        }
-        table {
-            margin: 30px auto;
-            width: 50%;
-        }
-    }
+  }
 }
 
 // <!-- ********************************* -->
 // <!-- ****PROJECTS with IMAGES*********** -->
 // <!-- ********************************* -->
 .projects {
-    background-color: $white-transparent-xl;
-    @include border-radius-xs;
-    @include box-shadow-xs;
-    padding: 30px;
+  background-color: $white-transparent-xl;
+  @include border-radius-xs;
+  @include box-shadow-xs;
+  padding: 30px;
 
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: auto;
-    gap: 30px;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  gap: 30px;
 
-    h2 {
-        @include h2-mobile;
+  h2 {
+    @include h2-mobile;
+  }
+  h4 {
+    padding: 3px;
+    h4:hover {
+      color: red;
     }
+  }
+  a:hover {
+    @include hover;
+    filter: brightness(0.8);
+    transition: filter 0.5s;
     h4 {
-        padding: 3px;
-        h4:hover {
-            color: red;
-        }
+      color: red;
+      font-weight: 800;
+      transform: translate(40px, 60px) scale(1.3);
+      transition: transform 0.5s, color 0.5s;
+    }
+  }
+
+  .planning {
+    background-image: url(../img/prototype.jpeg);
+    @include image-mobile;
+    color: $white;
+  }
+
+  .creating {
+    background-image: url(../img/desktops.webp);
+    @include image-mobile;
+    color: brown;
+  }
+
+  .testing {
+    background-image: url(../img/ipad-touch.webp);
+    @include image-mobile;
+    color: cornflowerblue;
+  }
+
+  .work {
+    background-image: url(../img/am-tisch.jpeg);
+    @include image-mobile;
+    color: blue;
+  }
+  // *******************************************************
+  @media screen and (min-width: $mobile-xl) {
+    a:hover {
+      @include hover;
+      h4 {
+        transform: translate(60px, 60px) scale(1.3);
+        transition: transform 0.5s, color 0.5s;
+      }
+    }
+  }
+  // *********************************************************
+  @media screen and (min-width: $tablet) {
+    grid-template-columns: repeat(2, 250px);
+    grid-template-rows: 50px repeat(4, 125px) 180px;
+    gap: 40px;
+    margin: 0 auto;
+    h2 {
+      text-align: left;
     }
     a:hover {
-        @include hover;
-        filter: brightness(.8);
-        transition: filter .5s;
-        h4 {
-            color: red;
-            font-weight: 800;
-            transform: translate(40px, 60px) scale(1.3);
-            transition: transform .5s, color .5s;
-        }
+      @include hover;
+      h4 {
+        color: red;
+        transform: translate(40px, 60px) scale(1.3);
+      }
     }
-
     .planning {
-        background-image: url(../img/prototype.jpeg);
-        @include image-mobile;
-        color: $white;
+      @include image-xl;
+      grid-area: 2/2/3/3;
+    }
+    div:nth-of-type(1) {
+      display: none;
     }
 
     .creating {
-        background-image: url(../img/desktops.webp);
-        @include image-mobile;
-        color: brown
+      @include image-xl;
+      grid-area: 3/1/5/2;
+    }
+    div:nth-of-type(2) {
+      display: none;
     }
 
     .testing {
-        background-image: url(../img/ipad-touch.webp);
-        @include image-mobile;
-        color: cornflowerblue;
+      @include image-xl;
+      grid-area: 4/2/6/3;
+    }
+    div:nth-of-type(3) {
+      display: none;
     }
 
     .work {
-        background-image: url(../img/am-tisch.jpeg);
-        @include image-mobile;
-        color: blue;
+      @include image-xl;
+      grid-area: 5/1/6/2;
     }
-    // *******************************************************
-    @media screen and (min-width:$mobile-xl) {
-        a:hover {
-            @include hover;
-            h4 {
-                transform: translate(60px, 60px) scale(1.3);
-                transition: transform .5s, color .5s;
-            }
-        }
+    div:nth-of-type(4) {
+      display: none;
     }
-    // *********************************************************
-    @media screen and (min-width:$tablet) {
-        grid-template-columns: repeat(2, 250px);
-        grid-template-rows: 50px repeat(4, 125px) 180px;
-        gap: 40px;
-        margin: 0 auto;
-        h2 {
-            text-align: left;
-        }
-        a:hover {
-            @include hover;
-            h4 {
-                color: red;
-                transform: translate(40px, 60px) scale(1.3);
-            }
-        }
-        .planning {
-            @include image-xl;
-            grid-area: 2/2/3/3;
-        }
-        div:nth-of-type(1) {
-            display: none;
-        }
+  }
+  // ****************************************************
+  @media screen and (min-width: $desktop) {
+    padding: 20px;
 
-        .creating {
-            @include image-xl;
-            grid-area: 3/1/5/2;
-        }
-        div:nth-of-type(2) {
-            display: none;
-        }
-
-        .testing {
-            @include image-xl;
-            grid-area: 4/2/6/3;
-        }
-        div:nth-of-type(3) {
-            display: none;
-        }
-
-        .work {
-            @include image-xl;
-            grid-area: 5/1/6/2;
-        }
-        div:nth-of-type(4) {
-            display: none;
-        }
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: 50px 50px 250px 50px 80px 90px 50px 100px;
+    gap: 20px;
+    a:hover {
+      @include hover;
+      h4 {
+        color: red;
+        transform: translate(40px, 60px) scale(1.3);
+      }
     }
-    // ****************************************************
-    @media screen and (min-width:$desktop) {  
-        padding: 20px;
-
-        display: grid;
-        grid-template-columns: repeat(8, 1fr);
-        grid-template-rows: 50px 50px 250px 50px 80px 90px 50px 100px;
-        gap: 20px;
-        a:hover {
-            @include hover;
-            h4 {
-                color: red;
-                transform: translate(40px, 60px) scale(1.3);
-            }
-        }
-        .planning {
-            grid-area: 2/3/5/6;
-        }
-        div:nth-of-type(1) {
-            display: unset;
-            grid-area: 2/6/3/9;
-
-        }
-        .creating {
-            grid-area: 4/5/7/8;
-        }
-        div:nth-of-type(2) {
-            display: unset;
-            grid-area: 7/5/8/8;
-        }
-
-        .testing {
-            grid-area: 3/1/4/3;
-        }
-        div:nth-of-type(3) {
-            display: unset;
-            grid-area: 4/1/5/3;
-        }
-
-        .work {
-            grid-area: 5/2/8/5;
-        }
-        div:nth-of-type(4) {
-            grid-area: 8/2/9/5;
-            display: unset;
-        }
+    .planning {
+      grid-area: 2/3/5/6;
     }
+    div:nth-of-type(1) {
+      display: unset;
+      grid-area: 2/6/3/9;
+    }
+    .creating {
+      grid-area: 4/5/7/8;
+    }
+    div:nth-of-type(2) {
+      display: unset;
+      grid-area: 7/5/8/8;
+    }
+
+    .testing {
+      grid-area: 3/1/4/3;
+    }
+    div:nth-of-type(3) {
+      display: unset;
+      grid-area: 4/1/5/3;
+    }
+
+    .work {
+      grid-area: 5/2/8/5;
+    }
+    div:nth-of-type(4) {
+      grid-area: 8/2/9/5;
+      display: unset;
+    }
+  }
 }
 
 // <!-- ********************************* -->
 // <!-- *******  PRICING   ************** -->
 // <!-- ********************************* -->
 .pricing {
+  display: flex;
+  flex-direction: column;
+  h2 {
+    margin-bottom: 30px;
+    text-align: center;
+    font-size: 1.8em;
+  }
+  a {
+    padding: 20px 0;
+    margin-top: 20px;
+    border-bottom: 1px solid $bg-dark;
+
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    &:hover *,
+    &:hover i {
+      @include hover1;
+    }
+    span {
+      color: $bg-dark;
+      font-size: 2em;
+    }
+    p {
+      text-transform: uppercase;
+    }
+    .fa-2xl {
+      color: $bg-dark;
+    }
+  }
+  // *************************************************
+  @media screen and (min-width: $tablet) {
     h2 {
-        margin-bottom: 30px;
-        text-align: center;
-        font-size: 1.8em;
+      margin-bottom: 30px;
+      text-align: start;
     }
     a {
-        padding: 20px 0;
-        margin-top: 20px;
-        border-bottom: 1px solid $bg-dark;
-        
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-between;
-        &:hover * , &:hover i {
-            @include hover1;
-        }
-        span {
-            color: $bg-dark;
-            font-size: 2em;
-        }
-        p {
-            text-transform: uppercase;
-        }
-        .fa-2xl {
-            color: $bg-dark;
-        }
+      line-height: 0.5em;
+      padding: 20px;
+      display: grid;
+      grid-template-columns: repeat(2, 2fr) 200px 1fr 50px;
+      span {
+        color: $bg-dark;
+        font-size: 2em;
+      }
     }
-    // *************************************************
-    @media screen and (min-width:$tablet) {
-        h2 {
-            margin-bottom: 30px;
-            text-align: start;
-        }
-        a {
-            line-height: 0.5em;
-            padding: 20px;
-            display: grid;
-            grid-template-columns: repeat(2, 2fr) 200px 1fr 50px;
-            span {
-                color: $bg-dark;
-                font-size: 2em;
-            }
-        }
-        a:nth-of-type(1) {
-            grid-template-areas: 
-            'span1 . p1 . i1'
-            ;
-            span {
-                grid-area: span1;
-            }
-            p {
-                grid-area: p1;
-            }
-            i {
-                grid-area: i1;
-            }
-        }
-        a:nth-of-type(2) {
-            grid-template-areas: 
-            'span1 . p1 . i1'
-            ;
-            span {
-                grid-area: span1;
-            }
-            p {
-                grid-area: p1;
-            }
-            i {
-                grid-area: i1;
-            }
-        }
-        a:nth-of-type(3) {
-            grid-template-areas: 
-            'span . p . i'
-            ;
-            span {
-                grid-area: span;
-            }
-            p {
-                grid-area: p;
-            }
-            i {
-                grid-area: i;
-            }
-        }
+    a:nth-of-type(1) {
+      grid-template-areas: "span1 . p1 . i1";
+      span {
+        grid-area: span1;
+      }
+      p {
+        grid-area: p1;
+      }
+      i {
+        grid-area: i1;
+      }
     }
+    a:nth-of-type(2) {
+      grid-template-areas: "span1 . p1 . i1";
+      span {
+        grid-area: span1;
+      }
+      p {
+        grid-area: p1;
+      }
+      i {
+        grid-area: i1;
+      }
+    }
+    a:nth-of-type(3) {
+      grid-template-areas: "span . p . i";
+      span {
+        grid-area: span;
+      }
+      p {
+        grid-area: p;
+      }
+      i {
+        grid-area: i;
+      }
+    }
+  }
 }
 
 // <!-- ********************************* -->
 // <!-- *******  CONTACT   ************** -->
 // <!-- ********************************* -->
 .contact {
-    text-align: center;
-    height: 60vh;
-    position: relative;
+  text-align: center;
+  height: 60vh;
+  position: relative;
+  h2 {
+    @include h2-mobile;
+  }
+  h4 {
+    width: 80%;
+    margin: 4em auto;
+  }
+  .get-started {
+    margin-top: 4em;
+    @include button-highlight;
+    &:hover {
+      @include hover2;
+    }
+    &:target {
+      display: none;
+    }
+  }
+  // *****************************************************
+  // *********   MODAL   *********************************
+  /* The modal's background */
+  .modal {
+    display: none;
+    left: 0;
+    top: 160px;
+    width: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+
+    // display modal when targeted  ************
+    &:target {
+      display: table;
+      position: absolute;
+      @include border-radius;
+    }
+    // modal-box   ****************************
+    .modal-dialog {
+      display: table-cell;
+    }
+    // modal-content   ************************
+    .modal-dialog,
+    .modal-content {
+      margin: auto;
+      background-color: rgb(122, 122, 122, 0.5);
+      border: 1px solid $border-color;
+      position: relative;
+      padding: 0;
+      @include border-radius;
+      text-align: center;
+      width: 100%;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+        0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      animation: get-started 0.5s;
+    }
+    header.modal-text {
+      background-color: $bg-dark;
+      font-size: 0.8em;
+      color: white;
+      @include border-radius;
+      h2 {
+        margin-bottom: unset;
+        padding: 10px;
+      }
+
+      /* The button used to close the modal */
+      .closebtn {
+        text-decoration: none;
+        float: right;
+        font-size: 2.5em;
+        font-weight: bold;
+        color: #fff;
+        padding: 10px 20px 0 0;
+      }
+
+      .closebtn:hover,
+      .closebtn:focus {
+        color: $bg-dark;
+        text-decoration: none;
+      }
+    }
+
+    // *****************************************************
+    // ******   VISITENKARTE MIT GLASSMORPHISM    **********
+    .con {
+      position: relative;
+      width: 100%;
+      height: 180px;
+      .card {
+        @include flex($direction: column, $align: flex-start);
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        z-index: 3;
+        background-image: linear-gradient(
+          315deg,
+          $white-transparent 0%,
+          white 80%
+        );
+        border: 1px solid $border-color;
+        @include border-radius;
+        @include box-shadow-lg;
+        p {
+          padding: 5px 0 0px 10px;
+        }
+      }
+
+      .ball {
+        position: absolute;
+        border-radius: 50%;
+        z-index: 1;
+      }
+
+      .ball-xl {
+        right: -20px;
+        bottom: -100px;
+        width: 150px;
+        height: 150px;
+        background-image: linear-gradient(250deg, $bg 0%, $bg-dark 70%);
+        @include box-shadow-lg;
+      }
+
+      .ball-sm {
+        right: -50px;
+        bottom: 20px;
+        width: 100px;
+        height: 100px;
+        background-color: $bg-dark;
+        box-shadow: 5px 2px 20px 5px rgba(52, 70, 102, 0.5);
+      }
+    }
+  }
+
+  // ************************************************
+  // *****  Keyframes  ******************************
+  // *****  Animation Visitenkarte wird sichtbar  ***
+
+  @keyframes get-started {
+    from {
+      top: -100px;
+      opacity: 0;
+    }
+    to {
+      top: 0px;
+      opacity: 1;
+    }
+  }
+
+  // ***********************************************
+  // ******  MEDIAQUERY LARGER SMARTPHONE   ********
+  @media screen and (min-width: $mobile-xl) {
+    .con {
+      .card {
+        p {
+          font-size: 1.2em;
+        }
+      }
+    }
+  }
+
+  // ************************************************
+  // ********   MEDIAQUERY TABLET   *****************
+  // ************************************************
+  @media screen and (min-width: $tablet) {
+    height: 70vh;
+    text-align: left;
     h2 {
-        @include h2-mobile;
+      margin: 0 0 60px 40%;
+      width: 40%;
     }
     h4 {
-        width: 80%;
-        margin: 4em auto;
+      width: 25%;
+      line-height: 1.8em;
+      margin: 4em 0;
+      font-size: 1.3em;
     }
+
     .get-started {
-        margin-top: 4em; 
-        @include button-highlight;
-        &:hover {
-            @include hover2;
-        }
-        &:target {
-            display: none;
-        }
+      margin-left: 5px;
     }
-    // *****************************************************
-    // *********   MODAL   *********************************
-    /* The modal's background */
+
     .modal {
-        display: none;
-        left: 0;
-        top: 160px;
-        width: 100%;
-        overflow: auto;
-        background-color: rgba(0, 0, 0, 0.4);
+      top: 280px;
+      width: 70%;
+      max-width: 500px;
+      height: 230px;
 
-        // display modal when targeted  ************
-        &:target {
-            display: table;
-            position: absolute;
-            @include border-radius;
-        }
-        // modal-box   ****************************
-        .modal-dialog {
-            display: table-cell;
-        }
-        // modal-content   ************************
-        .modal-dialog, .modal-content {
-            margin: auto;
-            background-color: rgb(122, 122, 122, 0.5);
-            border: 1px solid $border-color;
-            position: relative;
-            padding: 0;
-            @include border-radius;
-            text-align: center;
-            width: 100%;
-            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-            animation: get-started 0.5s;
-        }
-        header.modal-text {
-            background-color: $bg-dark;
-            font-size: .8em;
-            color: white;
-            @include border-radius;
-            h2 {
-                margin-bottom: unset;
-                padding: 10px;
-            }
-        
-            /* The button used to close the modal */
-            .closebtn {
-                text-decoration: none;
-                float: right;
-                font-size: 2.5em;
-                font-weight: bold;
-                color: #fff;
-                padding: 10px 20px 0 0 ;
-            }
-            
-            .closebtn:hover,
-            .closebtn:focus {
-                color: $bg-dark;
-                text-decoration: none;
-            }
-        }
-     
-        // *****************************************************
-        // ******   VISITENKARTE MIT GLASSMORPHISM    **********
-        .con {
-            position: relative;
-            width: 100%;
-            height: 180px;
-            .card {
-                @include flex($direction: column, $align:flex-start);
-                position: absolute;
-                height: 100%;
-                width: 100%;
-                z-index: 3;
-                background-image: linear-gradient(315deg, $white-transparent 0%, white 80%);
-                border: 1px solid $border-color;
-                @include border-radius;
-                @include box-shadow-lg;
-                p {
-                    padding: 5px 0 0px 10px;
-                }
-            }
-
-            .ball {
-                position: absolute;
-                border-radius: 50%;
-                z-index: 1;
-            }
-            
-            .ball-xl {
-                right: -20px;
-                bottom: -100px;
-                width: 150px;
-                height: 150px;
-                background-image: linear-gradient(250deg, $bg 0%, $bg-dark 70%);
-                @include box-shadow-lg;
-            }
-            
-            .ball-sm{
-                right: -50px;
-                bottom: 20px;
-                width: 100px;
-                height: 100px;
-                background-color: $bg-dark;
-                box-shadow: 5px 2px 20px 5px rgba(52, 70, 102, 0.5);
-            }
-        }
-    }
-
-    // ************************************************
-    // *****  Keyframes  ******************************
-    // *****  Animation Visitenkarte wird sichtbar  ***
-
-    @keyframes get-started {
-        from {
-            top: -100px;
-            opacity: 0;
-        }
-        to {
-            top: 0px;
-            opacity: 1;
-        }
-    }
-
-    // ***********************************************
-    // ******  MEDIAQUERY LARGER SMARTPHONE   ********
-    @media screen and (min-width:$mobile-xl) {        
-        .con {
-            .card {
-                p {
-                    font-size: 1.2em;
-                }
-            }
-        }
-    }
-    
-    // ************************************************
-    // ********   MEDIAQUERY TABLET   *****************
-    // ************************************************
-    @media screen and (min-width:$tablet) {
-        height: 70vh;
-        text-align: left;
+      header.modal-text {
         h2 {
-            margin: 0 0 60px 40%;
-            width: 40%;
+          margin: unset;
+          width: unset;
+          text-align: center;
+          padding: 20px;
+          font-size: 1.8em;
         }
-        h4 {
-            width: 25%;
-            line-height: 1.8em;
-            margin: 4em 0;
+      }
+
+      // *****************************************************
+      // ******   VISITENKARTE MIT GLASSMORPHISM    **********
+      .con {
+        width: 100%;
+        height: 200px;
+        .card {
+          p {
             font-size: 1.3em;
+          }
+        }
+        .ball-xl {
+          right: -50px;
+          bottom: -100px;
+          width: 180px;
+          height: 180px;
         }
 
-        .get-started {
-            margin-left: 5px;
+        .ball-sm {
+          right: -80px;
+          bottom: 20px;
+          width: 130px;
+          height: 130px;
         }
-
-        .modal {
-            top: 280px;
-            width: 70%;
-            max-width: 500px;
-            height: 230px; 
-         
-            header.modal-text {
-                h2 {
-                    margin: unset;
-                    width: unset;
-                    text-align: center;
-                    padding: 20px;
-                    font-size: 1.8em;
-                }
-            }
-         
-            // *****************************************************
-            // ******   VISITENKARTE MIT GLASSMORPHISM    **********
-            .con {
-                width: 100%;
-                height: 200px;
-                .card {
-                    p {
-                        font-size: 1.3em;
-                    }
-                }
-                .ball-xl {
-                    right: -50px;
-                    bottom: -100px;
-                    width: 180px;
-                    height: 180px;
-                }
-                
-                .ball-sm{
-                    right: -80px;
-                    bottom: 20px;
-                    width: 130px;
-                    height: 130px;
-                }
-            }
-        }
+      }
     }
+  }
 }
-
 
 // <!-- ********************************* -->
 // <!-- *******  Newsletter   *********** -->
 // <!-- ********************************* -->
 
 .newsletter {
-    border: 1px solid $border-color;
-    background-color: $white-transparent-xl;
-    @include border-radius-xs;
-    @include box-shadow-lg;
+  border: 1px solid $border-color;
+  background-color: $white-transparent-xl;
+  @include border-radius-xs;
+  @include box-shadow-lg;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60vh;
+
+  .container {
+    width: 80%;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 60vh;
+    position: relative;
 
-    .container {
-        width: 80%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        position: relative;
-    
-        #toggle {
-            display: none;
-        }
-    
-        .button {
-            position: absolute;
-            z-index: 999;
-            width: 43px;
-            height: 43px;
-            background: $bg-dark;
-            border-radius: 100%;
-            cursor: pointer;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            top: -12px;
-        
-            &:before {
-                position: absolute;
-                content: "";
-                width: 20px;
-                height: 2px;
-                background: #fff;
-                transform: rotate(90deg);
-                transition: all 0.4s ease;
-            }
-            &:after {
-                position: absolute;
-                content: "";
-                width: 20px;
-                height: 2px;
-                background: #fff;
-                transition: all 0.4s ease;
-            }
-        }
-    
-        .news {
-            text-align: center;
-            opacity: 0;
-            transition: all 0.4s ease-in-out;
-            background: #fff;
-            width: 100%;
-            @include border-radius-xs;
-            transform: translateY(0%);
-            @include box-shadow-xs;
-            border: 1px solid $border-color;
-            padding: 10px;
-        
-            ul, form {
-                margin: 0;
-                padding: 0;
-                display: flex;
-                flex-direction: column;
-                
-                a, label {
-                    text-align: center;
-                    margin: 20px 0;
-                    color: $bg-dark;
-                    text-decoration: none;
-                    font-family: $font-main, sans-serif;
-                    text-transform: uppercase;
-                    letter-spacing: 2px;
-                    font-size: 14px;
-                    &:hover {
-                        font-weight: 600;
-                    }
-                }
-                input {
-                    border: none;
-                    background-color: $bg;
-                    width: 80%;
-                    height: 30px;
-                    margin: 0 auto;
-                }
-            }
-           
-            form {
-                border: 2px solid $bg;
-                @include border-radius-xs;
-                &:hover{
-                    background-color: $border-color;
-                    font-weight: 800;
-                }
-                label {
-                    display: block;
-                    margin-bottom: 5px;
-                    &:hover{
-                        color: $pink;
-                    }
-                    a {
-                        padding: 10px;
-                        &:hover{
-                            color: $pink;
-                        }
-                    }
-                }
-                input, label {
-                    margin: 5px auto;
-                    text-align: center;
-                    @include border-radius-xs;
-                    &::placeholder {
-                        color: $bg-dark;
-                    } 
-                }
-                button {
-                    width: 50%;
-                    padding: 5px;
-                    margin: 20px auto;
-                    @include button2;
-                    @include border-radius-xs;
-                    &:hover {
-                        color: $white;
-                        background-color: $bg-dark;
-                        font-weight: 800;
-                    }
-                }
-                .close-btn{
-                    font-size: 2em;
-                    &:hover{
-                        color: $white;
-                    }
-                }
-            }
-           
-        }
-        // **********************************************
-        @media screen and (min-width:$tablet) {             
-            .news {
-                max-width: 500px;
-            }
-        }
-
-        #toggle:checked ~ .news {
-            opacity: 1;
-            transform: translateY(5%);
-        }
-        
-        #toggle:checked ~ .button:before {
-            transform: rotate(225deg);
-        }
-        
-        #toggle:checked ~ .button:after {
-            transform: rotate(135deg);
-        }
+    #toggle {
+      display: none;
     }
+
+    .button {
+      position: absolute;
+      z-index: 999;
+      width: 43px;
+      height: 43px;
+      background: $bg-dark;
+      border-radius: 100%;
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      top: -12px;
+
+      &:before {
+        position: absolute;
+        content: "";
+        width: 20px;
+        height: 2px;
+        background: #fff;
+        transform: rotate(90deg);
+        transition: all 0.4s ease;
+      }
+      &:after {
+        position: absolute;
+        content: "";
+        width: 20px;
+        height: 2px;
+        background: #fff;
+        transition: all 0.4s ease;
+      }
+    }
+
+    .news {
+      text-align: center;
+      opacity: 0;
+      transition: all 0.4s ease-in-out;
+      background: #fff;
+      width: 100%;
+      @include border-radius-xs;
+      transform: translateY(0%);
+      @include box-shadow-xs;
+      border: 1px solid $border-color;
+      padding: 10px;
+
+      ul,
+      form {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+
+        a,
+        label {
+          text-align: center;
+          margin: 20px 0;
+          color: $bg-dark;
+          text-decoration: none;
+          font-family: $font-main, sans-serif;
+          text-transform: uppercase;
+          letter-spacing: 2px;
+          font-size: 14px;
+          &:hover {
+            font-weight: 600;
+          }
+        }
+        input {
+          border: none;
+          background-color: $bg;
+          width: 80%;
+          height: 30px;
+          margin: 0 auto;
+        }
+      }
+
+      form {
+        border: 2px solid $bg;
+        @include border-radius-xs;
+        &:hover {
+          background-color: $border-color;
+          font-weight: 800;
+        }
+        label {
+          display: block;
+          margin-bottom: 5px;
+          &:hover {
+            color: $pink;
+          }
+          a {
+            padding: 10px;
+            &:hover {
+              color: $pink;
+            }
+          }
+        }
+        input,
+        label {
+          margin: 5px auto;
+          text-align: center;
+          @include border-radius-xs;
+          &::placeholder {
+            color: $bg-dark;
+          }
+        }
+        button {
+          width: 50%;
+          padding: 5px;
+          margin: 20px auto;
+          @include button2;
+          @include border-radius-xs;
+          &:hover {
+            color: $white;
+            background-color: $bg-dark;
+            font-weight: 800;
+          }
+        }
+        .close-btn {
+          font-size: 2em;
+          &:hover {
+            color: $white;
+          }
+        }
+      }
+    }
+    // **********************************************
+    @media screen and (min-width: $tablet) {
+      .news {
+        max-width: 500px;
+      }
+    }
+
+    #toggle:checked ~ .news {
+      opacity: 1;
+      transform: translateY(5%);
+    }
+
+    #toggle:checked ~ .button:before {
+      transform: rotate(225deg);
+    }
+
+    #toggle:checked ~ .button:after {
+      transform: rotate(135deg);
+    }
+  }
 }
 // *********************************
 // *********   MAIN END   **********
 // *********************************
 
-#unseen{
-    display: none;
-    &:target{
-        display: block;
-    }
+#unseen {
+  display: none;
+  &:target {
+    display: block;
+  }
 }
